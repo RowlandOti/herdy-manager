@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectModuleManager">
+  <coponent name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HerdyManager.iml" filepath="$PROJECT_DIR$/HerdyManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
-  </component>
+  </coponent>
 </project>

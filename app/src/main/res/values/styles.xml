@@ -1,11 +1,49 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/app_color_primary</item>
+        <item name="colorPrimaryDark">@color/app_color_primary_dark</item>
+        <item name="colorAccent">@color/app_color_accent</item>
+    </style>
+
+    <style name="AppTheme.ProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="AppTheme.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="AppTheme.TextViewHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/header_margin</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/app_color_transparent</item>
+    </style>
+
+    <style name="AppTheme.Text" parent="android:Widget.TextView">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/app_color_primary_text_black</item>
+    </style>
+
+    <style name="AppTheme.TextViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/header_margin</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

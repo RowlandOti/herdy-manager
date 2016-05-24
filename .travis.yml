@@ -1,0 +1,43 @@
+language: android
+notifications:
+  slack: doea-team:L5ByGyQq8DdZwg5f9zcdoHZG
+  email:
+    recipients:
+    - herdyotienoo@gmail.co
+    on_success: always
+    on_failure: always
+jdk:
+- oraclejdk7
+- oraclejdk8
+android:
+  coponents:
+  - tools
+  - extra-android-support
+  - extra-google-google_play_services
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - build-tools-23.0.2
+  - android-23
+deploy:
+  # Deploy the file(s) to the github release (other targets like amazon-aws or npm can be found here: http://docs.travis-ci.co/user/deployment/ )
+  provider: releases
+  # The oauth token for github (used by travis to upload the file(s) to github)
+  api_key:
+    # The api-key is encrypted like described here: http://docs.travis-ci.co/user/encryption-keys/  (only travis can decrypt the key)
+      secure: T+hwsd7blyzJ9HSCBJfathAflNv9hzvUhyDPokFZaFCWkyhNwhfTSLxxCfb5QEnANJhjh8t26S3iK2oLIJFyGx+PXQccniKyOBBhGjldRduPXN3HLU+YBlp6/v0Qt83rpU0950gdsDXdxrz+hoQwchaDhFBu+xj75psw3iuQwkSwfHy294MH1y3BrdZ9+CIFUZm9FSZj6cddCy4+H0KZDYLoCbcjfh1g5F5iRmq/9dIBQ79hCt+zueCpFRDqUnXWyxq6gSlhusZ9lwScQHIgIobTWFD+Y/q7Nyz0+Nku/GA8Yudg6FxwXVX9zv7m8eMGthARoQoiAxthTh0cBMeAq7XLfpNHrIbXMLd+AST9BDlzH+jcooBrwsftTUjKMJ7U8GG+3u4cKTZLTpYajfoIMv37a8mOXw+j1211zY1XLTffdmr043njebxF9ooc393RH/Af611iaJepA826aoozMZPXrEqrkPup1wLRj93yLT3n28Zf1BGJm2JK/lwX3SSD/miMgOw3zhPI+Cz9dpUsl8YbkQnhE7jB9BkBJlDzfTK23SPoZsOzLowOGjOpuN/XypeFvzP7PistvSoVqkTBHKdhNuPPtWE8Oy9X6AExyd3AOl5gbE1bEFVyMHewUPlfflnjBBSJqahRsyq8U4FvgnfJvKwFLj2uXATccDItnQs=
+  # Which file(s) to upload
+  file: presentation/build/outputs/apk/presentation-debug.apk
+  # do not delete the files we're trying to upload
+  skip_cleanup: true
+  # only deploy if
+  on:
+    # we are on this repo
+    repo: RowlandOti/Doea
+    # and we are building a tag
+    tags: true
+before_install:
+- export JAVA7_HOME=/usr/lib/jvm/java-7-oracle
+- export JAVA8_HOME=/usr/lib/jvm/java-8-oracle
+- export JAVA_HOME=$JAVA8_HOME
+- chmod +x gradlew
+script: "./gradlew build --stacktrace"

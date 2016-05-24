@@ -1,4 +1,4 @@
-package co.herdy.herdymanager;
+package co.herdy.manager;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package co.herdy.herdymanager;
+package co.herdy.manager;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

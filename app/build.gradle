@@ -1,15 +1,28 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.3'
+    }
+}
+
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.fernandocejas.frodo'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    copileSdkVersion baseCompileSdkVersion
+    buildToolsVersion baseBuildToolsVersion
 
     defaultConfig {
-        applicationId "co.herdy.herdymanager"
-        minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        applicationId basePackageName
+        minSdkVersion baseMinSdkVersion
+        targetSdkVersion baseTargetSdkVersion
+        versionCode baseVersionCode
+        versionName baseVersionName
+        testInstrumentationRunner baseTestInstrumentationRunner
     }
     buildTypes {
         release {
@@ -17,10 +30,57 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    copileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    def testDependencies = rootProject.ext.dataTestDependencies
+
+    def dataDependencies = rootProject.ext.dataDependencies
+
+    // LOCAL BINARY DEPENDENCY
+    copile fileTree(dir: 'libs', include: ['*.jar'])
+    // TEST-ONLY DEPENDENCIES
+    testCompile testDependencies.junit
+    // MODULE DEPENDENCY
+
+    // REMOTE BINARY DEPENDENCIES
+    // Use - Dependency Injection support
+    apt presentationDependencies.daggerCompiler
+    copile presentationDependencies.dagger
+    copile presentationDependencies.butterKnife
+    // Use - Android Support Library support
+    copile presentationDependencies.supportCardView
+    copile presentationDependencies.supportRecyclerView
+    copile presentationDependencies.supportDesign
+    copile presentationDependencies.supportAppCompatV7
+    // Use - Reactive Approach support
+    copile presentationDependencies.rxJava
+    copile presentationDependencies.rxAndroid
+    provided presentationDependencies.javaxAnnotation
+
+    // Use - Rest API support
+    copile dataDependencies.retrofit
+    copile dataDependencies.retrofitConverterGson
+    copile (dataDependencies.retrofitConverterSimpleXml) {
+        exclude module: 'stax-api'
+    }
+    copile dataDependencies.retrofitRxJavaAdapter
+    copile dataDependencies.okHttp
+
+    // Use - Data & network flow analytics/debugging support
+    copile 'com.facebook.stetho:stetho:1.3.1'
+    copile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    copile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    // DEVELOPMENT-ONLY DEPENDENCIES
+    copile developmentDependencies.leakCanary
 }

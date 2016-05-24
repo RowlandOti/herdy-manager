@@ -1,11 +1,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="co.herdy.herdymanager">
+    package="co.herdy.manager">
 
-    <application android:allowBackup="true"
-        android:label="@string/app_name"
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.herdy.manager.presentation.ApplicationController"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--Main-Activity-->
+        <activity
+            android:name="com.herdy.manager.presentation.userfeature.view.activity.DownloadListActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--Download-Feature-->
+        <activity
+            android:name="com.herdy.manager.presentation.userfeature.view.activity.DownloadDetailsActivity"
+            android:label="@string/activity_title_user_details"></activity>
 
     </application>
 

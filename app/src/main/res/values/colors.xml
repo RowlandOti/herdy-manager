@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--Material design colors-->
+    <color name="app_color_primary">#3F51B5</color>
+    <color name="app_color_primary_dark">#303F9F</color>
+    <color name="app_color_accent">#FF4081</color>
+    <!-- Text colors-->
+    <color name="app_color_primary_text_black">#212121</color>
+    <color name="app_color_secondary_text_grey">#727272</color>
+    <color name="app_color_white">#FFFFFF</color>
+    <color name="app_color_transparent">#00000000</color>
+    <!-- Secondary colors-->
+    <color name="app_color_accent_orange">#FF9800</color>
 </resources>
