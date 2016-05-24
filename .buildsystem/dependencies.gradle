@@ -46,7 +46,7 @@ ext {
   ]
 
   presentationTestDependencies = [
-      mockito:            "org.mockito:mockito-comre:$mockitoVersion",
+      mockito:            "org.mockito:mockito-core:$mockitoVersion",
       dexmaker:           "com.google.dexmaker:dexmaker:$dexmakerVersion",
       dexmakerMockito:    "com.google.dexmaker:dexmaker-mockito:$dexmakerVersion",
       espresso:           "com.android.support.test.espresso:espresso-comre:$espressoVersion",
@@ -75,11 +75,11 @@ ext {
       javaxAnnotation:    "javax.annotation:jsr250-api:$javaxAnnotationVersion",
       androidAnnotations: "com.android.support:support-annotations:$androidAnnotationsVersion",
       retrofit:           "com.squareup.retrofit2:retrofit:$retrofitVersion",
-      retrofitConverterGson: "com.squareup.retrofit2:comnverter-gson:$retrofitVersion",
-      retrofitConverterSimpleXml: "com.squareup.retrofit2:comnverter-simplexml:$retrofitVersion",
+      retrofitConverterGson: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+      retrofitConverterSimpleXml: "com.squareup.retrofit2:converter-simplexml:$retrofitVersion",
       retrofitRxJavaAdapter: "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
       dbFlow:             "com.github.Raizlabs.DBFlow:dbflow:$dbFlowVersion",
-      dbFlowCore:         "com.github.Raizlabs.DBFlow:dbflow-comre:$dbFlowVersion",
+      dbFlowCore:         "com.github.Raizlabs.DBFlow:dbflow-core:$dbFlowVersion",
       dbFlowProcessor:    "com.github.Raizlabs.DBFlow:dbflow-processor:$dbFlowVersion",
       dbFlowSQLCipher:    "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:$dbFlowVersion",
       dbSugarOrm:         "com.github.satyan:sugar:$dbSugarOrmVersion",
@@ -87,8 +87,8 @@ ext {
 
   dataTestDependencies = [
       junit:              "junit:junit:$jUnitVersion",
-      assertj:            "org.assertj:assertj-comre:$assertJVersion",
-      mockito:            "org.mockito:mockito-comre:$mockitoVersion",
+      assertj:            "org.assertj:assertj-core:$assertJVersion",
+      mockito:            "org.mockito:mockito-core:$mockitoVersion",
       robolectric:        "org.robolectric:robolectric:$robolectricVersion",
   ]
 
