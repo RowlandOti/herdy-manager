@@ -110,7 +110,7 @@ public class UserDetailsFragment extends ABaseFragment implements IUserDetailsVi
             Random rnd = new Random();
             int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
             this.iv_cover.setBackgroundColor(color);
-            this.tv_key.setText(user.getKey());
+            this.tv_key.setText(user.getId());
             this.tv_value.setText(user.getValue());
         }
     }

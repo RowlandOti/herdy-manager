@@ -23,7 +23,7 @@ deploy:
   provider: releases
   # The oauth token for github (used by travis to upload the file(s) to github)
   api_key:
-    # The api-key is encrypted like described here: http://docs.travis-ci.co/user/encryption-keys/  (only travis can decrypt the key)
+    # The api-id is encrypted like described here: http://docs.travis-ci.co/user/encryption-keys/  (only travis can decrypt the id)
       secure: T+hwsd7blyzJ9HSCBJfathAflNv9hzvUhyDPokFZaFCWkyhNwhfTSLxxCfb5QEnANJhjh8t26S3iK2oLIJFyGx+PXQccniKyOBBhGjldRduPXN3HLU+YBlp6/v0Qt83rpU0950gdsDXdxrz+hoQwchaDhFBu+xj75psw3iuQwkSwfHy294MH1y3BrdZ9+CIFUZm9FSZj6cddCy4+H0KZDYLoCbcjfh1g5F5iRmq/9dIBQ79hCt+zueCpFRDqUnXWyxq6gSlhusZ9lwScQHIgIobTWFD+Y/q7Nyz0+Nku/GA8Yudg6FxwXVX9zv7m8eMGthARoQoiAxthTh0cBMeAq7XLfpNHrIbXMLd+AST9BDlzH+jcooBrwsftTUjKMJ7U8GG+3u4cKTZLTpYajfoIMv37a8mOXw+j1211zY1XLTffdmr043njebxF9ooc393RH/Af611iaJepA826aoozMZPXrEqrkPup1wLRj93yLT3n28Zf1BGJm2JK/lwX3SSD/miMgOw3zhPI+Cz9dpUsl8YbkQnhE7jB9BkBJlDzfTK23SPoZsOzLowOGjOpuN/XypeFvzP7PistvSoVqkTBHKdhNuPPtWE8Oy9X6AExyd3AOl5gbE1bEFVyMHewUPlfflnjBBSJqahRsyq8U4FvgnfJvKwFLj2uXATccDItnQs=
   # Which file(s) to upload
   file: presentation/build/outputs/apk/presentation-debug.apk

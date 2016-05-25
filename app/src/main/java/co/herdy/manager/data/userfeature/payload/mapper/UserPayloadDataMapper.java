@@ -1,14 +1,14 @@
 package co.herdy.manager.data.userfeature.payload.mapper;
 
-import co.herdy.manager.data.userfeature.payload.UserPayload;
-import co.herdy.manager.domain.userfeature.model.User;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import co.herdy.manager.data.userfeature.payload.UserPayload;
+import co.herdy.manager.domain.userfeature.model.User;
 
 /**
  * Mapper class used to transform {@link UserPayload} (in the data layer) to {@link User} in the
@@ -18,7 +18,8 @@ import javax.inject.Singleton;
 public class UserPayloadDataMapper {
 
     @Inject
-    public UserPayloadDataMapper() {}
+    public UserPayloadDataMapper() {
+    }
 
     /**
      * Transform a {@link UserPayload} into an {@link User}.
@@ -30,11 +31,8 @@ public class UserPayloadDataMapper {
         User user = null;
         if (userPayload != null) {
             user = new User(userPayload.getUserId());
-            user.setCoverUrl(userPayload.getCoverUrl());
-            user.setFullName(userPayload.getFullname());
-            user.setDescription(userPayload.getDescription());
-            user.setFollowers(userPayload.getFollowers());
-            user.setEmail(userPayload.getEmail());
+          //  user.setFullName(userPayload.getFullname());
+          //  user.setEmail(userPayload.getEmail());
         }
         return user;
     }

@@ -3,12 +3,12 @@ package co.herdy.manager.domain.userfeature.model;
 public class User {
 
 
-    public User() {
-
+    public User(int id) {
+        this.id = id;
     }
 
     private String value;
-    private String key;
+    private int id;
 
 
     public void setValue(String value) {
@@ -19,19 +19,19 @@ public class User {
         return value;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getKey() {
-        return key;
+    public int getId() {
+        return id;
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("***** User Details *****\n");
-        stringBuilder.append("key=" + this.getKey() + "\n");
+        stringBuilder.append("id=" + this.getId() + "\n");
         stringBuilder.append("value=" + this.getValue() + "\n");
         stringBuilder.append("*******************************");
         return stringBuilder.toString();

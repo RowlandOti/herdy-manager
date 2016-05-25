@@ -19,13 +19,13 @@ import dagger.Provides;
 @Module
 public class UserModule {
 
-    private String userKey = null;
+    private int userInt = 0;
 
     public UserModule() {
     }
 
-    public UserModule(String userKey) {
-        this.userKey = userKey;
+    public UserModule(int userId) {
+        this.userInt = userId;
     }
 
     @Provides
@@ -39,6 +39,6 @@ public class UserModule {
     @PerActivity
     @Named("userDetails")
     UseCase provideGetUserDetailsUseCase(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
-        return new GetUserDetailsInteractor(userKey, userRepository, threadExecutor, postExecutionThread);
+        return new GetUserDetailsInteractor(userInt, userRepository, threadExecutor, postExecutionThread);
     }
 }

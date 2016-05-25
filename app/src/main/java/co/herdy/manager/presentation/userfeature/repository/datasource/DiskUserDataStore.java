@@ -24,13 +24,13 @@ public class DiskUserDataStore implements IUserDataStore {
         this.userCache = userCache;
     }
 
-    public Observable<List<String>> userPayloadList() {
+    public Observable<List<UserPayload>> userPayloadList() {
         //TODO: implement simple cache for storing/retrieving collections of users.
         throw new UnsupportedOperationException("Operation is not available!!!");
     }
 
     @Override
-    public Observable<UserPayload> userPayloadDetails(final String userKey) {
+    public Observable<UserPayload> userPayloadDetails(final int userKey) {
         return this.userCache.get(userKey);
     }
 

@@ -27,7 +27,7 @@ public class UserDetailsActivity extends ABaseActivity implements HasComponent<U
     return callingIntent;
   }
 
-  private String userKey;
+  private int userId;
   private UserComponent userComponent;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class UserDetailsActivity extends ABaseActivity implements HasComponent<U
 
   @Override protected void onSaveInstanceState(Bundle outState) {
     if (outState != null) {
-      outState.putString(INSTANCE_STATE_PARAM_BID_ID, this.userKey);
+      outState.putInt(INSTANCE_STATE_PARAM_BID_ID, this.userId);
     }
     super.onSaveInstanceState(outState);
   }
@@ -50,10 +50,10 @@ public class UserDetailsActivity extends ABaseActivity implements HasComponent<U
    */
   private void initializeActivity(Bundle savedInstanceState) {
     if (savedInstanceState == null) {
-      this.userKey = getIntent().getStringExtra(INTENT_EXTRA_PARAM_BID_ID);
+      this.userId = getIntent().getIntExtra(INTENT_EXTRA_PARAM_BID_ID, 0);
       addFragment(R.id.fragmentContainer, new UserDetailsFragment(), true);
     } else {
-      this.userKey = savedInstanceState.getString(INSTANCE_STATE_PARAM_BID_ID);
+      this.userId = savedInstanceState.getInt(INSTANCE_STATE_PARAM_BID_ID);
     }
   }
 
@@ -61,7 +61,7 @@ public class UserDetailsActivity extends ABaseActivity implements HasComponent<U
     this.userComponent = DaggerUserComponent.builder()
         .applicationComponent(getApplicationComponent())
         .activityModule(getActivityModule())
-        .userModule(new UserModule(this.userKey))
+        .userModule(new UserModule(this.userId))
         .build();
   }
 

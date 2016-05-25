@@ -19,6 +19,6 @@ public interface IRepository<T> {
      *
      * @param itemId The user id used to retrieve user data.
      */
-    Observable<T> getItem(final String itemId);
+    Observable<T> getItem(final int itemId);
 }
 

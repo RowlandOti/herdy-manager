@@ -31,7 +31,7 @@ public class UserModelDataMapper {
       throw new IllegalArgumentException("Cannot transform a null value");
     }
     UserModel userModel = new UserModel();
-    userModel.setKey(user.getKey());
+    userModel.setId(user.getId());
     userModel.setValue(user.getValue());
 
     return userModel;

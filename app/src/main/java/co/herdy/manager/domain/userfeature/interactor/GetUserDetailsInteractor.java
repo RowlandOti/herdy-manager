@@ -15,18 +15,18 @@ import rx.Observable;
  */
 public class GetUserDetailsInteractor extends UseCase {
 
-    private final String userKey;
+    private final int userId;
     private final co.herdy.manager.domain.userfeature.repository.IUserRepository userRepository;
 
     @Inject
-    public GetUserDetailsInteractor(String userKey, IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
+    public GetUserDetailsInteractor(int userId, IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
         super(threadExecutor, postExecutionThread);
-        this.userKey = userKey;
+        this.userId = userId;
         this.userRepository = userRepository;
     }
 
     @Override
     protected Observable buildUseCaseObservable() {
-        return this.userRepository.getItem(this.userKey);
+        return this.userRepository.getItem(this.userId);
     }
 }

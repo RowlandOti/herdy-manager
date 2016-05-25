@@ -2,6 +2,7 @@ package co.herdy.manager.presentation.userfeature.repository;
 
 import android.util.Log;
 
+import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.data.userfeature.payload.mapper.UserPayloadDataMapper;
 import co.herdy.manager.data.userfeature.repository.datasource.IUserDataStore;
 import co.herdy.manager.domain.userfeature.repository.IUserRepository;
@@ -42,7 +43,7 @@ public class UserDataRepository implements IRepository, IUserRepository {
 
     @SuppressWarnings("Convert2MethodRef")
     @Override
-    public Observable<List<String>> getList() {
+    public Observable<List<UserPayload>> getList() {
         //we always get all users from the cloud
         final IUserDataStore userDataStore = this.userDataStoreFactory.createCloudDataStore();
         Log.d(LOG_TAG, "I WAS CALLED by getList");
@@ -51,9 +52,9 @@ public class UserDataRepository implements IRepository, IUserRepository {
 
     @SuppressWarnings("Convert2MethodRef")
     @Override
-    public Observable<User> getItem(String userKey) {
-        final IUserDataStore userDataStore = this.userDataStoreFactory.create(userKey);
+    public Observable<User> getItem(int userId) {
+        final IUserDataStore userDataStore = this.userDataStoreFactory.create(userId);
         Log.d(LOG_TAG, "I WAS CALLED by getItem");
-        return userDataStore.userPayloadDetails(userKey).map(userEntity -> this.userPayloadDataMapper.transform(userEntity));
+        return userDataStore.userPayloadDetails(userId).map(userEntity -> this.userPayloadDataMapper.transform(userEntity));
     }
 }
