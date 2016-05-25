@@ -1,8 +1,8 @@
-package com.doea.app.data.authfeature.rest.service;
+package co.herdy.manager.data.authfeature.rest.service;
 
 
-import com.doea.app.data.rest.IApiEndPoint;
-import com.doea.app.data.userfeature.payload.UserPayload;
+import co.herdy.manager.data.rest.IApiEndPoint;
+import co.herdy.manager.data.userfeature.payload.UserPayload;
 
 import retrofit2.Callback;
 import retrofit2.http.POST;

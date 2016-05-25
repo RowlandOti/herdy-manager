@@ -1,9 +1,9 @@
-package com.doea.app.presentation.authfeature.view.activity;
+package co.herdy.manager.presentation.authfeature.view.activity;
 
 import android.os.Bundle;
 
-import com.doea.app.presentation.R;
-import com.doea.app.presentation.view.activity.ABaseActivity;
+import co.herdy.manager.presentation.R;
+import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 public class LoginActivity extends ABaseActivity {
 
