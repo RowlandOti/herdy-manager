@@ -3,7 +3,7 @@ package co.herdy.manager.presentation.navigation;
 import android.content.Context;
 import android.content.Intent;
 
-import co.herdy.manager.presentation.userfeature.view.activity.DownloadDetailsActivity;
+import co.herdy.manager.presentation.userfeature.view.activity.UserDetailsActivity;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -24,11 +24,11 @@ public class Navigator {
      * Goes to the user details screen.
      *
      * @param context A Context needed to open the destiny activity.
-     * @param userKey   A Download id.
+     * @param userKey   A User id.
      */
-    public void navigateToDownloadDetails(Context context, String userKey) {
+    public void navigateToUserDetails(Context context, String userKey) {
         if (context != null) {
-            Intent intentToLaunch = DownloadDetailsActivity.getCallingIntent(context, userKey);
+            Intent intentToLaunch = UserDetailsActivity.getCallingIntent(context, userKey);
             context.startActivity(intentToLaunch);
         }
     }

@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get install -yq libc6:i386 libstdc++6:i386 zlib1g:i386 libncurses5:i386 --no-install-recomends && \
     apt-get clean
 
-# Download and untar SDK
+# User and untar SDK
 ENV ANDROID_SDK_URL http://dl.google.co/android/android-sdk_r24.4.1-linux.tgz
 RUN curl -L "${ANDROID_SDK_URL}" | tar --no-same-owner -xz -C /usr/local
 ENV ANDROID_HOME /usr/local/android-sdk-linux

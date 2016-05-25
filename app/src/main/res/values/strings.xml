@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">HerdyManger</string>
     <string name="view_text_key">Key:</string>
-    <string name="btn_text_retry">Retry</string>
     <string name="activity_title_user_details">Details</string>
+
+    // Button text
+    <string name="login">Login</string>
+    <string name="btn_text_load_data">Load Data</string>
+    <string name="btn_text_retry">Retry</string>
 
     // Exception messages
     <string name="exception_message_generic">There was an application error</string>
     <string name="exception_message_no_connection">There is no internet connection</string>
     <string name="exception_message_user_not_found">Cannot retrieve user data. Check your internet connection</string>
     <string name="view_text_value">Value:</string>
+    <string name="activity_dashboard">Dashboard</string>
+    <string name="activity_login">Login</string>
 </resources>

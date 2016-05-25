@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.herdy.manager.presentation.ApplicationController"
+        android:name="co.herdy.manager.presentation.ApplicationController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,16 +14,16 @@
 
         <!--Main-Activity-->
         <activity
-            android:name="com.herdy.manager.presentation.userfeature.view.activity.DownloadListActivity"
+            android:name="co.herdy.manager.presentation.userfeature.view.activity.UserListActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--Download-Feature-->
+        <!--User-Feature-->
         <activity
-            android:name="com.herdy.manager.presentation.userfeature.view.activity.DownloadDetailsActivity"
+            android:name="co.herdy.manager.presentation.userfeature.view.activity.UserDetailsActivity"
             android:label="@string/activity_title_user_details"></activity>
 
     </application>

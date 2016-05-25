@@ -2,15 +2,15 @@ package co.herdy.manager.presentation.internal.di.modules;
 
 import android.content.Context;
 
-import co.herdy.manager.data.userfeature.cache.DownloadCache;
-import co.herdy.manager.data.userfeature.cache.IDownloadCache;
+import co.herdy.manager.data.userfeature.cache.UserCache;
+import co.herdy.manager.data.userfeature.cache.IUserCache;
 import co.herdy.manager.data.executor.JobThreadExecutor;
-import co.herdy.manager.domain.userfeature.repository.IDownloadRepository;
+import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import co.herdy.manager.domain.executor.IPostExecutionThread;
 import co.herdy.manager.domain.executor.IThreadExecutor;
 import co.herdy.manager.presentation.ApplicationController;
 import co.herdy.manager.presentation.UIThread;
-import co.herdy.manager.presentation.userfeature.repository.DownloadDataRepository;
+import co.herdy.manager.presentation.userfeature.repository.UserDataRepository;
 
 import javax.inject.Singleton;
 
@@ -48,13 +48,13 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    IDownloadCache provideDownloadCache(DownloadCache userCache) {
+    IUserCache provideUserCache(UserCache userCache) {
         return userCache;
     }
 
     @Provides
     @Singleton
-    IDownloadRepository provideDownloadRepository(DownloadDataRepository userDataRepository) {
+    IUserRepository provideUserRepository(UserDataRepository userDataRepository) {
         return userDataRepository;
     }
 }

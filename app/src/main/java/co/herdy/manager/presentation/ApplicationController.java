@@ -9,7 +9,7 @@ import co.herdy.manager.data.api.ApiManager;
 import co.herdy.manager.presentation.internal.di.coponents.ApplicationComponent;
 import co.herdy.manager.presentation.internal.di.coponents.DaggerApplicationComponent;
 import co.herdy.manager.presentation.internal.di.modules.ApplicationModule;
-import co.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.HashMap;
 import java.util.Map;

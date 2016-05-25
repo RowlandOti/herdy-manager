@@ -17,7 +17,7 @@ package co.herdy.manager.presentation.internal.di.coponents;
 
 import android.content.Context;
 
-import co.herdy.manager.domain.userfeature.repository.IDownloadRepository;
+import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import co.herdy.manager.domain.executor.IPostExecutionThread;
 import co.herdy.manager.domain.executor.IThreadExecutor;
 import co.herdy.manager.presentation.internal.di.modules.ApplicationModule;
@@ -42,5 +42,5 @@ public interface ApplicationComponent {
 
     IPostExecutionThread postExecutionThread();
     
-    IDownloadRepository userRepository();
+    IUserRepository userRepository();
 }

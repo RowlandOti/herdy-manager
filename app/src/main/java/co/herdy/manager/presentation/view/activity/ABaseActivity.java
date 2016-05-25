@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import co.facebook.stetho.Stetho;
+import com.facebook.stetho.Stetho;
 import co.herdy.manager.presentation.ApplicationController;
 import co.herdy.manager.presentation.internal.di.modules.ActivityModule;
 import co.herdy.manager.presentation.navigation.Navigator;
@@ -56,7 +56,7 @@ public abstract class ABaseActivity extends AppCompatActivity {
             animateFragmentTransition(ft);
         }
         ft.add(containerViewId, fragment);
-        ft.comit();
+        ft.commit();
     }
 
     /**
@@ -82,7 +82,7 @@ public abstract class ABaseActivity extends AppCompatActivity {
             if (isAddToBackStack) {
                 ft.addToBackStack(backStateName);
             }
-            ft.comit();
+            ft.commit();
         }
     }
 

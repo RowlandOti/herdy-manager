@@ -2,9 +2,9 @@ package co.herdy.manager.data.api;
 
 import android.content.Context;
 
-import co.herdy.manager.data.userfeature.payload.DownloadPayload;
-import co.herdy.manager.data.userfeature.payload.DownloadPayloadCollection;
+import java.util.List;
 
+import co.herdy.manager.data.userfeature.payload.UserPayload;
 import rx.Observable;
 
 public class ApiManager extends ABaseApiManager {
@@ -17,13 +17,13 @@ public class ApiManager extends ABaseApiManager {
     }
 
     /**
-     * Download API
+     * User API
      */
-    public Observable<DownloadPayloadCollection> listDownloads() {
-        return getDownloadsApi().listDownloads();
+    public Observable<List<UserPayload>> listUsers() {
+        return getUsersApi().listUsers();
     }
 
-    public Observable<DownloadPayload> getDownloadById(String key) {
-        return getDownloadsApi().getDownloadWithId(key);
+    public Observable<UserPayload> getUserById(int id) {
+        return getUsersApi().getUserWithId(id);
     }
 }

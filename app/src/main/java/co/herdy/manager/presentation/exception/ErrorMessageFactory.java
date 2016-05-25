@@ -2,7 +2,7 @@ package co.herdy.manager.presentation.exception;
 
 import android.content.Context;
 
-import co.herdy.manager.data.userfeature.exception.DownloadNotFoundException;
+import co.herdy.manager.data.userfeature.exception.UserNotFoundException;
 import co.herdy.manager.data.exception.NetworkConnectionException;
 import co.herdy.manager.R;
 
@@ -28,7 +28,7 @@ public class ErrorMessageFactory {
 
     if (exception instanceof NetworkConnectionException) {
       message = context.getString(R.string.exception_message_no_connection);
-    } else if (exception instanceof DownloadNotFoundException) {
+    } else if (exception instanceof UserNotFoundException) {
       message = context.getString(R.string.exception_message_user_not_found);
     }
 

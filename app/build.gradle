@@ -43,8 +43,8 @@ android {
 dependencies {
 
     def presentationDependencies = rootProject.ext.presentationDependencies
+    def presentationDebugDependencies = rootProject.ext.presentationDebugDependencies
     def testDependencies = rootProject.ext.dataTestDependencies
-
     def dataDependencies = rootProject.ext.dataDependencies
 
     // LOCAL BINARY DEPENDENCY
@@ -71,16 +71,14 @@ dependencies {
     // Use - Rest API support
     compile dataDependencies.retrofit
     compile dataDependencies.retrofitConverterGson
-    compile (dataDependencies.retrofitConverterSimpleXml) {
-        exclude module: 'stax-api'
-    }
+
     compile dataDependencies.retrofitRxJavaAdapter
     compile dataDependencies.okHttp
 
     // Use - Data & network flow analytics/debugging support
-    compile 'com.facebook.stetho:stetho:1.3.1'
-    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    compile presentationDebugDependencies.facebookStetho
+    compile presentationDebugDependencies.facebookStethoOkHttp3
+    compile presentationDebugDependencies.okHttp3LoggingInterceptor
     // DEVELOPMENT-ONLY DEPENDENCIES
     compile developmentDependencies.leakCanary
 }
