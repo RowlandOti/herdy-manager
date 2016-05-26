@@ -9,7 +9,7 @@ import co.herdy.manager.presentation.internal.di.HasComponent;
 import co.herdy.manager.presentation.internal.di.coponents.UserComponent;
 
 import co.herdy.manager.R;
-import co.herdy.manager.presentation.internal.di.coponents.DaggerUserComponent;
+import co.herdy.manager.presentation.internal.di.components.DaggerUserComponent;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 /**

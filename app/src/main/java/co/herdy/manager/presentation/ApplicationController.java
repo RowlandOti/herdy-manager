@@ -6,8 +6,8 @@ import android.graphics.Typeface;
 
 import co.herdy.manager.BuildConfig;
 import co.herdy.manager.data.api.ApiManager;
-import co.herdy.manager.presentation.internal.di.coponents.ApplicationComponent;
-import co.herdy.manager.presentation.internal.di.coponents.DaggerApplicationComponent;
+import co.herdy.manager.presentation.internal.di.components.ApplicationComponent;
+import co.herdy.manager.presentation.internal.di.components.DaggerApplicationComponent;
 import co.herdy.manager.presentation.internal.di.modules.ApplicationModule;
 import com.squareup.leakcanary.LeakCanary;
 

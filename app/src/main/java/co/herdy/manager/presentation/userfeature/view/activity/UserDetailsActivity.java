@@ -11,7 +11,7 @@ import co.herdy.manager.presentation.internal.di.modules.UserModule;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 import co.herdy.manager.R;
-import co.herdy.manager.presentation.internal.di.coponents.DaggerUserComponent;
+import co.herdy.manager.presentation.internal.di.components.DaggerUserComponent;
 
 /**
  * Activity that shows details of a certain user.
