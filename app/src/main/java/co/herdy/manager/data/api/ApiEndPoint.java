@@ -2,7 +2,7 @@ package co.herdy.manager.data.api;
 
 import co.herdy.manager.data.rest.IApiEndPoint;
 
-public class ApiApiEndPoint implements IApiEndPoint {
+public class ApiEndPoint implements IApiEndPoint {
 
     private String url;
 

@@ -17,7 +17,7 @@ import co.herdy.manager.presentation.internal.di.modules.ActivityModule;
 import co.herdy.manager.presentation.navigation.Navigator;
 
 import co.herdy.manager.R;
-import co.herdy.manager.presentation.internal.di.coponents.ApplicationComponent;
+import co.herdy.manager.presentation.internal.di.components.ApplicationComponent;
 
 import javax.inject.Inject;
 

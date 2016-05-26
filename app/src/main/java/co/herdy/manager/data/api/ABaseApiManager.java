@@ -20,7 +20,7 @@ public abstract class ABaseApiManager {
     // The class Log identifier
     private static final String LOG_TAG = ABaseApiManager.class.getSimpleName();
     protected Context mContext;
-    private ApiApiEndPoint API_ENDPOINT = new ApiApiEndPoint();
+    private ApiEndPoint API_ENDPOINT = new ApiEndPoint();
     private IUserService mUserApi;
     private IAuthService mAuthApi;
 
@@ -38,7 +38,7 @@ public abstract class ABaseApiManager {
     *
     * @Params IService service, IEndPoint endpoint
     * */
-    private <T> T createApi(Class<T> clazz, ApiApiEndPoint endpoint) {
+    private <T> T createApi(Class<T> clazz, ApiEndPoint endpoint) {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient httpClient = new OkHttpClient.Builder().addNetworkInterceptor(new StethoInterceptor()).addInterceptor(logging).build();

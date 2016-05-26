@@ -7,20 +7,17 @@ import com.google.gson.annotations.SerializedName;
  */
 public class UserPayload {
 
+    // Class log identifier
+    public final static String LOG_TAG = UserPayload.class.getSimpleName();
+
     @SerializedName("id")
     private int userId;
 
-    @SerializedName("cover_url")
-    private String coverUrl;
+    @SerializedName("user_name")
+    private String username;
 
     @SerializedName("full_name")
     private String fullname;
-
-    @SerializedName("description")
-    private String description;
-
-    @SerializedName("followers")
-    private int followers;
 
     @SerializedName("email")
     private String email;
@@ -37,12 +34,12 @@ public class UserPayload {
         this.userId = userId;
     }
 
-    public String getCoverUrl() {
-        return coverUrl;
+    public String getUsername() {
+        return username;
     }
 
-    public void setCoverUrl(String coverUrl) {
-        this.coverUrl = coverUrl;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFullname() {
@@ -51,22 +48,6 @@ public class UserPayload {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(int followers) {
-        this.followers = followers;
     }
 
     public String getEmail() {
@@ -83,11 +64,9 @@ public class UserPayload {
 
         stringBuilder.append("***** User Entity Details *****\n");
         stringBuilder.append("id=" + this.getUserId() + "\n");
-        stringBuilder.append("cover url=" + this.getCoverUrl() + "\n");
+        stringBuilder.append("username=" + this.getUsername() + "\n");
         stringBuilder.append("fullname=" + this.getFullname() + "\n");
         stringBuilder.append("email=" + this.getEmail() + "\n");
-        stringBuilder.append("description=" + this.getDescription() + "\n");
-        stringBuilder.append("followers=" + this.getFollowers() + "\n");
         stringBuilder.append("*******************************");
 
         return stringBuilder.toString();
