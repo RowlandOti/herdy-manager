@@ -1,4 +1,4 @@
-package co.herdy.manager.data.userfeature.repository.datasource;
+package co.herdy.manager.domain.userfeature.repository.datastore;
 
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 

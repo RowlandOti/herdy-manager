@@ -4,7 +4,7 @@ import android.util.Log;
 
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.data.userfeature.payload.mapper.UserPayloadDataMapper;
-import co.herdy.manager.data.userfeature.repository.datasource.IUserDataStore;
+import co.herdy.manager.domain.userfeature.repository.datastore.IUserDataStore;
 import co.herdy.manager.data.userfeature.repository.datasource.UserDataStoreFactory;
 import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import co.herdy.manager.domain.repository.IRepository;

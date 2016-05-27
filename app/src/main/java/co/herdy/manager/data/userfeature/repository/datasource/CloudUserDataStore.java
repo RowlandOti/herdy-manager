@@ -10,6 +10,7 @@ import co.herdy.manager.data.exception.NetworkConnectionException;
 import co.herdy.manager.data.userfeature.cache.IUserCache;
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.data.utility.NetworkUtility;
+import co.herdy.manager.domain.userfeature.repository.datastore.IUserDataStore;
 import rx.Observable;
 import rx.functions.Action1;
 
