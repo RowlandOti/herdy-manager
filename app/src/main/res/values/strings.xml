@@ -8,6 +8,19 @@
     <string name="btn_text_load_data">Load Data</string>
     <string name="btn_text_retry">Retry</string>
 
+    // Login and Register User texts
+    <string name="tv_login">Login</string>
+    <string name="bt_login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="tv_username">Username</string>
+    <string name="tv_password">Password</string>
+    <string name="username_hint">Tom</string>
+    <string name="email_hint">tom@xyz.com</string>
+    <string name="password_hint">QW3fx_tYitZ</string>
+    <string name="bt_register">Register</string>
+    <string name="tv_register">Register</string>
+
     // Exception messages
     <string name="exception_message_generic">There was an application error</string>
     <string name="exception_message_no_connection">There is no internet connection</string>
