@@ -21,6 +21,7 @@ public class UserPayload {
 
     @SerializedName("email")
     private String email;
+    private String password;
 
     public UserPayload() {
         //empty
@@ -56,6 +57,10 @@ public class UserPayload {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

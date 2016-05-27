@@ -17,6 +17,17 @@ public class ApiManager extends ABaseApiManager {
     }
 
     /**
+     * Auth API
+     */
+    public Observable<String> login(String username, String password) {
+        return getAuthApi().login(username, password);
+    }
+
+    public Observable<UserPayload> register(UserPayload payload) {
+        return getAuthApi().register(payload);
+    }
+
+    /**
      * User API
      */
     public Observable<List<UserPayload>> listUsers() {

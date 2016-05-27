@@ -19,6 +19,7 @@ public abstract class ABaseApiManager {
 
     // The class Log identifier
     private static final String LOG_TAG = ABaseApiManager.class.getSimpleName();
+
     protected Context mContext;
     private ApiEndPoint API_ENDPOINT = new ApiEndPoint();
     private IUserService mUserApi;
