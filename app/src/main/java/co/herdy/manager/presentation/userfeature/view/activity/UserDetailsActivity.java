@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import co.herdy.manager.presentation.userfeature.view.fragment.UserDetailsFragment;
 import co.herdy.manager.presentation.internal.di.HasComponent;
-import co.herdy.manager.presentation.internal.di.coponents.UserComponent;
+import co.herdy.manager.presentation.internal.di.components.UserComponent;
 import co.herdy.manager.presentation.internal.di.modules.UserModule;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
@@ -18,12 +18,12 @@ import co.herdy.manager.presentation.internal.di.components.DaggerUserComponent;
  */
 public class UserDetailsActivity extends ABaseActivity implements HasComponent<UserComponent> {
 
-  private static final String INTENT_EXTRA_PARAM_BID_ID = "co.herdy.manager.INTENT_PARAM_BID_ID";
-  private static final String INSTANCE_STATE_PARAM_BID_ID = "co.herdy.manager.STATE_PARAM_BID_ID";
+  private static final String INTENT_EXTRA_PARAM_USER_ID = "co.herdy.manager.INTENT_PARAM_USER_ID";
+  private static final String INSTANCE_STATE_PARAM_USER_ID = "co.herdy.manager.STATE_PARAM_USER_ID";
 
   public static Intent getCallingIntent(Context context, String userKey) {
     Intent callingIntent = new Intent(context, UserDetailsActivity.class);
-    callingIntent.putExtra(INTENT_EXTRA_PARAM_BID_ID, userKey);
+    callingIntent.putExtra(INTENT_EXTRA_PARAM_USER_ID, userKey);
     return callingIntent;
   }
 
@@ -40,7 +40,7 @@ public class UserDetailsActivity extends ABaseActivity implements HasComponent<U
 
   @Override protected void onSaveInstanceState(Bundle outState) {
     if (outState != null) {
-      outState.putInt(INSTANCE_STATE_PARAM_BID_ID, this.userId);
+      outState.putInt(INSTANCE_STATE_PARAM_USER_ID, this.userId);
     }
     super.onSaveInstanceState(outState);
   }
@@ -50,10 +50,10 @@ public class UserDetailsActivity extends ABaseActivity implements HasComponent<U
    */
   private void initializeActivity(Bundle savedInstanceState) {
     if (savedInstanceState == null) {
-      this.userId = getIntent().getIntExtra(INTENT_EXTRA_PARAM_BID_ID, 0);
+      this.userId = getIntent().getIntExtra(INTENT_EXTRA_PARAM_USER_ID, 0);
       addFragment(R.id.fragmentContainer, new UserDetailsFragment(), true);
     } else {
-      this.userId = savedInstanceState.getInt(INSTANCE_STATE_PARAM_BID_ID);
+      this.userId = savedInstanceState.getInt(INSTANCE_STATE_PARAM_USER_ID);
     }
   }
 

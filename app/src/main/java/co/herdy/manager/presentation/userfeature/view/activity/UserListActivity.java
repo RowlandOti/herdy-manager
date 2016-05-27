@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import co.herdy.manager.presentation.userfeature.view.fragment.UserListFragment;
 import co.herdy.manager.presentation.internal.di.HasComponent;
-import co.herdy.manager.presentation.internal.di.coponents.UserComponent;
+import co.herdy.manager.presentation.internal.di.components.UserComponent;
 
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.internal.di.components.DaggerUserComponent;

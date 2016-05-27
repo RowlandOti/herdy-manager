@@ -19,7 +19,7 @@ import co.herdy.manager.presentation.userfeature.model.UserModel;
 import co.herdy.manager.presentation.userfeature.presenter.UserDetailsPresenter;
 import co.herdy.manager.presentation.userfeature.view.IUserDetailsView;
 import co.herdy.manager.presentation.userfeature.view.activity.UserDetailsActivity;
-import co.herdy.manager.presentation.internal.di.coponents.UserComponent;
+import co.herdy.manager.presentation.internal.di.components.UserComponent;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 import java.util.Random;
@@ -110,8 +110,8 @@ public class UserDetailsFragment extends ABaseFragment implements IUserDetailsVi
             Random rnd = new Random();
             int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
             this.iv_cover.setBackgroundColor(color);
-            this.tv_key.setText(user.getId());
-            this.tv_value.setText(user.getValue());
+            this.tv_key.setText(user.getUserId());
+            this.tv_value.setText(user.getUsername());
         }
     }
 

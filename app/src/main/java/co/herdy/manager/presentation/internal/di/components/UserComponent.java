@@ -1,5 +1,7 @@
-package co.herdy.manager.presentation.internal.di.coponents;
+package co.herdy.manager.presentation.internal.di.components;
 
+import co.herdy.manager.presentation.internal.di.components.ActivityComponent;
+import co.herdy.manager.presentation.internal.di.components.ApplicationComponent;
 import co.herdy.manager.presentation.userfeature.view.fragment.UserDetailsFragment;
 import co.herdy.manager.presentation.internal.di.PerActivity;
 import co.herdy.manager.presentation.internal.di.modules.ActivityModule;

@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import co.herdy.manager.presentation.userfeature.presenter.UserListPresenter;
 import co.herdy.manager.presentation.userfeature.view.adapter.UserAdapter;
 import co.herdy.manager.presentation.userfeature.view.layoutmanager.UserLinearLayoutManager;
-import co.herdy.manager.presentation.internal.di.coponents.UserComponent;
+import co.herdy.manager.presentation.internal.di.components.UserComponent;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 import co.herdy.manager.R;
