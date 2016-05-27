@@ -5,6 +5,9 @@ import android.os.Bundle;
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
+/*
+*  Login activity
+* */
 public class LoginActivity extends ABaseActivity {
 
     @Override

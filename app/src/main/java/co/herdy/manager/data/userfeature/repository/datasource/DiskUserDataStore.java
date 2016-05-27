@@ -1,4 +1,4 @@
-package co.herdy.manager.presentation.userfeature.repository.datasource;
+package co.herdy.manager.data.userfeature.repository.datasource;
 
 import co.herdy.manager.data.userfeature.repository.datasource.IUserDataStore;
 import co.herdy.manager.data.userfeature.cache.IUserCache;

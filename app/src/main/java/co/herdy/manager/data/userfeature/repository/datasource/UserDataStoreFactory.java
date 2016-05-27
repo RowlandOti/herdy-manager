@@ -1,9 +1,8 @@
-package co.herdy.manager.presentation.userfeature.repository.datasource;
+package co.herdy.manager.data.userfeature.repository.datasource;
 
 import android.content.Context;
 
 import co.herdy.manager.data.userfeature.cache.IUserCache;
-import co.herdy.manager.data.userfeature.repository.datasource.IUserDataStore;
 import co.herdy.manager.presentation.ApplicationController;
 import co.herdy.manager.data.api.ApiManager;
 

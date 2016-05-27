@@ -1,14 +1,14 @@
-package co.herdy.manager.presentation.userfeature.repository;
+package co.herdy.manager.data.userfeature.repository;
 
 import android.util.Log;
 
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.data.userfeature.payload.mapper.UserPayloadDataMapper;
 import co.herdy.manager.data.userfeature.repository.datasource.IUserDataStore;
+import co.herdy.manager.data.userfeature.repository.datasource.UserDataStoreFactory;
 import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import co.herdy.manager.domain.repository.IRepository;
 import co.herdy.manager.domain.userfeature.model.User;
-import co.herdy.manager.presentation.userfeature.repository.datasource.UserDataStoreFactory;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ import co.herdy.manager.domain.executor.IPostExecutionThread;
 import co.herdy.manager.domain.executor.IThreadExecutor;
 import co.herdy.manager.presentation.ApplicationController;
 import co.herdy.manager.presentation.UIThread;
-import co.herdy.manager.presentation.userfeature.repository.UserDataRepository;
+import co.herdy.manager.data.userfeature.repository.UserDataRepository;
 
 import javax.inject.Singleton;
 

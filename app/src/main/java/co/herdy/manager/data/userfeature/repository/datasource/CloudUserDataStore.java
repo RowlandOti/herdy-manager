@@ -1,4 +1,4 @@
-package co.herdy.manager.presentation.userfeature.repository.datasource;
+package co.herdy.manager.data.userfeature.repository.datasource;
 
 import android.util.Log;
 
@@ -9,7 +9,6 @@ import co.herdy.manager.data.api.ApiManager;
 import co.herdy.manager.data.exception.NetworkConnectionException;
 import co.herdy.manager.data.userfeature.cache.IUserCache;
 import co.herdy.manager.data.userfeature.payload.UserPayload;
-import co.herdy.manager.data.userfeature.repository.datasource.IUserDataStore;
 import co.herdy.manager.data.utility.NetworkUtility;
 import rx.Observable;
 import rx.functions.Action1;
