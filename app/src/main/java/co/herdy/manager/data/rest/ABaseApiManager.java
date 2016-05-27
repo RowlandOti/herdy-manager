@@ -1,4 +1,4 @@
-package co.herdy.manager.data.api;
+package co.herdy.manager.data.rest;
 
 import android.content.Context;
 

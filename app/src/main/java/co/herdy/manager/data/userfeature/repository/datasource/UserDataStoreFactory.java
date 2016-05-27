@@ -4,7 +4,7 @@ import android.content.Context;
 
 import co.herdy.manager.data.userfeature.cache.IUserCache;
 import co.herdy.manager.presentation.ApplicationController;
-import co.herdy.manager.data.api.ApiManager;
+import co.herdy.manager.data.rest.ApiManager;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

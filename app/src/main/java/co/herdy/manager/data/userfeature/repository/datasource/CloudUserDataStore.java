@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.List;
 
 import com.fernandocejas.frodo.annotation.RxLogObservable;
-import co.herdy.manager.data.api.ApiManager;
+import co.herdy.manager.data.rest.ApiManager;
 import co.herdy.manager.data.exception.NetworkConnectionException;
 import co.herdy.manager.data.userfeature.cache.IUserCache;
 import co.herdy.manager.data.userfeature.payload.UserPayload;
