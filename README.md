@@ -8,12 +8,15 @@ Herdy-Manager for the Herdy platform
 ## Organisation by layer and then by feature
 We have three layers i.e domain, data and presenter. 
 
-### Domain Layer
-Domain layer contains the company logic and interactors(use cases) e.g how to retrieve models, create models, show model details e.t.c. It contains only java dependencies. Try as much as possible to keep Android logic away from this layer. This layer also defines interfaces to be implemented by other layers which restricts them to company logic.
-### Data Layer
-Data layer is an abstraction over the domain layer. It hides the access to the data in such a manner as to allow a variety of data sources without the presenter caring about it. The layer contains implementation of repository interfaces, mappers, api services, payloads, data sources e.t.c
+### Domain/Business Layer
+- Domain layer contains the company logic and interactors(use cases) e.g how to retrieve models, create models, show model details e.t.c. It contains only java dependencies. Try as much as possible to keep Android logic away from this layer. This layer also defines interfaces to be implemented by other layers which restricts them to company logic. 
+- Rule of thumb Business layer is core and it should be like cross-platform, all you need to do on new platform is to implement required interfaces. But Business layer will be the same. Business layer is just coordinator. 
+
+### Data/Infrastructure Layer
+- Data layer is an abstraction over the domain layer. It hides the access to the data in such a manner as to allow a variety of data sources without the presenter caring about it. The layer contains implementation of repository interfaces, mappers, api services, payloads, data sources e.t.c
+
 ### Presenter Layer
-Presenter layer contains Android view logic such as presenter, views, adapters, layoutmanagers
+- Presenter layer contains Android view logic such as presenter, views, adapters, layoutmanagers
 
 In general, your idea of data flow seems correct, so stick with that. From an architectural standpoint, keep the following in mind :
 
