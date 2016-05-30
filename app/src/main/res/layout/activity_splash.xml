@@ -1,10 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.co/apk/res/android"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/intro_fragment_container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 
+
+    <FrameLayout
+        android:id="@+id/auth_fragment_container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 </RelativeLayout>
