@@ -16,8 +16,8 @@
     <string name="tv_username">Username</string>
     <string name="tv_password">Password</string>
     <string name="username_hint">Tom</string>
-    <string name="email_hint">tom@xyz.com</string>
-    <string name="password_hint">QW3fx_tYitZ</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
     <string name="bt_register">Register</string>
     <string name="tv_register">Register</string>
 

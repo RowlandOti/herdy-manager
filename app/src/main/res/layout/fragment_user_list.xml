@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.co/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.co/apk/res-auto"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_user"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
+        android:id="@+id/tb_user"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_scrollFlags="scroll|enterAlways">
@@ -19,8 +20,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_users"
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_width="match_parent"
         android:scrollbars="vertical" />
 
     <include layout="@layout/view_progress" />

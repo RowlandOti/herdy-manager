@@ -1,95 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_color_primary"
     android:gravity="center"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-        <ImageView
-            android:id="@+id/img_regcover"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitStart"
-            android:src="@color/app_color_accent" />
-
-        <TextView
-            android:id="@+id/et_action"
-            style="@style/AppTheme.TextViewHeader"
-            android:text="@string/tv_register"
-            android:textColor="@color/app_color_white" />
-    </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/auth_box_padding"
-        android:paddingRight="@dimen/auth_box_padding">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/userWrapper"
-            style="@style/TextInput.Base">
+        <LinearLayout
+            android:id="@+id/login_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/et_username"
-                style="@style/EditText.Username"
+            <ImageView
+                android:id="@+id/img_logcover"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/herdy_logo_125" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nextFocusDown="@+id/et_email" />
-        </android.support.design.widget.TextInputLayout>
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Herdy"
+                android:textColor="@color/app_color_white"
+                android:textSize="30sp" />
+        </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/email_wrapper"
-            style="@style/TextInput.Base">
-
-            <EditText
-                android:id="@+id/et_email"
-                style="@style/EditText.Email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nextFocusDown="@+id/et_password" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/password_wrapper"
-            style="@style/TextInput.Base">
-
-            <EditText
-                android:id="@+id/et_password"
-                style="@style/EditText.Password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nextFocusDown="@+id/bt_register" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/bt_register"
-            style="@style/Button.Register"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
-            android:text="@string/bt_register" />
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/auth_box_padding"
+            android:paddingRight="@dimen/auth_box_padding">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/userWrapper"
+                style="@style/TextInput.Base">
+
+                <EditText
+                    android:id="@+id/et_username"
+                    style="@style/EditText.Username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nextFocusDown="@+id/et_email" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/email_wrapper"
+                style="@style/TextInput.Base">
+
+                <EditText
+                    android:id="@+id/et_email"
+                    style="@style/EditText.Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nextFocusDown="@+id/et_password" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/password_wrapper"
+                style="@style/TextInput.Base">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    style="@style/EditText.Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nextFocusDown="@+id/bt_register" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_register"
+                style="@style/Button.Register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/bt_register" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_color_primary_dark">
 
         <TextView
             android:id="@+id/tv_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/tv_login"
             android:textColor="@color/app_color_white" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
