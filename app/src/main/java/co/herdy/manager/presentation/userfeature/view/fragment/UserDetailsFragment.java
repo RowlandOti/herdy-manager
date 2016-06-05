@@ -168,4 +168,5 @@ public class UserDetailsFragment extends ABaseFragment implements IUserDetailsVi
     void onButtonRetryClick() {
         UserDetailsFragment.this.loadUserDetails();
     }
+
 }

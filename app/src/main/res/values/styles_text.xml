@@ -5,7 +5,7 @@
 
 <resources>
 
-    <style name="TextView" parent="AppTheme.Text" />
+    <style name="TextView" parent="AppTheme.Dark.Text" />
 
     <style name="TextView.Base">
         <item name="android:layout_width">wrap_content</item>

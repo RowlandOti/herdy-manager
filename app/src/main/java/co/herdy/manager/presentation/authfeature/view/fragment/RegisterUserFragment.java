@@ -34,8 +34,6 @@ public class RegisterUserFragment extends ABaseFragment {
         void onCallLoginClicked(Bundle args);
     }
 
-    @Bind(R.id.img_regcover)
-    ImageView imgRegcover;
     @Bind(R.id.et_username)
     EditText etUsername;
     @Bind(R.id.et_email)

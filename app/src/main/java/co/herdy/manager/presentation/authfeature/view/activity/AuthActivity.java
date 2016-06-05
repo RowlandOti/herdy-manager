@@ -28,7 +28,7 @@ public class AuthActivity extends ABaseActivity implements RegisterUserFragment.
         setStatusbarTransparent(true);
         // Check that the activity is using the layout with the fragment_container id
         if (findViewById(R.id.fragment_container) != null) {
-            // However, if we're being restored from a previous state, then we don't need to do
+            // If we're being restored from a previous state, then we don't need to do
             // anything and should return or else we could end up with overlapping fragments.
             if (savedInstanceState != null) {
                 return;

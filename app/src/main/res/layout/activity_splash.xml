@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.co/apk/res/android"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/app_color_primary"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/intro_fragment_container"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent" />
+        android:id="@+id/splash_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
     <FrameLayout
         android:id="@+id/auth_fragment_container"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent" />
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

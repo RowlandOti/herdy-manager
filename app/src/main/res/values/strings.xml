@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HerdyManger</string>
+    <string name="app_name">Herdy Manager</string>
     <string name="view_text_key">Key:</string>
     <string name="activity_title_user_details">Details</string>
 
@@ -15,7 +15,7 @@
     <string name="password">Password</string>
     <string name="tv_username">Username</string>
     <string name="tv_password">Password</string>
-    <string name="username_hint">Tom</string>
+    <string name="username_hint">Username</string>
     <string name="email_hint">Email Address</string>
     <string name="password_hint">Password</string>
     <string name="bt_register">Register</string>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.facebook.stetho.Stetho;
+
+import butterknife.Bind;
 import co.herdy.manager.presentation.ApplicationController;
 import co.herdy.manager.presentation.internal.di.modules.ActivityModule;
 import co.herdy.manager.presentation.navigation.Navigator;
@@ -29,6 +32,8 @@ public abstract class ABaseActivity extends AppCompatActivity {
     // Class Variables
     private final String LOG_TAG = ABaseActivity.class.getSimpleName();
     // The toolbar
+    @Nullable
+    @Bind(R.id.toolbar)
     protected Toolbar mToolbar;
 
     @Inject
