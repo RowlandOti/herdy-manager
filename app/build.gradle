@@ -22,6 +22,7 @@ android {
         targetSdkVersion baseTargetSdkVersion
         versionCode baseVersionCode
         versionName baseVersionName
+        generatedDensities = []
         testInstrumentationRunner baseTestInstrumentationRunner
     }
     buildTypes {
@@ -29,6 +30,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -69,11 +73,14 @@ dependencies {
     provided presentationDependencies.javaxAnnotation
     // Use - Animation support
     compile presentationDependencies.facebookRebound
+    // Use -App Intro screen
+    compile presentationDependencies.paolorotoloAppIntro
+    //compile 'com.github.chyrta:AndroidOnboarder:0.6'
+
 
     // Use - Rest API support
     compile dataDependencies.retrofit
     compile dataDependencies.retrofitConverterGson
-
     compile dataDependencies.retrofitRxJavaAdapter
     compile dataDependencies.okHttp
 

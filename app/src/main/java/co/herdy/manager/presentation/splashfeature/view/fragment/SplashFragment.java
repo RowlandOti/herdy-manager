@@ -16,6 +16,7 @@ import com.facebook.rebound.SpringSystem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
+import co.herdy.manager.presentation.splashfeature.view.activity.SplashActivity;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 /**
@@ -57,6 +58,12 @@ public class SplashFragment extends ABaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         animateSplash();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        ((SplashActivity) getActivity()).loadIntroFragment();
     }
 
     private void animateSplash() {

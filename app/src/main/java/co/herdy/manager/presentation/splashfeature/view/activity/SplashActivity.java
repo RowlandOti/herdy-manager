@@ -2,16 +2,11 @@ package co.herdy.manager.presentation.splashfeature.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.widget.FrameLayout;
 
-import com.facebook.rebound.SimpleSpringListener;
-import com.facebook.rebound.Spring;
-import com.facebook.rebound.SpringSystem;
-
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
+import co.herdy.manager.presentation.authfeature.view.activity.AuthActivity;
+import co.herdy.manager.presentation.onboarderfeature.view.activity.OnBoarderActivity;
 import co.herdy.manager.presentation.splashfeature.view.fragment.SplashFragment;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
@@ -36,17 +31,22 @@ public class SplashActivity extends ABaseActivity {
                 showSplashFragment(null);
             }
         }
-
-
     }
 
     private void showSplashFragment(Bundle args) {
-       SplashFragment fragment = SplashFragment.newInstance(args);
+        SplashFragment fragment = SplashFragment.newInstance(args);
         replaceFragment(R.id.splash_fragment_container, fragment, false, true);
     }
 
-    private void showIntroFragment() {
-        
+    public void loadIntroFragment() {
+        Intent intent = new Intent(this, OnBoarderActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void loadAuthActivity() {
+        Intent intent = new Intent(this, AuthActivity.class);
+        startActivity(intent);
         finish();
     }
 

@@ -7,7 +7,7 @@ ext {
 
     // Libraries
     // REMOTE BINARY DEPENDENCY - Android
-    supportLibraryVersion = '23.1.1'
+    supportLibraryVersion = '23.3.0'
     daggerVersion = '2.0.2'
     butterKnifeVersion = '7.0.1'
     rxJavaVersion = '1.0.14'
@@ -22,6 +22,7 @@ ext {
     dbSugarOrmVersion = '1.5'
     facebookStethoVersion = '1.3.1'
     facebookReboundVersion = '0.3.4'
+    paolorotoloAppIntroVersion = '4.0.0'
 
     // Testing
     robolectricVersion = '3.0'
@@ -49,6 +50,7 @@ ext {
             facebookStetho       : "com.facebook.stetho:stetho:$facebookStethoVersion",
             facebookStethoOkHttp3: "com.facebook.stetho:stetho-okhttp3:$facebookStethoVersion",
             facebookRebound      : "com.facebook.rebound:rebound:$facebookReboundVersion",
+            paolorotoloAppIntro    : "com.github.paolorotolo:appintro:$paolorotoloAppIntroVersion",
     ]
 
     presentationTestDependencies = [

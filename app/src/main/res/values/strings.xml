@@ -28,4 +28,7 @@
     <string name="view_text_value">Value:</string>
     <string name="activity_dashboard">Dashboard</string>
     <string name="activity_login">Login</string>
+    <string name="btn_skip">skip</string>
+    <string name="btn_finish">Finish</string>
+
 </resources>

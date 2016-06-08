@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/onboarder_footer_height"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <include layout="@layout/inc_horizontal_divider" />
+
+        <FrameLayout
+            android:id="@+id/btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:background="@color/app_color_primary_dark"
+            android:paddingEnd="@dimen/footer_layout_margin"
+            android:paddingLeft="@dimen/footer_layout_margin"
+            android:paddingRight="@dimen/footer_layout_margin"
+            android:paddingStart="@dimen/footer_layout_margin">
+
+            <Button
+                android:id="@+id/btn_skip"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:text="@string/btn_skip"
+                android:textColor="@color/app_color_white" />
+
+            <LinearLayout
+                android:id="@+id/ll_indicators"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <co.herdy.manager.presentation.onboarderfeature.view.CircleIndicatorView
+                    android:id="@+id/circle_indicator_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_finish"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:text="@string/btn_finish"
+                android:textColor="@color/app_color_white"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:padding="@dimen/footer_layout_margin"
+                android:src="@drawable/ic_chevron_right"
+                android:tint="@color/app_color_white" />
+
+        </FrameLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/footer_layout_margin"
+            android:src="@drawable/ic_arrow_forward_white_24dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</merge>
