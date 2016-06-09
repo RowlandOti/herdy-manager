@@ -73,11 +73,7 @@ dependencies {
     provided presentationDependencies.javaxAnnotation
     // Use - Animation support
     compile presentationDependencies.facebookRebound
-    // Use -App Intro screen
-    compile presentationDependencies.paolorotoloAppIntro
-    //compile 'com.github.chyrta:AndroidOnboarder:0.6'
-
-
+    
     // Use - Rest API support
     compile dataDependencies.retrofit
     compile dataDependencies.retrofitConverterGson

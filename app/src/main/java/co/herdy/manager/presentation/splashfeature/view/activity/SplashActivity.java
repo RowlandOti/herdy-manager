@@ -31,23 +31,23 @@ public class SplashActivity extends ABaseActivity {
         prefManager = new OnBoarderPreferenceManager(this);
         if (!prefManager.getIsFirstTimeLaunch()) {
             loadAuthActivity();
-            finish();
-        }
-        // Check that the activity is using the layout with the container id
-        if (findViewById(R.id.splash_fragment_container) != null) {
-            // If we're being restored from a previous state, then we don't need to do
-            // anything and should return or else we could end up with overlapping fragments.
-            if (savedInstanceState != null) {
-                return;
-            } else {
-                showSplashFragment(null);
-            }
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    loadIntroActivity();
+        } else {
+            // Check that the activity is using the layout with the container id
+            if (findViewById(R.id.splash_fragment_container) != null) {
+                // If we're being restored from a previous state, then we don't need to do
+                // anything and should return or else we could end up with overlapping fragments.
+                if (savedInstanceState != null) {
+                    return;
+                } else {
+                    showSplashFragment(null);
                 }
-            }, SPLASH_DISPLAY_DURATION);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadIntroActivity();
+                    }
+                }, SPLASH_DISPLAY_DURATION);
+            }
         }
     }
 
