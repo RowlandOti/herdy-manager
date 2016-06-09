@@ -106,9 +106,14 @@ public abstract class ABaseActivity extends AppCompatActivity {
      * @param ft The FragmentTransaction
      */
     private void animateFragmentTransition(FragmentTransaction ft) {
-        ft.setCustomAnimations(R.anim.slide_in_to_left,
-                R.anim.slide_out_to_left, R.anim.slide_in_to_right,
-                R.anim.slide_out_to_right);
+        ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.slide_in_to_left, R.anim.slide_out_to_right);
+    }
+
+    /*
+   * Smoothen the activity transition
+   * */
+    protected void animateActivityTransition() {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     /**

@@ -4,7 +4,7 @@
         xmlns:android="http://schemas.android.co/apk/res/android"
         android:fromXDelta="0"
         android:toXDelta="-100%"
-        android:duration="500"
+        android:duration="700"
         android:startOffset="0"
         android:interpolator="@android:anim/decelerate_interpolator"
         />

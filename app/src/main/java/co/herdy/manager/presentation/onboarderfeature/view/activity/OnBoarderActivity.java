@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.herdy.manager.R;
+import co.herdy.manager.data.splashfeature.preference.SplashPreferenceManager;
 import co.herdy.manager.presentation.authfeature.view.activity.AuthActivity;
 import co.herdy.manager.presentation.onboarderfeature.view.fragment.OnBoarder;
 import co.herdy.manager.presentation.splashfeature.view.activity.SplashActivity;
@@ -16,12 +17,14 @@ public class OnBoarderActivity extends AOnBoarderActivity {
     // Class log identifier
     public final static String LOG_TAG = SplashActivity.class.getSimpleName();
 
-    List<OnBoarder> onBoarderPages;
+    private List<OnBoarder> onBoarderPages;
+    private SplashPreferenceManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onBoarderPages = new ArrayList<>();
+        prefManager = new SplashPreferenceManager(this);
 
         OnBoarder intro1 = new OnBoarder("Welcome", "Your Two Steps Away from Making Farming Easier", R.drawable.herdy_logo_125px);
         intro1.setBackgroundColor(R.color.app_color_primary);
@@ -48,6 +51,8 @@ public class OnBoarderActivity extends AOnBoarderActivity {
     private void loadAuthActivity() {
         Intent intent = new Intent(this, AuthActivity.class);
         startActivity(intent);
+        prefManager.setIsFirstTimeLaunch(false);
+        animateActivityTransition();
         finish();
     }
 }
