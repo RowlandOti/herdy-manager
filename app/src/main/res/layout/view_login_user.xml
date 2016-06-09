@@ -6,88 +6,97 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:transitionGroup="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:id="@+id/login_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/img_logcover"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                android:src="@drawable/herdy_125px" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/auth_box_padding"
-            android:paddingRight="@dimen/auth_box_padding">
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/email_wrapper"
-                style="@style/TextInput.Base">
+            <LinearLayout
+                android:id="@+id/login_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/et_email"
-                    style="@style/EditText.Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nextFocusDown="@+id/et_password" />
-            </android.support.design.widget.TextInputLayout>
+                <ImageView
+                    android:id="@+id/img_logcover"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/herdy_125px" />
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/password_wrapper"
-                style="@style/TextInput.Base">
+            </LinearLayout>
 
-                <EditText
-                    android:id="@+id/et_password"
-                    style="@style/EditText.Password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nextFocusDown="@+id/bt_login" />
-            </android.support.design.widget.TextInputLayout>
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/bt_login"
-                style="@style/Button.Login"
+            <LinearLayout
+                android:id="@+id/login_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp" />
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/auth_box_padding"
+                android:paddingRight="@dimen/auth_box_padding">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/email_wrapper"
+                    style="@style/TextInput.Base">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_email"
+                        style="@style/EditText.Email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nextFocusDown="@+id/et_password" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/password_wrapper"
+                    style="@style/TextInput.Base">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_password"
+                        style="@style/EditText.Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nextFocusDown="@+id/bt_login" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_login"
+                    style="@style/Button.Login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
-
+    </android.support.v4.widget.NestedScrollView>
 
     <LinearLayout
         android:id="@+id/login_footer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/onboarder_footer_height"
         android:layout_alignParentBottom="true"
         android:background="@color/app_color_primary_dark">
 
         <TextView
             android:id="@+id/tv_register"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/tv_register"
@@ -95,4 +104,5 @@
     </LinearLayout>
 
 </LinearLayout>
+
 

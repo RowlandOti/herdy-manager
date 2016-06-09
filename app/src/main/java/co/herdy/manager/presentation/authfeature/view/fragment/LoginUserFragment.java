@@ -3,6 +3,7 @@ package co.herdy.manager.presentation.authfeature.view.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,9 @@ public class LoginUserFragment extends ABaseFragment {
     @Bind(R.id.img_logcover)
     ImageView ivLogcover;
     @Bind(R.id.et_email)
-    EditText etEmail;
+    TextInputEditText etEmail;
     @Bind(R.id.et_password)
-    EditText etPassword;
+    TextInputEditText etPassword;
     @Bind(R.id.rl_progress)
     RelativeLayout rlProgress;
     @Bind(R.id.rl_retry)

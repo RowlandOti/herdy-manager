@@ -3,12 +3,11 @@ package co.herdy.manager.presentation.authfeature.view.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -35,11 +34,11 @@ public class RegisterUserFragment extends ABaseFragment {
     }
 
     @Bind(R.id.et_username)
-    EditText etUsername;
+    TextInputEditText etUsername;
     @Bind(R.id.et_email)
-    EditText etEmail;
+    TextInputEditText etEmail;
     @Bind(R.id.et_password)
-    EditText etPassword;
+    TextInputEditText etPassword;
     @Bind(R.id.rl_progress)
     RelativeLayout rlProgress;
     @Bind(R.id.rl_retry)

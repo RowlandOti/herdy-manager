@@ -21,7 +21,8 @@ public class UserPayload {
 
     @SerializedName("email")
     private String email;
-    private String password;
+    // Not part of the persistent state - don't serialize
+    private transient String password;
 
     public UserPayload() {
         //empty

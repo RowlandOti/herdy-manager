@@ -6,6 +6,15 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:transitionGroup="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +55,7 @@
                 android:id="@+id/userWrapper"
                 style="@style/TextInput.Base">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/et_username"
                     style="@style/EditText.Username"
                     android:layout_width="match_parent"
@@ -58,7 +67,7 @@
                 android:id="@+id/email_wrapper"
                 style="@style/TextInput.Base">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/et_email"
                     style="@style/EditText.Email"
                     android:layout_width="match_parent"
@@ -70,7 +79,7 @@
                 android:id="@+id/password_wrapper"
                 style="@style/TextInput.Base">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/et_password"
                     style="@style/EditText.Password"
                     android:layout_width="match_parent"
@@ -90,17 +99,19 @@
 
     </LinearLayout>
 
+    </android.support.v4.widget.NestedScrollView>
+
     <LinearLayout
         android:id="@+id/login_footer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/onboarder_footer_height"
         android:layout_alignParentBottom="true"
         android:background="@color/app_color_primary_dark">
 
         <TextView
             android:id="@+id/tv_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/tv_login"

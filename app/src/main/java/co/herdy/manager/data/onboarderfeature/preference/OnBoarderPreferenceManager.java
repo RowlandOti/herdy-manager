@@ -1,9 +1,9 @@
-package co.herdy.manager.data.splashfeature.preference;
+package co.herdy.manager.data.onboarderfeature.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class SplashPreferenceManager {
+public class OnBoarderPreferenceManager {
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -17,7 +17,7 @@ public class SplashPreferenceManager {
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
 
-    public SplashPreferenceManager(Context context) {
+    public OnBoarderPreferenceManager(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();

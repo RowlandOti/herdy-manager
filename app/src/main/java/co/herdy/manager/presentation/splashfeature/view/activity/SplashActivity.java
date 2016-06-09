@@ -6,7 +6,7 @@ import android.os.Handler;
 
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
-import co.herdy.manager.data.splashfeature.preference.SplashPreferenceManager;
+import co.herdy.manager.data.onboarderfeature.preference.OnBoarderPreferenceManager;
 import co.herdy.manager.presentation.authfeature.view.activity.AuthActivity;
 import co.herdy.manager.presentation.onboarderfeature.view.activity.OnBoarderActivity;
 import co.herdy.manager.presentation.splashfeature.view.fragment.SplashFragment;
@@ -18,7 +18,7 @@ public class SplashActivity extends ABaseActivity {
     public final static String LOG_TAG = SplashActivity.class.getSimpleName();
 
     private final int SPLASH_DISPLAY_DURATION = 3000;
-    private SplashPreferenceManager prefManager;
+    private OnBoarderPreferenceManager prefManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class SplashActivity extends ABaseActivity {
         setStatusbarTransparent(true);
 
         // Checking for first time launch - before calling setContentView()
-        prefManager = new SplashPreferenceManager(this);
+        prefManager = new OnBoarderPreferenceManager(this);
         if (!prefManager.getIsFirstTimeLaunch()) {
             loadAuthActivity();
             finish();
