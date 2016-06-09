@@ -27,5 +27,5 @@ public interface ApplicationComponent {
 
     IPostExecutionThread postExecutionThread();
     
-    IUserRepository userRepository();
+    IUserRepository getUserRepository();
 }

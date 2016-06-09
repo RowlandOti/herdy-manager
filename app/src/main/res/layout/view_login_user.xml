@@ -23,20 +23,12 @@
 
             <ImageView
                 android:id="@+id/img_logcover"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitStart"
-                android:src="@drawable/herdy_logo_125" />
+                android:src="@drawable/herdy_125px" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="5dp"
-                android:textSize="30sp"
-                android:text="Herdy"
-                android:textColor="@color/app_color_white" />
         </LinearLayout>
 
 

@@ -23,7 +23,7 @@ public class OnBoarderActivity extends AOnBoarderActivity {
         super.onCreate(savedInstanceState);
         onBoarderPages = new ArrayList<>();
 
-        OnBoarder intro1 = new OnBoarder("Welcome", "Your Two Steps Away from Making Farming Easier", R.drawable.herdy_logo_125);
+        OnBoarder intro1 = new OnBoarder("Welcome", "Your Two Steps Away from Making Farming Easier", R.drawable.herdy_logo_125px);
         intro1.setBackgroundColor(R.color.app_color_primary);
         intro1.setDescriptionColor(R.color.app_color_white);
         intro1.setTitleColor(R.color.app_color_white);

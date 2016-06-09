@@ -2,6 +2,7 @@ package co.herdy.manager.presentation.splashfeature.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
@@ -14,6 +15,8 @@ public class SplashActivity extends ABaseActivity {
 
     // Class log identifier
     public final static String LOG_TAG = SplashActivity.class.getSimpleName();
+
+    private final int SPLASH_DISPLAY_DURATION = 3000;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,12 @@ public class SplashActivity extends ABaseActivity {
             } else {
                 showSplashFragment(null);
             }
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadIntroActivity();
+                }
+            }, SPLASH_DISPLAY_DURATION);
         }
     }
 
@@ -38,7 +47,7 @@ public class SplashActivity extends ABaseActivity {
         replaceFragment(R.id.splash_fragment_container, fragment, false, true);
     }
 
-    public void loadIntroFragment() {
+    public void loadIntroActivity() {
         Intent intent = new Intent(this, OnBoarderActivity.class);
         startActivity(intent);
         finish();

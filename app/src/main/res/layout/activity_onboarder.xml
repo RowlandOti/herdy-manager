@@ -9,7 +9,7 @@
     tools:context=".presentation.onboarderfeature.view.activity.AOnBoarderActivity">
 
 
-    <include layout="@layout/view_intro_viewpager" />
-    <include layout="@layout/view_intro_footer" />
+    <include layout="@layout/view_onboarder_viewpager" />
+    <include layout="@layout/view_onboarder_footer" />
 
 </android.support.design.widget.CoordinatorLayout>

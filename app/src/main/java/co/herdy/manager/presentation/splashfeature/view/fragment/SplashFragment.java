@@ -16,7 +16,6 @@ import com.facebook.rebound.SpringSystem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
-import co.herdy.manager.presentation.splashfeature.view.activity.SplashActivity;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 /**
@@ -60,12 +59,6 @@ public class SplashFragment extends ABaseFragment {
         animateSplash();
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        ((SplashActivity) getActivity()).loadIntroFragment();
-    }
-
     private void animateSplash() {
         // Create a system to run the physics loop for a set of springs.
         SpringSystem springSystem = SpringSystem.create();
@@ -80,8 +73,10 @@ public class SplashFragment extends ABaseFragment {
                 // state by asking its current value in onSpringUpdate.
                 float value = (float) spring.getCurrentValue();
                 float scale = 3f - (value * 2f);
-                mSplashLayout.setScaleX(scale);
-                mSplashLayout.setScaleY(scale);
+                if (mSplashLayout != null) {
+                    mSplashLayout.setScaleX(scale);
+                    mSplashLayout.setScaleY(scale);
+                }
             }
         });
         // Set the mSpring in motion; moving from 0 to 0.5
