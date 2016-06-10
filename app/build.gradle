@@ -73,7 +73,7 @@ dependencies {
     provided presentationDependencies.javaxAnnotation
     // Use - Animation support
     compile presentationDependencies.facebookRebound
-    
+
     // Use - Rest API support
     compile dataDependencies.retrofit
     compile dataDependencies.retrofitConverterGson
