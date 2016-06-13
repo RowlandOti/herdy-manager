@@ -86,29 +86,24 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         this.authLoginPresenter.setView(this);
+
+        btLogin.setOnClickListener((View v) -> {
+            if (!isValidEditTextData(etEmail, etPassword)) {
+                return;
+            }
+            loginUser();
+        });
+
+        tvRegister.setOnClickListener((View v) -> {
+            callRegisterView();
+        });
 
         if (getArguments() != null) {
             etEmail.setText(getArguments().getString(AuthActivity.AUTHEMAIL));
             etPassword.setText(getArguments().getString(AuthActivity.AUTHPASSWORD));
+            btLogin.performClick();
         }
-        // ToDo: replace with Lambda
-        btLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!isValidEditTextData(etEmail, etPassword)) {
-                    return;
-                }
-                loginUser();
-            }
-        });
-        tvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                callRegisterView();
-            }
-        });
     }
 
     // Called after fragment is attached to activity
