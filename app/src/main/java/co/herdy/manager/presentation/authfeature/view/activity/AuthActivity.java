@@ -12,6 +12,7 @@ import co.herdy.manager.presentation.authfeature.view.fragment.AuthRegisterFragm
 import co.herdy.manager.presentation.internal.di.HasComponent;
 import co.herdy.manager.presentation.internal.di.components.AuthComponent;
 import co.herdy.manager.presentation.internal.di.components.DaggerAuthComponent;
+import co.herdy.manager.presentation.internal.di.modules.AuthModule;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 
@@ -92,6 +93,7 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
         this.authComponent = DaggerAuthComponent.builder()
                 .applicationComponent(getApplicationComponent())
                 .activityModule(getActivityModule())
+                .authModule(new AuthModule(null, ))
                 .build();
     }
 

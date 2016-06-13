@@ -1,7 +1,5 @@
 package co.herdy.manager.domain.authfeature.interactor;
 
-import android.support.annotation.Nullable;
-
 import javax.inject.Inject;
 
 import co.herdy.manager.domain.executor.IPostExecutionThread;
@@ -17,11 +15,11 @@ public class AuthLoginInteractor extends UseCase {
     private final String mPassword;
 
     @Inject
-    protected AuthLoginInteractor(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
+    public AuthLoginInteractor(String email, String password, IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
         super(threadExecutor, postExecutionThread);
         this.mUserRepository = userRepository;
-        this.mEmail = "email";
-        this.mPassword = "password";
+        this.mEmail = email;
+        this.mPassword = password;
     }
 
     @Override
