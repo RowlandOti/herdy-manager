@@ -29,6 +29,7 @@
                     android:layout_width="250dp"
                     android:layout_height="250dp"
                     android:adjustViewBounds="true"
+                    android:transitionName="logo"
                     android:scaleType="fitStart"
                     android:src="@drawable/herdy_125px" />
 

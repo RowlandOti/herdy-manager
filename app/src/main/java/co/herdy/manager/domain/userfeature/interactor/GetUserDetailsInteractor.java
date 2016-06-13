@@ -1,12 +1,11 @@
 package co.herdy.manager.domain.userfeature.interactor;
 
-import co.herdy.manager.domain.userfeature.repository.IUserRepository;
+import javax.inject.Inject;
+
 import co.herdy.manager.domain.executor.IPostExecutionThread;
 import co.herdy.manager.domain.executor.IThreadExecutor;
 import co.herdy.manager.domain.interactor.UseCase;
-
-import javax.inject.Inject;
-
+import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import rx.Observable;
 
 /**
@@ -16,7 +15,7 @@ import rx.Observable;
 public class GetUserDetailsInteractor extends UseCase {
 
     private final int userId;
-    private final co.herdy.manager.domain.userfeature.repository.IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     @Inject
     public GetUserDetailsInteractor(int userId, IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {

@@ -33,6 +33,7 @@
                     android:id="@+id/img_logcover"
                     android:layout_width="250dp"
                     android:layout_height="250dp"
+                    android:transitionName="logo"
                     android:adjustViewBounds="true"
                     android:scaleType="fitStart"
                     android:src="@drawable/herdy_125px" />

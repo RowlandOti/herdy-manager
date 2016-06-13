@@ -21,7 +21,7 @@ public class GetUserListInteractor extends UseCase {
     private final IUserRepository userRepository;
 
     @Inject
-    public GetUserListInteractor(co.herdy.manager.domain.userfeature.repository.IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
+    public GetUserListInteractor(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
         super(threadExecutor, postExecutionThread);
         this.userRepository = userRepository;
     }

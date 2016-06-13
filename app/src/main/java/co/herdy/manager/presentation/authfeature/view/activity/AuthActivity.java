@@ -1,16 +1,21 @@
 package co.herdy.manager.presentation.authfeature.view.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import co.herdy.manager.R;
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.presentation.ApplicationController;
-import co.herdy.manager.presentation.authfeature.view.fragment.LoginUserFragment;
-import co.herdy.manager.presentation.authfeature.view.fragment.RegisterUserFragment;
+import co.herdy.manager.presentation.authfeature.view.fragment.AuthLoginFragment;
+import co.herdy.manager.presentation.authfeature.view.fragment.AuthRegisterFragment;
+import co.herdy.manager.presentation.internal.di.HasComponent;
+import co.herdy.manager.presentation.internal.di.components.AuthComponent;
+import co.herdy.manager.presentation.internal.di.components.DaggerAuthComponent;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 
-public class AuthActivity extends ABaseActivity implements RegisterUserFragment.onRegisterFinishBtnClickListener, LoginUserFragment.onLoginFinishBtnClickListener {
+public class AuthActivity extends ABaseActivity implements HasComponent<AuthComponent>, AuthRegisterFragment.onRegisterFinishBtnClickListener, AuthLoginFragment.onAuthLoginClickListener {
 
     // Class log identifier
     public final static String LOG_TAG = AuthActivity.class.getSimpleName();
@@ -19,17 +24,22 @@ public class AuthActivity extends ABaseActivity implements RegisterUserFragment.
     public static String AUTHUSERNAME = "AUTH.USERNAME";
     public static String AUTHPASSWORD = "AUTH.PASSWORD";
 
+    public static Intent getCallingIntent(Context context) {
+        return new Intent(context, AuthActivity.class);
+    }
+
+    private AuthComponent authComponent;
     private String mAuthToken = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        setStatusbarTransparent(true);
+        this.setStatusbarTransparent(true);
+        this.initializeInjector();
         // Check that the activity is using the layout with the fragment_container id
         if (findViewById(R.id.fragment_container) != null) {
-            // If we're being restored from a previous state, then we don't need to do
-            // anything and should return or else we could end up with overlapping fragments.
+            // Return or else we could end up with overlapping fragments.
             if (savedInstanceState != null) {
                 return;
             } else {
@@ -40,12 +50,12 @@ public class AuthActivity extends ABaseActivity implements RegisterUserFragment.
     }
 
     private void showLoginFragment(Bundle args) {
-        LoginUserFragment fragment = LoginUserFragment.newInstance(args);
+        AuthLoginFragment fragment = AuthLoginFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 
     private void showRegisterFragment(Bundle args) {
-        RegisterUserFragment fragment = RegisterUserFragment.newInstance(args);
+        AuthRegisterFragment fragment = AuthRegisterFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 
@@ -55,7 +65,7 @@ public class AuthActivity extends ABaseActivity implements RegisterUserFragment.
         payload.setUsername(args.getString(AuthActivity.AUTHUSERNAME));
         payload.setEmail(args.getString(AuthActivity.AUTHEMAIL));
         payload.setPassword(args.getString(AuthActivity.AUTHPASSWORD));
-        ApplicationController.apiManager.register(payload);
+        ApplicationController.apiManager.registerUser(payload);
         showLoginFragment(args);
     }
 
@@ -68,13 +78,25 @@ public class AuthActivity extends ABaseActivity implements RegisterUserFragment.
     public void onLoginFinishClicked(Bundle args) {
         String email = args.getString(AuthActivity.AUTHEMAIL);
         String password = args.getString(AuthActivity.AUTHPASSWORD);
-        ApplicationController.apiManager.login(email, password);
+        ApplicationController.apiManager.loginUser(email, password);
         setResult(RESULT_OK, getIntent().putExtras(args));
-        finish();
+        // finish();
     }
 
     @Override
     public void onCallRegisterClicked(Bundle args) {
         showRegisterFragment(args);
+    }
+
+    private void initializeInjector() {
+        this.authComponent = DaggerAuthComponent.builder()
+                .applicationComponent(getApplicationComponent())
+                .activityModule(getActivityModule())
+                .build();
+    }
+
+    @Override
+    public AuthComponent getComponent() {
+        return authComponent;
     }
 }

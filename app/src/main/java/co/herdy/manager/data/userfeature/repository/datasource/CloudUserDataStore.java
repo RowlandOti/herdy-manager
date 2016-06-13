@@ -2,11 +2,12 @@ package co.herdy.manager.data.userfeature.repository.datasource;
 
 import android.util.Log;
 
+import com.fernandocejas.frodo.annotation.RxLogObservable;
+
 import java.util.List;
 
-import com.fernandocejas.frodo.annotation.RxLogObservable;
-import co.herdy.manager.data.rest.ApiManager;
 import co.herdy.manager.data.exception.NetworkConnectionException;
+import co.herdy.manager.data.rest.ApiManager;
 import co.herdy.manager.data.userfeature.cache.IUserCache;
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.data.utility.NetworkUtility;
@@ -44,7 +45,7 @@ public class CloudUserDataStore implements IUserDataStore {
 
     @RxLogObservable
     @Override
-    public Observable<List<UserPayload>> userPayloadList() {
+    public Observable<List<UserPayload>> getUserPayloadList() {
         Observable<List<UserPayload>> userListPayloadObservable = this.mApiManager.listUsers();
         return userListPayloadObservable.create(subscriber -> {
             if (NetworkUtility.isNetworkAvailable(mApiManager.getContext())) {
@@ -53,7 +54,7 @@ public class CloudUserDataStore implements IUserDataStore {
                     responseUserPayload = userListPayloadObservable.toBlocking().single();
                     subscriber.onNext(responseUserPayload);
                     subscriber.onCompleted();
-                    Log.d(LOG_TAG, "OUR LIST CONTENTS " + userListPayloadObservable.toBlocking().single().toString());
+                    Log.d(LOG_TAG, "OUR LIST CONTENTS " + responseUserPayload.toString());
                 } catch (Exception e) {
                     subscriber.onError(new NetworkConnectionException(e.getCause()));
                     Log.d(LOG_TAG, "NETWORK UNKNOWNHOST EXCEPTION 1");
@@ -67,7 +68,7 @@ public class CloudUserDataStore implements IUserDataStore {
 
     @RxLogObservable
     @Override
-    public Observable<UserPayload> userPayloadDetails(final int userId) {
+    public Observable<UserPayload> getUserPayloadDetails(final int userId) {
         Observable<UserPayload> userDetailsPayloadObservable = this.mApiManager.getUserById(userId).doOnNext(saveToCacheAction);
         return userDetailsPayloadObservable.create(subscriber -> {
             UserPayload responseUserDetails = null;
@@ -76,11 +77,51 @@ public class CloudUserDataStore implements IUserDataStore {
                     responseUserDetails = userDetailsPayloadObservable.toBlocking().single();
                     subscriber.onNext(responseUserDetails);
                     subscriber.onCompleted();
-                    Log.d(LOG_TAG, "OUR DETAILS CONTENTS " + userDetailsPayloadObservable.toBlocking().single().toString());
+                    Log.d(LOG_TAG, "OUR DETAILS CONTENTS " + responseUserDetails.toString());
                 } catch (Exception e) {
                     subscriber.onError(new NetworkConnectionException(e.getCause()));
                 }
 
+            } else {
+                subscriber.onError(new NetworkConnectionException());
+            }
+        });
+    }
+
+    @Override
+    public Observable<String> authLoginUser(String userEmail, String userPassword) {
+        Observable<String> userAuthTokenObservable = this.mApiManager.loginUser(userEmail, userPassword);
+        return userAuthTokenObservable.create(subscriber -> {
+            String authToken = null;
+            if (NetworkUtility.isNetworkAvailable(mApiManager.getContext())) {
+                try {
+                    authToken = userAuthTokenObservable.toBlocking().single();
+                    subscriber.onNext(authToken);
+                    subscriber.onCompleted();
+                    Log.d(LOG_TAG, "OUR LOGIN CONTENTS " + authToken.toString());
+                } catch (Exception e) {
+                    subscriber.onError(new NetworkConnectionException(e.getCause()));
+                }
+            } else {
+                subscriber.onError(new NetworkConnectionException());
+            }
+        });
+    }
+
+    @Override
+    public Observable<UserPayload> authRegisterUser(UserPayload payload) {
+        Observable<UserPayload> userRegisterPayloadObservable = this.mApiManager.registerUser(payload);
+        return userRegisterPayloadObservable.create(subscriber -> {
+            UserPayload userPayload = null;
+            if (NetworkUtility.isNetworkAvailable(mApiManager.getContext())) {
+                try {
+                    userPayload = userRegisterPayloadObservable.toBlocking().single();
+                    subscriber.onNext(userPayload);
+                    subscriber.onCompleted();
+                    Log.d(LOG_TAG, "OUR REGISTER CONTENTS " + userPayload.toString());
+                } catch (Exception e) {
+                    subscriber.onError(new NetworkConnectionException(e.getCause()));
+                }
             } else {
                 subscriber.onError(new NetworkConnectionException());
             }

@@ -20,10 +20,10 @@ import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 /**
  * A simple {@link ABaseFragment} subclass.
  */
-public class RegisterUserFragment extends ABaseFragment {
+public class AuthRegisterFragment extends ABaseFragment {
 
     // Class log identifier
-    public final static String LOG_TAG = RegisterUserFragment.class.getSimpleName();
+    public final static String LOG_TAG = AuthRegisterFragment.class.getSimpleName();
 
     private onRegisterFinishBtnClickListener mRegisterFinishBtnClickListener;
 
@@ -51,13 +51,13 @@ public class RegisterUserFragment extends ABaseFragment {
     TextView tvLogin;
 
 
-    public RegisterUserFragment() {
+    public AuthRegisterFragment() {
         setRetainInstance(true);
     }
 
     // Actual method to use to create new fragment instance externally
-    public static RegisterUserFragment newInstance(@Nullable Bundle args) {
-        RegisterUserFragment fragmentInstance = new RegisterUserFragment();
+    public static AuthRegisterFragment newInstance(@Nullable Bundle args) {
+        AuthRegisterFragment fragmentInstance = new AuthRegisterFragment();
         if (args != null) {
             fragmentInstance.setArguments(args);
         }
@@ -86,7 +86,7 @@ public class RegisterUserFragment extends ABaseFragment {
                 args.putString(AuthActivity.AUTHUSERNAME, etUsername.getText().toString().trim());
                 args.putString(AuthActivity.AUTHEMAIL, etEmail.getText().toString().trim());
                 args.putString(AuthActivity.AUTHPASSWORD, etPassword.getText().toString().trim());
-                mRegisterFinishBtnClickListener.onRegisterFinishClicked(args);
+                mRegisterFinishBtnClickListener. onRegisterFinishClicked(args);
             }
         });
         tvLogin.setOnClickListener(new View.OnClickListener() {
