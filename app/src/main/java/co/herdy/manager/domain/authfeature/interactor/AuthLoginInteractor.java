@@ -8,22 +8,18 @@ import co.herdy.manager.domain.interactor.UseCase;
 import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import rx.Observable;
 
-public class AuthLoginInteractor extends UseCase {
+public class AuthLoginInteractor extends UseCase<String> {
 
     private final IUserRepository mUserRepository;
-    private final String mEmail;
-    private final String mPassword;
 
     @Inject
-    public AuthLoginInteractor(String email, String password, IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
+    public AuthLoginInteractor(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
         super(threadExecutor, postExecutionThread);
         this.mUserRepository = userRepository;
-        this.mEmail = email;
-        this.mPassword = password;
     }
 
     @Override
-    protected Observable buildUseCaseObservable() {
-        return this.mUserRepository.authLoginUser(this.mEmail, this.mPassword);
+    protected Observable buildUseCaseObservable(String... params) {
+        return this.mUserRepository.authLoginUser(params[0], params[1]);
     }
 }

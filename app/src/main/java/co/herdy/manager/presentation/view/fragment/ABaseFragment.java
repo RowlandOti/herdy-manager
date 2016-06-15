@@ -1,5 +1,6 @@
 package co.herdy.manager.presentation.view.fragment;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,6 +11,10 @@ import co.herdy.manager.presentation.internal.di.HasComponent;
  * Base {@link Fragment} class for every fragment in this application.
  */
 public abstract class ABaseFragment extends Fragment {
+
+    public interface OnViewListener{
+        void onFinish(String action);
+    }
 
     // Class log identifier
     public final static String LOG_TAG = ABaseFragment.class.getSimpleName();

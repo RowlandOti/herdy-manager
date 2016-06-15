@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import co.herdy.manager.R;
-import co.herdy.manager.data.userfeature.payload.UserPayload;
-import co.herdy.manager.presentation.ApplicationController;
 import co.herdy.manager.presentation.authfeature.view.fragment.AuthLoginFragment;
 import co.herdy.manager.presentation.authfeature.view.fragment.AuthRegisterFragment;
 import co.herdy.manager.presentation.internal.di.HasComponent;
@@ -16,7 +14,7 @@ import co.herdy.manager.presentation.internal.di.modules.AuthModule;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 
-public class AuthActivity extends ABaseActivity implements HasComponent<AuthComponent>, AuthRegisterFragment.onRegisterFinishBtnClickListener, AuthLoginFragment.onAuthLoginClickListener {
+public class AuthActivity extends ABaseActivity implements HasComponent<AuthComponent>, AuthRegisterFragment.onRegisterFinishBtnClickListener, AuthLoginFragment.OnAuthLoginClickListener {
 
     // Class log identifier
     public final static String LOG_TAG = AuthActivity.class.getSimpleName();
@@ -62,11 +60,6 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
 
     @Override
     public void onRegisterFinishClicked(Bundle args) {
-        UserPayload payload = new UserPayload();
-        payload.setUsername(args.getString(AuthActivity.AUTHUSERNAME));
-        payload.setEmail(args.getString(AuthActivity.AUTHEMAIL));
-        payload.setPassword(args.getString(AuthActivity.AUTHPASSWORD));
-        ApplicationController.apiManager.registerUser(payload);
         showLoginFragment(args);
     }
 
@@ -76,12 +69,13 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
     }
 
     @Override
-    public void onLoginFinishClicked(Bundle args) {
-        String email = args.getString(AuthActivity.AUTHEMAIL);
-        String password = args.getString(AuthActivity.AUTHPASSWORD);
-        ApplicationController.apiManager.loginUser(email, password);
-        setResult(RESULT_OK, getIntent().putExtras(args));
-        // finish();
+    public void onFinish(String action) {
+        switch (action) {
+            case "login":
+                break;
+            case "register":
+                break;
+        }
     }
 
     @Override
@@ -93,7 +87,7 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
         this.authComponent = DaggerAuthComponent.builder()
                 .applicationComponent(getApplicationComponent())
                 .activityModule(getActivityModule())
-                .authModule(new AuthModule(null, ))
+                .authModule(new AuthModule())
                 .build();
     }
 

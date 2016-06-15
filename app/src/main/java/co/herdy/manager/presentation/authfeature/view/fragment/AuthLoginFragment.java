@@ -31,11 +31,9 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     // Class log identifier
     public final static String LOG_TAG = AuthLoginFragment.class.getSimpleName();
 
-    private onAuthLoginClickListener mOnAuthLoginClickListener;
+    private OnAuthLoginClickListener mOnAuthLoginClickListener;
 
-    public interface onAuthLoginClickListener {
-        void onLoginFinishClicked(Bundle args);
-
+    public interface OnAuthLoginClickListener extends OnViewListener {
         void onCallRegisterClicked(Bundle args);
     }
 
@@ -111,9 +109,9 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mOnAuthLoginClickListener = (onAuthLoginClickListener) context;
+            mOnAuthLoginClickListener = (OnAuthLoginClickListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + " must implement onAuthLoginClickListener");
+            throw new ClassCastException(context.toString() + " must implement OnAuthLoginClickListener");
         }
     }
 
@@ -150,12 +148,9 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
 
     @Override
     public void loginUser() {
-        this.authLoginPresenter.initialize();
         if (this.mOnAuthLoginClickListener != null) {
             Bundle args = new Bundle();
-            args.putString(AuthActivity.AUTHEMAIL, etEmail.getText().toString().trim());
-            args.putString(AuthActivity.AUTHPASSWORD, etPassword.getText().toString().trim());
-            this.mOnAuthLoginClickListener.onLoginFinishClicked(args);
+            this.authLoginPresenter.initializeLogin(etEmail.getText().toString().trim(), etPassword.getText().toString().trim());
         }
     }
 
@@ -198,5 +193,10 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     @Override
     public Context context() {
         return this.getActivity().getApplicationContext();
+    }
+
+    @Override
+    public OnViewListener getViewListener() {
+        return mOnAuthLoginClickListener;
     }
 }

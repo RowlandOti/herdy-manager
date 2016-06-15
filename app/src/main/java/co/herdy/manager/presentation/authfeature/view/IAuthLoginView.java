@@ -1,6 +1,7 @@
 package co.herdy.manager.presentation.authfeature.view;
 
 import co.herdy.manager.presentation.view.ILoadDataView;
+import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 public interface IAuthLoginView extends ILoadDataView {
 
@@ -17,4 +18,10 @@ public interface IAuthLoginView extends ILoadDataView {
      * @param
      */
     void callRegisterView();
+
+    /**
+     * Cause for Next Action
+     *
+     */
+    ABaseFragment.OnViewListener getViewListener();
 }

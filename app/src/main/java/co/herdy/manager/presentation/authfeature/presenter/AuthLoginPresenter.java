@@ -53,9 +53,9 @@ public class AuthLoginPresenter implements IPresenter {
     /**
      * Initializes the presenter
      */
-    public void initialize() {
+    public void initializeLogin(String... params) {
         this.showViewLoading();
-        this.authLogin();
+        this.authLogin(params);
     }
 
     private void showViewLoading() {
@@ -71,14 +71,15 @@ public class AuthLoginPresenter implements IPresenter {
         this.authLoginView.showError(errorMessage);
     }
 
-    private void authLogin() {
-        this.authLoginUseCase.execute(new AuthLoginSubscriber());
+    private void authLogin(String... params) {
+        this.authLoginUseCase.execute(new AuthLoginSubscriber(), params);
     }
 
     private final class AuthLoginSubscriber extends DefaultSubscriber<List<String>> {
         @Override
         public void onCompleted() {
             AuthLoginPresenter.this.hideViewLoading();
+            authLoginView.getViewListener().onFinish("login");
         }
 
         @Override
