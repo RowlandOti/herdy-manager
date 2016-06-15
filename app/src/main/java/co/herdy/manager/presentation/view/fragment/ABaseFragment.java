@@ -12,10 +12,6 @@ import co.herdy.manager.presentation.internal.di.HasComponent;
  */
 public abstract class ABaseFragment extends Fragment {
 
-    public interface OnViewListener{
-        void onFinish(String action);
-    }
-
     // Class log identifier
     public final static String LOG_TAG = ABaseFragment.class.getSimpleName();
 

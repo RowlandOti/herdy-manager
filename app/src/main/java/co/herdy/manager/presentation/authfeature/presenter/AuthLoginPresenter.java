@@ -79,7 +79,7 @@ public class AuthLoginPresenter implements IPresenter {
         @Override
         public void onCompleted() {
             AuthLoginPresenter.this.hideViewLoading();
-            authLoginView.getViewListener().onFinish("login");
+            authLoginView.getViewListener().onLoginFinish(null);
         }
 
         @Override

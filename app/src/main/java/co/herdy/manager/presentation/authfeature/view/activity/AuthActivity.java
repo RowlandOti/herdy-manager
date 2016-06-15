@@ -59,28 +59,23 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
     }
 
     @Override
-    public void onRegisterFinishClicked(Bundle args) {
-        showLoginFragment(args);
-    }
-
-    @Override
     public void onCallLoginClicked(Bundle args) {
         showLoginFragment(args);
     }
 
     @Override
-    public void onFinish(String action) {
-        switch (action) {
-            case "login":
-                break;
-            case "register":
-                break;
-        }
+    public void onCallRegisterClicked(Bundle args) {
+        showRegisterFragment(args);
     }
 
     @Override
-    public void onCallRegisterClicked(Bundle args) {
-        showRegisterFragment(args);
+    public void onLoginFinish(Bundle args) {
+
+    }
+
+    @Override
+    public void onRegisterFinish(Bundle args) {
+        showLoginFragment(args);
     }
 
     private void initializeInjector() {

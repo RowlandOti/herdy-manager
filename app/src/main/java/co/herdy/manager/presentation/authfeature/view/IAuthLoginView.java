@@ -1,9 +1,16 @@
 package co.herdy.manager.presentation.authfeature.view;
 
+import android.os.Bundle;
+
 import co.herdy.manager.presentation.view.ILoadDataView;
-import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 public interface IAuthLoginView extends ILoadDataView {
+
+    interface OnAuthViewClickListener {
+        void onLoginFinish(Bundle args);
+
+        void onRegisterFinish(Bundle args);
+    }
 
     /**
      * Login User
@@ -21,7 +28,6 @@ public interface IAuthLoginView extends ILoadDataView {
 
     /**
      * Cause for Next Action
-     *
      */
-    ABaseFragment.OnViewListener getViewListener();
+    OnAuthViewClickListener getViewListener();
 }

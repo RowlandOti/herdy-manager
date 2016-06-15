@@ -86,7 +86,7 @@ public class AuthRegisterFragment extends ABaseFragment {
                 args.putString(AuthActivity.AUTHUSERNAME, etUsername.getText().toString().trim());
                 args.putString(AuthActivity.AUTHEMAIL, etEmail.getText().toString().trim());
                 args.putString(AuthActivity.AUTHPASSWORD, etPassword.getText().toString().trim());
-                mRegisterFinishBtnClickListener. onRegisterFinishClicked(args);
+                mRegisterFinishBtnClickListener.onRegisterFinishClicked(args);
             }
         });
         tvLogin.setOnClickListener(new View.OnClickListener() {

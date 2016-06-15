@@ -33,7 +33,7 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
 
     private OnAuthLoginClickListener mOnAuthLoginClickListener;
 
-    public interface OnAuthLoginClickListener extends OnViewListener {
+    public interface OnAuthLoginClickListener extends OnAuthViewClickListener {
         void onCallRegisterClicked(Bundle args);
     }
 
@@ -149,7 +149,6 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     @Override
     public void loginUser() {
         if (this.mOnAuthLoginClickListener != null) {
-            Bundle args = new Bundle();
             this.authLoginPresenter.initializeLogin(etEmail.getText().toString().trim(), etPassword.getText().toString().trim());
         }
     }
@@ -196,7 +195,7 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     }
 
     @Override
-    public OnViewListener getViewListener() {
+    public OnAuthViewClickListener getViewListener() {
         return mOnAuthLoginClickListener;
     }
 }
