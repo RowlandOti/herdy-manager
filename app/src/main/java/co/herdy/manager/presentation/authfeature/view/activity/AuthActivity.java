@@ -7,6 +7,7 @@ import android.os.Bundle;
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.authfeature.view.fragment.AuthLoginFragment;
 import co.herdy.manager.presentation.authfeature.view.fragment.AuthRegisterFragment;
+import co.herdy.manager.presentation.dashboardfeature.view.activity.DashBoardActivity;
 import co.herdy.manager.presentation.internal.di.HasComponent;
 import co.herdy.manager.presentation.internal.di.components.AuthComponent;
 import co.herdy.manager.presentation.internal.di.components.DaggerAuthComponent;
@@ -14,7 +15,7 @@ import co.herdy.manager.presentation.internal.di.modules.AuthModule;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 
-public class AuthActivity extends ABaseActivity implements HasComponent<AuthComponent>, AuthRegisterFragment.onRegisterFinishBtnClickListener, AuthLoginFragment.OnAuthLoginClickListener {
+public class AuthActivity extends ABaseActivity implements HasComponent<AuthComponent>, AuthRegisterFragment.onAuthRegisterClickListener, AuthLoginFragment.OnAuthLoginClickListener {
 
     // Class log identifier
     public final static String LOG_TAG = AuthActivity.class.getSimpleName();
@@ -48,6 +49,13 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
         }
     }
 
+    private void loadDashBoardActivity() {
+        Intent intent = new Intent(this, DashBoardActivity.class);
+        startActivity(intent);
+        animateActivityTransition();
+        finish();
+    }
+
     private void showLoginFragment(Bundle args) {
         AuthLoginFragment fragment = AuthLoginFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
@@ -70,7 +78,7 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
 
     @Override
     public void onLoginFinish(Bundle args) {
-
+        loadDashBoardActivity();
     }
 
     @Override

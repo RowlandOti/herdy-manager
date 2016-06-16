@@ -11,27 +11,33 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
+import co.herdy.manager.presentation.authfeature.presenter.AuthRegisterPresenter;
+import co.herdy.manager.presentation.authfeature.view.IAuthRegisterView;
 import co.herdy.manager.presentation.authfeature.view.activity.AuthActivity;
+import co.herdy.manager.presentation.internal.di.components.AuthComponent;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 /**
  * A simple {@link ABaseFragment} subclass.
  */
-public class AuthRegisterFragment extends ABaseFragment {
+public class AuthRegisterFragment extends ABaseFragment implements IAuthRegisterView {
 
     // Class log identifier
     public final static String LOG_TAG = AuthRegisterFragment.class.getSimpleName();
 
-    private onRegisterFinishBtnClickListener mRegisterFinishBtnClickListener;
+    private onAuthRegisterClickListener mOnAuthRegisterClickListener;
 
-    public interface onRegisterFinishBtnClickListener {
-        void onRegisterFinishClicked(Bundle args);
-
+    public interface onAuthRegisterClickListener extends IAuthRegisterView.OnAuthViewClickListener {
         void onCallLoginClicked(Bundle args);
     }
+
+    @Inject
+    AuthRegisterPresenter authRegisterPresenter;
 
     @Bind(R.id.et_username)
     TextInputEditText etUsername;
@@ -64,6 +70,12 @@ public class AuthRegisterFragment extends ABaseFragment {
         return fragmentInstance;
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.getComponent(AuthComponent.class).inject(this);
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,26 +88,17 @@ public class AuthRegisterFragment extends ABaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!isValidEditTextData(etUsername, etEmail, etPassword)) {
-                    return;
-                }
-                Bundle args = new Bundle();
-                args.putString(AuthActivity.AUTHUSERNAME, etUsername.getText().toString().trim());
-                args.putString(AuthActivity.AUTHEMAIL, etEmail.getText().toString().trim());
-                args.putString(AuthActivity.AUTHPASSWORD, etPassword.getText().toString().trim());
-                mRegisterFinishBtnClickListener.onRegisterFinishClicked(args);
+        this.authRegisterPresenter.setView(this);
+
+        btRegister.setOnClickListener((View v) -> {
+            if (!isValidEditTextData(etUsername, etEmail, etPassword)) {
+                return;
             }
+            registerUser();
         });
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle args = new Bundle();
-                args.putString(AuthActivity.AUTHEMAIL, etEmail.getText().toString().trim());
-                mRegisterFinishBtnClickListener.onCallLoginClicked(args);
-            }
+
+        tvLogin.setOnClickListener((View v) -> {
+            callLoginView();
         });
     }
 
@@ -103,21 +106,94 @@ public class AuthRegisterFragment extends ABaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        // Ensure attached activity has implemented the callback interface.
         try {
-            // Acquire the implemented callback
-            mRegisterFinishBtnClickListener = (onRegisterFinishBtnClickListener) context;
+            mOnAuthRegisterClickListener = (onAuthRegisterClickListener) context;
         } catch (ClassCastException e) {
-            // If not, it throws an exception
-            throw new ClassCastException(context.toString() + " must implement onRegisterFinishBtnClickListener");
+            throw new ClassCastException(context.toString() + " must implement onAuthRegisterClickListener");
         }
     }
 
     // Called after fragment is detached from activity
     @Override
     public void onDetach() {
-        // Avoid leaking,
-        mRegisterFinishBtnClickListener = null;
+        mOnAuthRegisterClickListener = null;
         super.onDetach();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.authRegisterPresenter.resume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        this.authRegisterPresenter.pause();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        this.authRegisterPresenter.destroy();
+    }
+
+    @Override
+    public void registerUser() {
+        if (this.mOnAuthRegisterClickListener != null) {
+            this.authRegisterPresenter.initializeRegistration(etEmail.getText().toString().trim(), etPassword.getText().toString().trim(), etUsername.getText().toString().trim());
+        }
+    }
+
+    @Override
+    public void callLoginView() {
+        if (this.mOnAuthRegisterClickListener != null) {
+            Bundle args = new Bundle();
+            args.putString(AuthActivity.AUTHEMAIL, etEmail.getText().toString().trim());
+            mOnAuthRegisterClickListener.onCallLoginClicked(args);
+        }
+    }
+
+    @Override
+    public IAuthRegisterView.OnAuthViewClickListener getViewListener() {
+        return mOnAuthRegisterClickListener;
+    }
+
+    @Override
+    public void showLoading() {
+        this.rlProgress.setVisibility(View.VISIBLE);
+        this.getActivity().setProgressBarIndeterminateVisibility(true);
+    }
+
+    @Override
+    public void hideLoading() {
+        this.rlProgress.setVisibility(View.GONE);
+        this.getActivity().setProgressBarIndeterminateVisibility(false);
+    }
+
+    @Override
+    public void showRetry() {
+
+    }
+
+    @Override
+    public void hideRetry() {
+
+    }
+
+    @Override
+    public void showError(String message) {
+        this.showToastMessage(message);
+    }
+
+    @Override
+    public Context context() {
+        return this.getActivity().getApplicationContext();
     }
 }

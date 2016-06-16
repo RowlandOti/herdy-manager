@@ -4,25 +4,25 @@ import android.os.Bundle;
 
 import co.herdy.manager.presentation.view.ILoadDataView;
 
-public interface IAuthLoginView extends ILoadDataView {
+public interface IAuthRegisterView extends ILoadDataView {
 
     interface OnAuthViewClickListener {
-        void onLoginFinish(Bundle args);
+        void onRegisterFinish(Bundle args);
     }
 
     /**
-     * Login User
+     * Register User
      *
      * @param
      */
-    void loginUser();
+    void registerUser();
 
     /**
      * Call User registerUser view
      *
      * @param
      */
-    void callRegisterView();
+    void callLoginView();
 
     /**
      * Call for Next Action

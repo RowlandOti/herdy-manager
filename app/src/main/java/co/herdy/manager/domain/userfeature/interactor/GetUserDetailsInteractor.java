@@ -1,5 +1,7 @@
 package co.herdy.manager.domain.userfeature.interactor;
 
+import android.support.annotation.Nullable;
+
 import javax.inject.Inject;
 
 import co.herdy.manager.domain.executor.IPostExecutionThread;
@@ -12,7 +14,7 @@ import rx.Observable;
  * This class is an implementation of {@link UseCase} that represents a use case for
  * retrieving a collection of all {@link co.herdy.manager.domain.userfeature.model.User}.
  */
-public class GetUserDetailsInteractor extends UseCase {
+public class GetUserDetailsInteractor extends UseCase<Integer> {
 
     private final int userId;
     private final IUserRepository userRepository;
@@ -25,7 +27,7 @@ public class GetUserDetailsInteractor extends UseCase {
     }
 
     @Override
-    protected Observable buildUseCaseObservable() {
+    protected Observable buildUseCaseObservable(@Nullable Integer[] params) {
         return this.userRepository.getItem(this.userId);
     }
 }

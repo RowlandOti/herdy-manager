@@ -1,15 +1,14 @@
 package co.herdy.manager.presentation.internal.di.modules;
 
-import co.herdy.manager.domain.userfeature.repository.IUserRepository;
-import co.herdy.manager.domain.executor.IPostExecutionThread;
-import co.herdy.manager.domain.userfeature.interactor.GetUserDetailsInteractor;
-import co.herdy.manager.domain.userfeature.interactor.GetUserListInteractor;
-import co.herdy.manager.domain.executor.IThreadExecutor;
-import co.herdy.manager.domain.interactor.UseCase;
-import co.herdy.manager.presentation.internal.di.PerActivity;
-
 import javax.inject.Named;
 
+import co.herdy.manager.domain.executor.IPostExecutionThread;
+import co.herdy.manager.domain.executor.IThreadExecutor;
+import co.herdy.manager.domain.interactor.UseCase;
+import co.herdy.manager.domain.userfeature.interactor.GetUserDetailsInteractor;
+import co.herdy.manager.domain.userfeature.interactor.GetUserListInteractor;
+import co.herdy.manager.domain.userfeature.repository.IUserRepository;
+import co.herdy.manager.presentation.internal.di.PerActivity;
 import dagger.Module;
 import dagger.Provides;
 

@@ -33,7 +33,7 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
 
     private OnAuthLoginClickListener mOnAuthLoginClickListener;
 
-    public interface OnAuthLoginClickListener extends OnAuthViewClickListener {
+    public interface OnAuthLoginClickListener extends IAuthLoginView.OnAuthViewClickListener {
         void onCallRegisterClicked(Bundle args);
     }
 
@@ -163,6 +163,11 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     }
 
     @Override
+    public OnAuthViewClickListener getViewListener() {
+        return mOnAuthLoginClickListener;
+    }
+
+    @Override
     public void showLoading() {
         this.rlProgress.setVisibility(View.VISIBLE);
         this.getActivity().setProgressBarIndeterminateVisibility(true);
@@ -192,10 +197,5 @@ public class AuthLoginFragment extends ABaseFragment implements IAuthLoginView {
     @Override
     public Context context() {
         return this.getActivity().getApplicationContext();
-    }
-
-    @Override
-    public OnAuthViewClickListener getViewListener() {
-        return mOnAuthLoginClickListener;
     }
 }
