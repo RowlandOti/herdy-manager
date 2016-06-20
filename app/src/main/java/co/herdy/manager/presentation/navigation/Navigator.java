@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 
 import co.herdy.manager.presentation.authfeature.view.activity.AuthActivity;
-import co.herdy.manager.presentation.dashboardfeature.view.activity.DashBoardActivity;
 import co.herdy.manager.presentation.onboarderfeature.view.activity.OnBoarderActivity;
 import co.herdy.manager.presentation.userfeature.view.activity.UserDetailsActivity;
 

@@ -30,5 +30,11 @@
     <string name="activity_login">Login</string>
     <string name="btn_skip">skip</string>
     <string name="btn_finish">Finish</string>
+    <string name="title_activity_dash">DashActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>

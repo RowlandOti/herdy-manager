@@ -2,9 +2,10 @@
 
     <style name="AppTheme.Dark" parent="AppBaseThemeNoActionBar.Dark" />
 
-    <style name="AppTheme.SplashTheme" parent="AppBaseThemeNoActionBar.Dark"/>
+    <style name="AppTheme.SplashTheme" parent="AppBaseThemeNoActionBar.Dark" />
 
-    <style name="AppTheme.OnBoarderTheme" parent="AppBaseThemeNoActionBar.Dark"> </style>
+    <style name="AppTheme.OnBoarderTheme" parent="AppBaseThemeNoActionBar.Dark" />
+    <style name="AppTheme.DashBoard" parent="AppBaseThemeNoActionBar.Dark" />
 
     <!-- Base application theme. -->
     <style name="AppBaseThemeNoActionBar.Dark" parent="Theme.AppCompat.Light.NoActionBar">
@@ -52,5 +53,9 @@
         <item name="android:layout_marginTop">@dimen/header_margin</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="AppTheme.Dark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.Dark.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

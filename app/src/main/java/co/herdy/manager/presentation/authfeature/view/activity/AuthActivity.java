@@ -7,7 +7,6 @@ import android.os.Bundle;
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.authfeature.view.fragment.AuthLoginFragment;
 import co.herdy.manager.presentation.authfeature.view.fragment.AuthRegisterFragment;
-import co.herdy.manager.presentation.dashboardfeature.view.activity.DashBoardActivity;
 import co.herdy.manager.presentation.internal.di.HasComponent;
 import co.herdy.manager.presentation.internal.di.components.AuthComponent;
 import co.herdy.manager.presentation.internal.di.components.DaggerAuthComponent;

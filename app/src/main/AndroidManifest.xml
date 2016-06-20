@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Dark">
+
         <!-- Splash-Activity -->
         <activity
             android:name=".presentation.splashfeature.view.activity.SplashActivity"
@@ -29,9 +30,12 @@
         <!-- Auth-Feature -->
         <activity android:name=".presentation.authfeature.view.activity.AuthActivity" />
         <!-- DashBoard-Feature -->
-        <activity android:name=".presentation.dashboardfeature.view.activity.DashBoardActivity" />
         <!-- onBoader-Feature -->
         <activity android:name=".presentation.onboarderfeature.view.activity.OnBoarderActivity" />
+        <activity
+            android:name=".presentation.dashboardfeature.view.activity.DashBoardActivity"
+            android:label="@string/title_activity_dash"
+            android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>
