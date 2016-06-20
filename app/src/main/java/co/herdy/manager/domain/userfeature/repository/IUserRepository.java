@@ -2,6 +2,7 @@ package co.herdy.manager.domain.userfeature.repository;
 
 import co.herdy.manager.data.userfeature.payload.UserPayload;
 import co.herdy.manager.domain.repository.IRepository;
+import co.herdy.manager.domain.userfeature.model.User;
 import rx.Observable;
 
 /*
@@ -11,5 +12,5 @@ public interface IUserRepository extends IRepository {
 
     Observable<String> authLoginUser(String email, String password);
 
-    Observable<UserPayload> authRegisterUser(UserPayload userPayload);
+    Observable<UserPayload> authRegisterUser(User user);
 }

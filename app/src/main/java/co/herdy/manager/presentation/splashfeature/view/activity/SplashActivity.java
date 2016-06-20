@@ -44,7 +44,7 @@ public class SplashActivity extends ABaseActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        loadIntroActivity();
+                        loadOnBoarderActivity();
                     }
                 }, SPLASH_DISPLAY_DURATION);
             }
@@ -56,16 +56,14 @@ public class SplashActivity extends ABaseActivity {
         replaceFragment(R.id.splash_fragment_container, fragment, false, true);
     }
 
-    public void loadIntroActivity() {
-        Intent intent = new Intent(this, OnBoarderActivity.class);
-        startActivity(intent);
+    public void loadOnBoarderActivity() {
+        this.navigator.navigateToOnBoarderActivity(this);
         animateActivityTransition();
         finish();
     }
 
     private void loadAuthActivity() {
-        Intent intent = new Intent(this, AuthActivity.class);
-        startActivity(intent);
+        this.navigator.navigateToAuthActivity(this);
         animateActivityTransition();
         finish();
     }

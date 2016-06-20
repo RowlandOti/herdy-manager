@@ -30,7 +30,7 @@ public class UserPayloadDataMapper {
     public User transform(UserPayload userPayload) {
         User user = null;
         if (userPayload != null) {
-            user = new User(userPayload.getUserId());
+            user = new User();
             user.setFullname(userPayload.getFullname());
             user.setUsername(userPayload.getUsername());
             user.setEmail(userPayload.getEmail());
@@ -55,5 +55,23 @@ public class UserPayloadDataMapper {
         }
         return userList;
     }
+
+    /**
+     * Transform a {@link UserPayload} into an {@link User}.
+     *
+     * @param user Object to be transformed.
+     * @return {@link User} if valid {@link UserPayload} otherwise null.
+     */
+    public UserPayload transform(User user) {
+        UserPayload userPayload = null;
+        if (user != null) {
+            userPayload = new UserPayload();
+            userPayload.setUsername(user.getUsername());
+            userPayload.setPassword(user.getPassword());
+            userPayload.setEmail(user.getEmail());
+        }
+        return userPayload;
+    }
+
 }
 

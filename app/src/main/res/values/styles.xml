@@ -4,9 +4,10 @@
 
     <style name="AppTheme.SplashTheme" parent="AppBaseThemeNoActionBar.Dark"/>
 
+    <style name="AppTheme.OnBoarderTheme" parent="AppBaseThemeNoActionBar.Dark"> </style>
+
     <!-- Base application theme. -->
     <style name="AppBaseThemeNoActionBar.Dark" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/app_color_primary</item>
         <item name="colorPrimaryDark">@color/app_color_primary_dark</item>

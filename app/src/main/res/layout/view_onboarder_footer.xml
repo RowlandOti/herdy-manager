@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/onboarder_footer_height"
@@ -40,11 +40,20 @@
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <co.herdy.manager.presentation.onboarderfeature.view.CircleIndicatorView
+             <co.herdy.manager.presentation.onboarderfeature.view.CircleIndicatorView
                     android:id="@+id/circle_indicator_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+                <!--<com.badoualy.stepperindicator.StepperIndicator
+                    android:id="@+id/stepper_indicator_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:stpi_stepCount="5"
+                    app:stpi_circleColor="@color/app_color_grey"
+                    app:stpi_indicatorColor="@color/app_color_accent_teal"
+                    app:stpi_lineColor="@color/app_color_grey"
+                    app:stpi_lineDoneColor="@color/app_color_accent_teal" />-->
             </LinearLayout>
 
             <Button

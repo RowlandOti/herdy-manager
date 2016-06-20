@@ -5,8 +5,8 @@ import javax.inject.Named;
 import co.herdy.manager.domain.executor.IPostExecutionThread;
 import co.herdy.manager.domain.executor.IThreadExecutor;
 import co.herdy.manager.domain.interactor.UseCase;
-import co.herdy.manager.domain.userfeature.interactor.GetUserDetailsInteractor;
-import co.herdy.manager.domain.userfeature.interactor.GetUserListInteractor;
+import co.herdy.manager.domain.userfeature.usecase.GetUserDetailsUseCase;
+import co.herdy.manager.domain.userfeature.usecase.GetUserListUseCase;
 import co.herdy.manager.domain.userfeature.repository.IUserRepository;
 import co.herdy.manager.presentation.internal.di.PerActivity;
 import dagger.Module;
@@ -30,7 +30,7 @@ public class UserModule {
     @Provides
     @PerActivity
     @Named("userList")
-    UseCase provideGetUserListUseCase(GetUserListInteractor getUserList) {
+    UseCase provideGetUserListUseCase(GetUserListUseCase getUserList) {
         return getUserList;
     }
 
@@ -38,6 +38,6 @@ public class UserModule {
     @PerActivity
     @Named("userDetails")
     UseCase provideGetUserDetailsUseCase(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
-        return new GetUserDetailsInteractor(userInt, userRepository, threadExecutor, postExecutionThread);
+        return new GetUserDetailsUseCase(userInt, userRepository, threadExecutor, postExecutionThread);
     }
 }

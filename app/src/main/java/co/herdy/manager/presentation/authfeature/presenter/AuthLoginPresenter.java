@@ -7,6 +7,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import co.herdy.manager.domain.authfeature.usecase.AuthLoginUseCase;
 import co.herdy.manager.domain.exception.DefaultErrorBundle;
 import co.herdy.manager.domain.exception.IErrorBundle;
 import co.herdy.manager.domain.interactor.DefaultSubscriber;
@@ -72,10 +73,16 @@ public class AuthLoginPresenter implements IPresenter {
     }
 
     private void authLogin(String... params) {
-        this.authLoginUseCase.execute(new AuthLoginSubscriber(), params);
+        ((AuthLoginUseCase) this.authLoginUseCase).init(params[0], params[1]);
+        this.authLoginUseCase.execute(new AuthLoginSubscriber());
     }
 
     private final class AuthLoginSubscriber extends DefaultSubscriber<List<String>> {
+
+        public AuthLoginSubscriber() {
+            super();
+        }
+
         @Override
         public void onCompleted() {
             AuthLoginPresenter.this.hideViewLoading();

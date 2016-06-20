@@ -24,10 +24,6 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
     public static String AUTHUSERNAME = "AUTH.USERNAME";
     public static String AUTHPASSWORD = "AUTH.PASSWORD";
 
-    public static Intent getCallingIntent(Context context) {
-        return new Intent(context, AuthActivity.class);
-    }
-
     private AuthComponent authComponent;
     private String mAuthToken = null;
 
@@ -49,9 +45,12 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
         }
     }
 
+    public static Intent getCallingIntent(Context context) {
+        return new Intent(context, AuthActivity.class);
+    }
+
     private void loadDashBoardActivity() {
-        Intent intent = new Intent(this, DashBoardActivity.class);
-        startActivity(intent);
+        this.navigator.navigateToDashBoardActivity(this);
         animateActivityTransition();
         finish();
     }

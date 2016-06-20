@@ -2,9 +2,8 @@ package co.herdy.manager.presentation.internal.di.modules;
 
 import javax.inject.Named;
 
-import co.herdy.manager.data.userfeature.payload.UserPayload;
-import co.herdy.manager.domain.authfeature.interactor.AuthLoginInteractor;
-import co.herdy.manager.domain.authfeature.interactor.AuthRegisterInteractor;
+import co.herdy.manager.domain.authfeature.usecase.AuthLoginUseCase;
+import co.herdy.manager.domain.authfeature.usecase.AuthRegisterUseCase;
 import co.herdy.manager.domain.executor.IPostExecutionThread;
 import co.herdy.manager.domain.executor.IThreadExecutor;
 import co.herdy.manager.domain.interactor.UseCase;
@@ -26,13 +25,13 @@ public class AuthModule {
     @PerActivity
     @Named("authLoginUser")
     UseCase provideAuthLoginUseCase(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
-        return new AuthLoginInteractor(userRepository, threadExecutor, postExecutionThread);
+        return new AuthLoginUseCase(userRepository, threadExecutor, postExecutionThread);
     }
 
     @Provides
     @PerActivity
     @Named("authRegisterUser")
     UseCase provideAuthRegisterUseCase(IUserRepository userRepository, IThreadExecutor threadExecutor, IPostExecutionThread postExecutionThread) {
-        return new AuthRegisterInteractor(userRepository, threadExecutor, postExecutionThread);
+        return new AuthRegisterUseCase(userRepository, threadExecutor, postExecutionThread);
     }
 }

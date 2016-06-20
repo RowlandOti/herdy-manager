@@ -61,7 +61,8 @@ public class UserDataRepository implements IUserRepository {
 
     @SuppressWarnings("Convert2MethodRef")
     @Override
-    public Observable<UserPayload> authRegisterUser(UserPayload payload) {
+    public Observable<UserPayload> authRegisterUser(User user) {
+        UserPayload payload = userPayloadDataMapper.transform(user);
         final IUserDataStore userDataStore = this.userDataStoreFactory.createCloudDataStore();
         return userDataStore.authRegisterUser(payload).map(userPayload -> userPayload);
     }

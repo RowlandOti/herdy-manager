@@ -1,5 +1,6 @@
 package co.herdy.manager.presentation.onboarderfeature.view.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -45,14 +46,17 @@ public class OnBoarderActivity extends AOnBoarderActivity {
         loadAuthActivity();
     }
 
+    public static Intent getCallingIntent(Context context) {
+        return new Intent(context, OnBoarderActivity.class);
+    }
+
     @Override
     public void onFinishButtonPressed() {
         loadAuthActivity();
     }
 
     private void loadAuthActivity() {
-        Intent intent = new Intent(this, AuthActivity.class);
-        startActivity(intent);
+        this.navigator.navigateToAuthActivity(this);
         prefManager.setIsFirstTimeLaunch(false);
         animateActivityTransition();
         finish();

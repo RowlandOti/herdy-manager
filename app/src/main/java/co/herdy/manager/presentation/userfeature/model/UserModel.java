@@ -5,23 +5,21 @@ package co.herdy.manager.presentation.userfeature.model;
  */
 public class UserModel {
 
-    private int userId;
+    private String password;
 
     private String username;
-
-    private String fullname;
 
     private String email;
 
     public UserModel() {
     }
 
-    public int getUserId() {
-        return userId;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public String getPassword() {
+        return password;
     }
 
     public String getUsername() {
@@ -30,14 +28,6 @@ public class UserModel {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
     }
 
     public String getEmail() {
@@ -52,8 +42,6 @@ public class UserModel {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("***** User Details *****\n");
-        stringBuilder.append("id=" + this.getUserId() + "\n");
-        stringBuilder.append("fullname=" + this.getFullname() + "\n");
         stringBuilder.append("username=" + this.getUsername() + "\n");
         stringBuilder.append("email=" + this.getEmail() + "\n");
         stringBuilder.append("*******************************");

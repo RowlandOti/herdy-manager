@@ -8,6 +8,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import co.herdy.manager.domain.authfeature.usecase.AuthRegisterUseCase;
 import co.herdy.manager.domain.exception.DefaultErrorBundle;
 import co.herdy.manager.domain.exception.IErrorBundle;
 import co.herdy.manager.domain.interactor.DefaultSubscriber;
@@ -73,15 +74,17 @@ public class AuthRegisterPresenter implements IPresenter {
         this.authRegisterView.showError(errorMessage);
     }
 
-    private void authRegister(String... params) {
-        this.authRegisterUseCase.execute(new AuthRegisterSubscriber(), params);
+    private void authRegister(String[] params) {
+        ((AuthRegisterUseCase) this.authRegisterUseCase).init(params[0], params[1], params[2]);
+        this.authRegisterUseCase.execute(new AuthRegisterSubscriber(params));
     }
 
     private final class AuthRegisterSubscriber extends DefaultSubscriber<List<String>> {
 
         Bundle nArgs;
 
-        public AuthRegisterSubscriber(String... registrationParams) {
+        public AuthRegisterSubscriber(String[] registrationParams) {
+            super();
             Bundle args = new Bundle();
             args.putString(AuthActivity.AUTHEMAIL, registrationParams[0]);
             args.putString(AuthActivity.AUTHPASSWORD, registrationParams[1]);

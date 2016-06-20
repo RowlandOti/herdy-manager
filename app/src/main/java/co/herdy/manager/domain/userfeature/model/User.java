@@ -5,7 +5,7 @@ package co.herdy.manager.domain.userfeature.model;
  */
 public class User {
 
-    private int userId;
+    private String password;
 
     private String username;
 
@@ -13,16 +13,15 @@ public class User {
 
     private String email;
 
-    public User(int userId) {
-        this.userId = userId;
+    public User() {
     }
 
-    public int getUserId() {
-        return userId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUsername() {
@@ -53,7 +52,7 @@ public class User {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("***** User Details *****\n");
-        stringBuilder.append("id=" + this.getUserId() + "\n");
+        stringBuilder.append("id=" + this.getPassword() + "\n");
         stringBuilder.append("fullname=" + this.getFullname() + "\n");
         stringBuilder.append("username=" + this.getUsername() + "\n");
         stringBuilder.append("email=" + this.getEmail() + "\n");

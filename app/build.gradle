@@ -73,6 +73,12 @@ dependencies {
     provided presentationDependencies.javaxAnnotation
     // Use - Animation support
     compile presentationDependencies.facebookRebound
+    // Use - Debug Logging - https://github.com/orhanobut/logger
+    compile presentationDependencies.prettyLogger
+    // Use - ViewPager Indication for onboarding - https://github.com/badoualy/stepper-indicator
+    compile presentationDependencies.stepperIndicator
+    // Use - OnBoarding ViewPager - https://github.com/sacot41/SCViewPager
+    compile "com.dev.sacot41:scviewpager:0.0.4"
 
     // Use - Rest API support
     compile dataDependencies.retrofit
