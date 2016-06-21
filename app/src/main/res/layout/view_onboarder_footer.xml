@@ -5,7 +5,6 @@
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/onboarder_footer_height"
-        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@android:color/transparent"
         android:gravity="bottom"
@@ -18,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
-            android:background="@color/app_color_primary_dark"
+            android:background="@android:color/transparent"
             android:paddingEnd="@dimen/footer_layout_margin"
             android:paddingLeft="@dimen/footer_layout_margin"
             android:paddingRight="@dimen/footer_layout_margin"
@@ -33,28 +32,29 @@
                 android:text="@string/btn_skip"
                 android:textColor="@color/app_color_white" />
 
-            <LinearLayout
+            <!--<android.support.v4.widget.DrawerLayout
                 android:id="@+id/ll_indicators"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-             <co.herdy.manager.presentation.onboarderfeature.view.CircleIndicatorView
+&lt;!&ndash;             <co.herdy.manager.presentation.onboarderfeature.view.CircleIndicatorView
                     android:id="@+id/circle_indicator_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content" />&ndash;&gt;
 
-                <!--<com.badoualy.stepperindicator.StepperIndicator
-                    android:id="@+id/stepper_indicator_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:stpi_stepCount="5"
-                    app:stpi_circleColor="@color/app_color_grey"
-                    app:stpi_indicatorColor="@color/app_color_accent_teal"
-                    app:stpi_lineColor="@color/app_color_grey"
-                    app:stpi_lineDoneColor="@color/app_color_accent_teal" />-->
-            </LinearLayout>
+                    <com.badoualy.stepperindicator.StepperIndicator
+                        android:id="@+id/stepper_indicator_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:stpi_circleColor="@color/app_color_grey"
+                        app:stpi_indicatorColor="@color/app_color_accent_teal"
+                        app:stpi_lineColor="@color/app_color_grey"
+                        app:stpi_lineDoneColor="@color/app_color_accent_teal"
+                        app:stpi_stepCount="4" />
+
+            </android.support.v4.widget.DrawerLayout>-->
 
             <Button
                 android:id="@+id/btn_finish"

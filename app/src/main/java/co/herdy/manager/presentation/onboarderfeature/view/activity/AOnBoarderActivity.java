@@ -34,7 +34,7 @@ public abstract class AOnBoarderActivity extends ABaseActivity implements View.O
 
     @Bind(R.id.view_pager_onboarder)
     ViewPager mVpOnboarderPager;
-    @Bind(R.id.circle_indicator_view)
+    // @Bind(R.id.circle_indicator_view)
     CircleIndicatorView mCircleIndicatorView;
     @Bind(R.id.btn_next)
     ImageButton mIbNext;

@@ -15,7 +15,7 @@ import co.herdy.manager.presentation.authfeature.view.activity.AuthActivity;
 import co.herdy.manager.presentation.onboarderfeature.view.fragment.OnBoarder;
 import co.herdy.manager.presentation.splashfeature.view.activity.SplashActivity;
 
-public class OnBoarderActivity extends AOnBoarderActivity {
+public class OnBoarderActivity extends AOnBoarderWithStepperIndicatorActivity {
 
     // Class log identifier
     public final static String LOG_TAG = SplashActivity.class.getSimpleName();
@@ -30,10 +30,12 @@ public class OnBoarderActivity extends AOnBoarderActivity {
         prefManager = new OnBoarderPreferenceManager(this);
 
         OnBoarder intro1 = new OnBoarder("Welcome", "Your Two Steps Away from Making Farming Easier", R.drawable.herdy_logo_125px);
-        intro1.setBackgroundColor(R.color.app_color_primary);
-        intro1.setDescriptionColor(R.color.app_color_white);
-        intro1.setTitleColor(R.color.app_color_white);
+        intro1.setBackgroundColor(R.color.app_color_white);
+        intro1.setDescriptionColor(R.color.app_color_secondary_text_grey);
+        intro1.setTitleColor(R.color.app_color_accent_teal);
 
+        onBoarderPages.add(intro1);
+        onBoarderPages.add(intro1);
         onBoarderPages.add(intro1);
         onBoarderPages.add(intro1);
         setOnboardPagesReady(onBoarderPages);

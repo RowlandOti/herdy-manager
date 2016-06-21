@@ -25,7 +25,7 @@ import co.herdy.manager.presentation.onboarderfeature.view.adapter.OnBoarderAdap
 import co.herdy.manager.presentation.onboarderfeature.view.fragment.OnBoarder;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
-public abstract class AOnBoarderWithStepperIndicator extends ABaseActivity implements View.OnClickListener{
+public abstract class AOnBoarderWithStepperIndicatorActivity extends ABaseActivity implements View.OnClickListener{
 
     private Integer[] mColors;
     private ArgbEvaluator evaluator;
@@ -35,7 +35,7 @@ public abstract class AOnBoarderWithStepperIndicator extends ABaseActivity imple
 
     @Bind(R.id.view_pager_onboarder)
     ViewPager mVpOnboarderPager;
-    // @Bind(R.id.stepper_indicator_view)
+    @Bind(R.id.stepper_indicator_view)
     StepperIndicator mStepperIndicatorView;
     @Bind(R.id.btn_next)
     ImageButton mIbNext;
@@ -83,8 +83,6 @@ public abstract class AOnBoarderWithStepperIndicator extends ABaseActivity imple
             @Override
             public void onPageSelected(int position) {
                 int lastPagePosition = onboarderAdapter.getCount() - 1;
-                // mStepperIndicatorView.setCurrentPage(position);
-                mStepperIndicatorView.setCurrentStep(position);
                 mIbNext.setVisibility(position == lastPagePosition && !mShouldUseFloatingActionButton ? View.GONE : View.VISIBLE);
                 mBtnFinish.setVisibility(position == lastPagePosition && !mShouldUseFloatingActionButton ? View.VISIBLE : View.GONE);
                 if (mShouldUseFloatingActionButton)
@@ -135,7 +133,7 @@ public abstract class AOnBoarderWithStepperIndicator extends ABaseActivity imple
         onboarderAdapter = new OnBoarderAdapter(pages, getSupportFragmentManager());
         mVpOnboarderPager.setAdapter(onboarderAdapter);
         mColors = ColorsArrayBuilder.getPageBackgroundColors(this, pages);
-        mStepperIndicatorView.setViewPager(mVpOnboarderPager);
+        mStepperIndicatorView.setViewPager(mVpOnboarderPager, true);
     }
 
     public void shouldDarkenButtonsLayout(boolean shouldDarkenButtonsLayout) {

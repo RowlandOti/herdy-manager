@@ -22,23 +22,17 @@ public class CircleIndicatorView extends View {
 
     public CircleIndicatorView(Context context) {
         super(context);
-        if(!isInEditMode()) {
-            init(context);
-        }
+        init(context);
     }
 
     public CircleIndicatorView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        if(!isInEditMode()) {
-            init(context);
-        }
+        init(context);
     }
 
     public CircleIndicatorView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        if(!isInEditMode()) {
-            init(context);
-        }
+        init(context);
     }
 
     private void init(Context context) {

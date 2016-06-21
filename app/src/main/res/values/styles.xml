@@ -13,7 +13,7 @@
         <item name="colorPrimary">@color/app_color_primary</item>
         <item name="colorPrimaryDark">@color/app_color_primary_dark</item>
         <item name="colorAccent">@color/app_color_accent_teal</item>
-        <item name="android:windowBackground">@color/app_color_primary</item>
+        <item name="android:windowBackground">@color/app_color_white</item>
     </style>
 
     <style name="AppTheme.Dark.ProgressBar">

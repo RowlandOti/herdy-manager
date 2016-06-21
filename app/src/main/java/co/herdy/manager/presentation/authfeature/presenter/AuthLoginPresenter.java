@@ -93,6 +93,8 @@ public class AuthLoginPresenter implements IPresenter {
         public void onError(Throwable e) {
             AuthLoginPresenter.this.hideViewLoading();
             AuthLoginPresenter.this.showErrorMessage(new DefaultErrorBundle((Exception) e));
+
+            authLoginView.getViewListener().onLoginFinish(null);
         }
 
         @Override

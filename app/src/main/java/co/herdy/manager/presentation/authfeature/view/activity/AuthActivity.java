@@ -38,7 +38,6 @@ public class AuthActivity extends ABaseActivity implements HasComponent<AuthComp
             if (savedInstanceState != null) {
                 return;
             } else {
-                // Pass bundle to the fragment
                 showLoginFragment(null);
             }
         }

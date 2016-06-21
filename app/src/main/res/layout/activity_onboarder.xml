@@ -5,11 +5,25 @@
     style="@style/AppTheme.OnBoarderTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_color_primary"
+    android:background="@color/app_color_white"
     tools:context=".presentation.onboarderfeature.view.activity.AOnBoarderActivity">
 
+    <include
+        layout="@layout/view_onboarder_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <include layout="@layout/view_onboarder_viewpager" />
-    <include layout="@layout/view_onboarder_footer" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="@dimen/footer_margin"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_stepper_indicator" />
+
+        <include layout="@layout/view_onboarder_footer" />
+    </LinearLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>
