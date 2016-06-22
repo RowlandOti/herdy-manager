@@ -26,6 +26,7 @@ public class OnBoarderActivity extends AOnBoarderWithStepperIndicatorActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusbarTransparent(true);
         onBoarderPages = new ArrayList<>();
         prefManager = new OnBoarderPreferenceManager(this);
 

@@ -24,4 +24,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="indicator_layout_margin">20dp</dimen>
     <dimen name="footer_margin">16dp</dimen>
+    <dimen name="footer_layout_marginEnd">8dp</dimen>
 </resources>

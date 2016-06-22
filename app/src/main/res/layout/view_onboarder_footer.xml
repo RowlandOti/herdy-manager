@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:id="@+id/bottom"
@@ -18,10 +18,8 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
             android:background="@android:color/transparent"
-            android:paddingEnd="@dimen/footer_layout_margin"
-            android:paddingLeft="@dimen/footer_layout_margin"
-            android:paddingRight="@dimen/footer_layout_margin"
-            android:paddingStart="@dimen/footer_layout_margin">
+            android:paddingEnd="@dimen/footer_layout_marginEnd"
+            android:paddingStart="@dimen/footer_layout_marginEnd">
 
             <Button
                 android:id="@+id/btn_skip"
@@ -30,38 +28,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center"
                 android:text="@string/btn_skip"
-                android:textColor="@color/app_color_white" />
-
-            <!--<android.support.v4.widget.DrawerLayout
-                android:id="@+id/ll_indicators"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-&lt;!&ndash;             <co.herdy.manager.presentation.onboarderfeature.view.CircleIndicatorView
-                    android:id="@+id/circle_indicator_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />&ndash;&gt;
-
-                    <com.badoualy.stepperindicator.StepperIndicator
-                        android:id="@+id/stepper_indicator_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:stpi_circleColor="@color/app_color_grey"
-                        app:stpi_indicatorColor="@color/app_color_accent_teal"
-                        app:stpi_lineColor="@color/app_color_grey"
-                        app:stpi_lineDoneColor="@color/app_color_accent_teal"
-                        app:stpi_stepCount="4" />
-
-            </android.support.v4.widget.DrawerLayout>-->
+                android:textColor="@color/app_color_accent_teal" />
 
             <Button
                 android:id="@+id/btn_finish"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|center"
+                android:layout_gravity="center"
                 android:text="@string/btn_finish"
                 android:textColor="@color/app_color_white"
                 android:visibility="gone" />
@@ -74,17 +48,9 @@
                 android:layout_gravity="end|center"
                 android:padding="@dimen/footer_layout_margin"
                 android:src="@drawable/ic_chevron_right"
-                android:tint="@color/app_color_white" />
+                android:tint="@color/app_color_accent_teal" />
 
         </FrameLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="@dimen/footer_layout_margin"
-            android:src="@drawable/ic_arrow_forward_white_24dp"
-            android:visibility="gone" />
     </LinearLayout>
 </merge>
