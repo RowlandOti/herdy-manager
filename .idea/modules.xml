@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HerdyManager.iml" filepath="$PROJECT_DIR$/HerdyManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onboarderwithstepperindicator/onboarderwithstepperindicator.iml" filepath="$PROJECT_DIR$/onboarderwithstepperindicator/onboarderwithstepperindicator.iml" />
     </modules>
   </component>
 </project>
