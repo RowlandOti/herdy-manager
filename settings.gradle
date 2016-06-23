@@ -1,1 +1,1 @@
-include ':app', ':onboarderwithstepperindicator'
+include ':app'
