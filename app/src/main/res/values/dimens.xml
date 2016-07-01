@@ -3,14 +3,12 @@
     <dimen name="lv_row_padding">5dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="iv_cover_height">120dp</dimen>
-
     <!--User Header stuff-->
     <dimen name="header_text_size">26sp</dimen>
     <dimen name="header_margin">5dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!--Login stuff-->
     <dimen name="auth_box_padding">40dp</dimen>
-
     <!--Indicator stuff-->
     <dimen name="indicator_size">8dp</dimen>
     <dimen name="footer_layout_margin">16dp</dimen>
@@ -25,4 +23,7 @@
     <dimen name="indicator_layout_margin">20dp</dimen>
     <dimen name="footer_margin">16dp</dimen>
     <dimen name="footer_layout_marginEnd">8dp</dimen>
+    <!--Sliding Tab stuff-->
+    <dimen name="tab_padding_horizontal">12dp</dimen>
+    <dimen name="tab_height">45dp</dimen>
 </resources>

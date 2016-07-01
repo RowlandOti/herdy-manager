@@ -3,6 +3,7 @@ package co.herdy.manager.presentation.dashboardfeature.view.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
+import co.herdy.manager.presentation.dashboardfeature.view.fragment.CalendarFragment;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 public class DashBoardActivity extends ABaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -20,6 +22,8 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     DrawerLayout drawer;
     @Bind(R.id.nav_view)
     NavigationView navigationView;
+    @Bind(R.id.appbar)
+    AppBarLayout appBarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setChecked(true);
     }
 
     public static Intent getCallingIntent(Context context) {
@@ -55,17 +60,18 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.nav_camera:
+            case R.id.nav_calendar:
+                showLoginFragment(null);
                 break;
-            case R.id.nav_gallery:
+            case R.id.nav_animals:
                 break;
-            case R.id.nav_slideshow:
+            case R.id.nav_litters:
                 break;
-            case R.id.nav_manage:
+            case R.id.nav_breeding:
                 break;
-            case R.id.nav_share:
+            case R.id.nav_preferences:
                 break;
-            case R.id.nav_send:
+            case R.id.nav_logout:
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
@@ -76,5 +82,14 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     public void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+    }
+
+    private void showLoginFragment(Bundle args) {
+        CalendarFragment fragment = CalendarFragment.newInstance(args);
+        replaceFragment(R.id.fragment_container, fragment, false, true);
+    }
+
+    public AppBarLayout getAppBarLayout() {
+        return appBarLayout;
     }
 }

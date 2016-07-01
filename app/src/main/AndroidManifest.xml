@@ -30,7 +30,7 @@
         <!-- Auth-Feature -->
         <activity android:name=".presentation.authfeature.view.activity.AuthActivity" />
         <!-- DashBoard-Feature -->
-        <!-- onBoader-Feature -->
+        <!-- onBoarder-Feature -->
         <activity android:name=".presentation.onboarderfeature.view.activity.OnBoarderActivity" />
         <activity
             android:name=".presentation.dashboardfeature.view.activity.DashBoardActivity"

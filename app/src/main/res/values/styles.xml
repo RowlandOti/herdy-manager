@@ -54,6 +54,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!-- Widget styles -->
+    <style name="Widget" />
+
+    <style name="Widget.App" parent="Widget" />
+
+
     <style name="AppTheme.Dark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.Dark.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

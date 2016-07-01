@@ -22,4 +22,4 @@
     android:layout_height="1dp"
     android:layout_gravity="bottom"
     android:layout_marginBottom="?attr/actionBarSize"
-    android:background="@color/app_color_divider_grey" />
+    android:background="@color/app_color_grey" />

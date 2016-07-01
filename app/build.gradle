@@ -66,7 +66,7 @@ dependencies {
     compile presentationDependencies.supportCardView
     compile presentationDependencies.supportRecyclerView
     compile presentationDependencies.supportDesign
-    compile presentationDependencies.supportAppCompatV7
+    //compile presentationDependencies.supportAppCompatV7
     // Use - Reactive Approach support
     compile presentationDependencies.rxJava
     compile presentationDependencies.rxAndroid
@@ -78,7 +78,6 @@ dependencies {
     // Use - ViewPager Indication for onboarding - https://github.com/badoualy/stepper-indicator
     compile presentationDependencies.stepperIndicator
     // Use - OnBoarding ViewPager - https://github.com/sacot41/SCViewPager
-    compile "com.dev.sacot41:scviewpager:0.0.4"
 
     // Use - Rest API support
     compile dataDependencies.retrofit
@@ -92,4 +91,5 @@ dependencies {
     compile presentationDebugDependencies.okHttp3LoggingInterceptor
     // DEVELOPMENT-ONLY DEPENDENCIES
     compile developmentDependencies.leakCanary
+    compile 'com.android.support:support-v4:23.4.0'
 }

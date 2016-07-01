@@ -8,8 +8,10 @@
     tools:context=".presentation.dashboardfeature.view.activity.DashBoardActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
         android:theme="@style/AppTheme.Dark.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -17,13 +19,24 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.Dark.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
-        android:id="@+id/fragmentContainer"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.FloatingActionButton
+        style="@style/Widget.App.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        app:layout_behavior="co.herdy.manager.presentation.view.behaviour.ScrollAwareFloatingActionButtonBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>
