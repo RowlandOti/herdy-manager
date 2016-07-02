@@ -73,7 +73,6 @@ public abstract class ABaseActivity extends AppCompatActivity {
      * @param isAnimateTransition  The boolean on whether to animate fragment transition.
      */
     protected void replaceFragment(int containerViewId, Fragment fragment, boolean isAddToBackStack, boolean isAnimateTransition) {
-        // invalidateOptionsMenu();
         String backStateName = fragment.getClass().getName();
         FragmentManager fm = this.getSupportFragmentManager();
         boolean fragmentPopped = fm.popBackStackImmediate(backStateName, 0);

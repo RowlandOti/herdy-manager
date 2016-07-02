@@ -24,11 +24,10 @@ public class CalendarFragment extends ABaseFragment {
     private static final String LOG_TAG = CalendarFragment.class.getSimpleName();
     public static final String SELECTED_TAB_KEY = "SELECTED_TAB";
 
-    //@Bind(R.id.slidingTabStrips)
     TabLayout mSlidingTabStrips;
     @Bind(R.id.calendar_view_pager)
     ViewPager mViewPager;
-    // The Subfragment titles
+
     private String[] TITLES = {"Servings Due", "Kindlings Due", "Nestings Due", "Weanings Due", "Sexings Due"};
     private SmartNestedViewPagerAdapter pagerAdapter;
     private int selectedTabStrip = 0;
@@ -67,19 +66,12 @@ public class CalendarFragment extends ABaseFragment {
 
         ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
         View rootTab = getActivity().getLayoutInflater().inflate(R.layout.inc_tab_calendar, parentAppBarLayout);
-        mSlidingTabStrips  = (TabLayout) rootTab.findViewById(R.id.slidingTabStrips);
-
+        mSlidingTabStrips = (TabLayout) rootTab.findViewById(R.id.slidingTabStrips);
         mSlidingTabStrips.setupWithViewPager(mViewPager);
         if (savedInstanceState != null) {
             selectedTabStrip = savedInstanceState.getInt(SELECTED_TAB_KEY, selectedTabStrip);
             mViewPager.setCurrentItem(selectedTabStrip, true);
         }
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
     }
 
     // Save data for this fragment
@@ -88,6 +80,12 @@ public class CalendarFragment extends ABaseFragment {
         super.onSaveInstanceState(outState);
         selectedTabStrip = mViewPager.getCurrentItem();
         outState.putInt(SELECTED_TAB_KEY, selectedTabStrip);
+    }
+
+    @Override
+    public void onStop() {
+        ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
+        parentAppBarLayout.removeView(mSlidingTabStrips);
     }
 
     public String[] getTITLES() {

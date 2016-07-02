@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,8 +13,10 @@ import android.view.MenuItem;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.dashboardfeature.view.fragment.CalendarFragment;
+import co.herdy.manager.presentation.dashboardfeature.view.fragment.DueFragment;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 public class DashBoardActivity extends ABaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +25,8 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     DrawerLayout drawer;
     @Bind(R.id.nav_view)
     NavigationView navigationView;
+    @Bind(R.id.fab_dashboard)
+    FloatingActionButton fabButton;
     @Bind(R.id.appbar)
     AppBarLayout appBarLayout;
 
@@ -61,7 +66,7 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
 
         switch (id) {
             case R.id.nav_calendar:
-                showLoginFragment(null);
+                showCalendarFragment(null);
                 break;
             case R.id.nav_animals:
                 break;
@@ -84,12 +89,18 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
         ButterKnife.unbind(this);
     }
 
-    private void showLoginFragment(Bundle args) {
+    private void showCalendarFragment(Bundle args) {
         CalendarFragment fragment = CalendarFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 
     public AppBarLayout getAppBarLayout() {
         return appBarLayout;
+    }
+
+    @OnClick(R.id.fab_dashboard)
+    public void onClickFab() {
+        AddAnimalFragment fragment = AddAnimalFragment.newInstance(null);
+        replaceFragment(R.id.fragment_add_container, fragment, false, true);
     }
 }

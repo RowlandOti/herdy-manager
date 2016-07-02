@@ -22,4 +22,6 @@
     <color name="app_color_window_grey">#FFE5E5E5</color>
     <color name="app_color_grey_transluscent">#66E5E5E5</color>
     <color name="app_color_grey_border">#999999</color>
+    <!-- Add Animal Overlay colors-->
+    <color name="app_color_animal_overlay">#80455A64</color>
 </resources>

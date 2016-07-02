@@ -19,6 +19,8 @@
         <item name="android:textSize">17sp</item>>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app_color_white</item>
+        <item name="android:background">@color/app_color_accent_teal</item>
     </style>
 
     <style name="Button.Base.Weight">
@@ -30,16 +32,29 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:text">@string/bt_login</item>
-        <item name="android:textColor">@color/app_color_white</item>
-        <item name="android:background">@color/app_color_accent_teal</item>
     </style>
 
     <style name="Button.Register" parent="Button.Base">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:text">@string/bt_register</item>
-        <item name="android:textColor">@color/app_color_white</item>
-        <item name="android:background">@color/app_color_accent_teal</item>
     </style>
+
+    <style name="Button.AddAnimal" parent="Button.Base">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:text">@string/bt_add_animal</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="Button.AddAnimal.Cancel" parent="Button.Base">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:text">@string/bt_add_animal_cancel</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
 
 </resources>
