@@ -84,6 +84,7 @@ public class CalendarFragment extends ABaseFragment {
 
     @Override
     public void onStop() {
+        super.onStop();
         ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
         parentAppBarLayout.removeView(mSlidingTabStrips);
     }
