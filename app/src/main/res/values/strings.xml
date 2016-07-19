@@ -48,9 +48,10 @@
     <string name="bt_add_animal">Add Animal</string>
     <string name="bt_add_animal_cancel">Cancel</string>
     <string name="add_animal_name_hint">e.g Fena</string>
-    <string name="add_animal_hatch_no_hint">e.g 1 or L5 or #3</string>
+    <string name="add_animal_hatchno_hint">e.g 1 or L5 or #3</string>
     <string name="add_animal_dob_hint">e.g 2016-07-14</string>
     <string name="add_animal_sex_hint">e.g Doe</string>
     <string name="add_animal_breed_hint">e.g Checkered Giant</string>
+    <string name="empty_list">Currently Empty</string>
 
 </resources>

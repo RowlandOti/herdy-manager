@@ -30,4 +30,6 @@
     <dimen name="add_animal_form_field_height">6dp</dimen>
     <!--Toolbar stuff-->
     <dimen name="toolbar_horizontal_padding">12dp</dimen>
+    <dimen name="add_animal_action_margin">8dp</dimen>
+    <dimen name="empty_text_view_padding">16dp</dimen>
 </resources>

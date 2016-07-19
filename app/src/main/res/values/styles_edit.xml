@@ -93,7 +93,7 @@
     </style>
 
     <style name="EditText.AddAnimal.HatchNo" parent="EditText.AddAnimal">
-        <item name="android:hint">@string/add_animal_hatch_no_hint</item>
+        <item name="android:hint">@string/add_animal_hatchno_hint</item>
     </style>
 
     <style name="EditText.AddAnimal.DoB" parent="EditText.AddAnimal">

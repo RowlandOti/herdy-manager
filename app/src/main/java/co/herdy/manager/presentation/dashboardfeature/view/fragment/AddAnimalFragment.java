@@ -1,11 +1,15 @@
-package co.herdy.manager.presentation.dashboardfeature.view.activity;
+package co.herdy.manager.presentation.dashboardfeature.view.fragment;
 
 
 import android.animation.ObjectAnimator;
+import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.roomorama.caldroid.CaldroidFragment;

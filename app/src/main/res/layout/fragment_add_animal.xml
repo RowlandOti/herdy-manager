@@ -7,7 +7,7 @@
     android:background="@color/app_color_animal_overlay"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="co.herdy.manager.presentation.dashboardfeature.view.activity.AddAnimalFragment">
+    tools:context="co.herdy.manager.presentation.dashboardfeature.view.fragment.AddAnimalFragment">
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/add_animal_form_normal_mode_container"
@@ -32,18 +32,31 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_animal_name" />
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:id="@+id/name_wrapper"
-                style="@style/TextInput.Base">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_name"
-                    style="@style/EditText.AddAnimal.Name"
-                    android:layout_width="match_parent"
+                <co.herdy.manager.presentation.view.widget.TintableImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:nextFocusDown="@+id/et_hatch_no" />
-            </android.support.design.widget.TextInputLayout>
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:src="@drawable/ic_label_outline_black_48dp"
+                    app:tint="@color/color_add_animal_formitem" />
+
+                <TextView
+                    android:id="@+id/tv_name_title"
+                    style="@style/TextView.Title.AddAnimal.ClickTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/app_color_disabled_text"
+                    android:gravity="center"
+                    android:text="@string/add_animal_name_hint" />
+
+            </LinearLayout>
+
 
             <TextView
                 style="@style/TextView.Title.AddAnimal"
@@ -51,18 +64,31 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_animal_hatchno" />
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:id="@+id/hatch_no_wrapper"
-                style="@style/TextInput.Base">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_hatch_no"
-                    style="@style/EditText.AddAnimal.HatchNo"
-                    android:layout_width="match_parent"
+
+                <co.herdy.manager.presentation.view.widget.TintableImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:nextFocusDown="@+id/et_dob" />
-            </android.support.design.widget.TextInputLayout>
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:src="@drawable/ic_home_variant_black_48dp"
+                    app:tint="@color/color_add_animal_formitem" />
+
+                <TextView
+                    android:id="@+id/tv_hatch_no_title"
+                    style="@style/TextView.Title.AddAnimal.ClickTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/app_color_disabled_text"
+                    android:gravity="center"
+                    android:text="@string/add_animal_hatchno_hint" />
+
+            </LinearLayout>
 
             <TextView
                 style="@style/TextView.Title.AddAnimal"
@@ -70,29 +96,30 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_animal_dob" />
 
-            <!--         <android.support.design.widget.TextInputLayout
-                         android:id="@+id/dob_wrapper"
-                         style="@style/TextInput.Base">
-
-                         <android.support.design.widget.TextInputEditText
-                             android:id="@+id/et_dob"
-                             style="@style/EditText.AddAnimal.DoB"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:imeOptions="actionNext"
-                             android:nextFocusDown="@+id/et_sex" />
-                     </android.support.design.widget.TextInputLayout>-->
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:id="@+id/dob_wrapper"
-                style="@style/TextInput.Base">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <co.herdy.manager.presentation.view.widget.TintableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:src="@drawable/ic_calendar_black_48dp"
+                    app:tint="@color/color_add_animal_formitem" />
 
                 <TextView
                     android:id="@+id/tv_dob_title"
-                    style="@style/TextView.Title.AddAnimal"
+                    style="@style/TextView.Title.AddAnimal.ClickTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/add_animal_dob" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/app_color_disabled_text"
+                    android:gravity="center"
+                    android:text="@string/add_animal_dob_hint" />
+
+            </LinearLayout>
 
             <TextView
                 style="@style/TextView.Title.AddAnimal"
@@ -100,18 +127,30 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_animal_sex" />
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:id="@+id/sex_wrapper"
-                style="@style/TextInput.Base">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_sex"
-                    style="@style/EditText.AddAnimal.Sex"
-                    android:layout_width="match_parent"
+                <co.herdy.manager.presentation.view.widget.TintableImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:nextFocusDown="@+id/et_breed" />
-            </android.support.design.widget.TextInputLayout>
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:src="@drawable/ic_gender_male_female_black_48dp"
+                    app:tint="@color/color_add_animal_formitem" />
+
+                <TextView
+                    android:id="@+id/tv_sex_title"
+                    style="@style/TextView.Title.AddAnimal.ClickTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/app_color_disabled_text"
+                    android:gravity="center"
+                    android:text="@string/add_animal_sex_hint" />
+
+            </LinearLayout>
 
             <TextView
                 style="@style/TextView.Title.AddAnimal"
@@ -119,22 +158,33 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_animal_breed" />
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:id="@+id/breed_wrapper"
-                style="@style/TextInput.Base">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_breed"
-                    style="@style/EditText.AddAnimal.Breed"
-                    android:layout_width="match_parent"
+                <co.herdy.manager.presentation.view.widget.TintableImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
-                    android:nextFocusDown="@+id/bt_add_animal" />
-            </android.support.design.widget.TextInputLayout>
+                    android:clickable="true"
+                    android:src="@drawable/ic_vector_intersection_black_48dp"
+                    app:tint="@color/color_add_animal_formitem" />
+
+                <TextView
+                    android:id="@+id/tv_breed_title"
+                    style="@style/TextView.Title.AddAnimal.ClickTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/app_color_disabled_text"
+                    android:gravity="center"
+                    android:text="@string/add_animal_breed_hint" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/add_animal_action_margin"
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.AppCompatButton

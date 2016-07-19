@@ -83,10 +83,11 @@ public class CalendarFragment extends ABaseFragment {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onDestroy() {
+        super.onDestroy();
         ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
         parentAppBarLayout.removeView(mSlidingTabStrips);
+        ButterKnife.unbind(this);
     }
 
     public String[] getTITLES() {
