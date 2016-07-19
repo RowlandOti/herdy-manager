@@ -10,6 +10,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,10 +23,15 @@ import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 public class DashBoardActivity extends ABaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    // Logging Identifier for class
+    private final String LOG_TAG = DashBoardActivity.class.getSimpleName();
+
     // The Food POSITION Identifier Key
     public static final String SELECTED_NAV_MENU_KEY = "selected_nav_menu_key";
     // The selected grid position
     private int mSelectedNavMenuIndex = 0;
+    // Accounts toggle
+    private boolean toggle = false;
 
     @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
@@ -41,8 +48,8 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
         setContentView(R.layout.activity_dashboard);
         ButterKnife.bind(this);
 
-        setSupportActionBar(mToolbar);
-        /*askforPermisions();*/
+        setToolbar(false, true, 0);
+        setStatusbarTransparent(true);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -55,14 +62,13 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
             mSelectedNavMenuIndex = savedInstanceState.getInt(SELECTED_NAV_MENU_KEY);
             // Recover menu as selected
             MenuItem menuItem = navigationView.getMenu().getItem(mSelectedNavMenuIndex);
-            toggleNavMenuItemCheck(menuItem);
-            // onNavigationItemSelected(menuItem);
+            onNavigationItemSelected(menuItem);
             return;
         } else {
             MenuItem menuItem = navigationView.getMenu().getItem(mSelectedNavMenuIndex);
-            toggleNavMenuItemCheck(menuItem);
             onNavigationItemSelected(menuItem);
         }
+        setListeners();
     }
 
     // Save any important data for recovery
@@ -113,6 +119,7 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
                 showCalendarFragment(null);
                 mSelectedNavMenuIndex = 0;
         }
+        toggleNavMenuItemCheck(item);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -136,6 +143,26 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
         }
     }
 
+    private void setListeners() {
+        View header = navigationView.getHeaderView(0);
+        //navigationView.removeHeaderView(header);
+        ImageView imageViewCarret = (ImageView) header.findViewById(R.id.imageViewCarret);
+        imageViewCarret.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (toggle) {
+                    imageViewCarret.setImageResource(R.drawable.ic_arrow_drop_up_white_48dp);
+                    toggle = false;
+                } else {
+                    imageViewCarret.setImageResource(R.drawable.ic_arrow_drop_down_white_48dp);
+                    toggle = true;
+                    navigationView.s
+                }
+            }
+        });
+    }
+
     public AppBarLayout getAppBarLayout() {
         return appBarLayout;
     }
@@ -145,14 +172,4 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
         AddAnimalFragment fragment = AddAnimalFragment.newInstance(null);
         replaceFragment(R.id.fragment_add_container, fragment, false, true);
     }
-
-/*    private void askforPermisions() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-            } else {
-            }
-        } else {
-        }
-    }*/
 }

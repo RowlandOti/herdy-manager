@@ -5,8 +5,10 @@
     <dimen name="iv_cover_height">120dp</dimen>
     <!--User Header stuff-->
     <dimen name="header_text_size">26sp</dimen>
+    <dimen name="nav_header_height">220dp</dimen>
     <dimen name="header_margin">5dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <!--Login stuff-->
     <dimen name="auth_box_padding">40dp</dimen>
     <!--Indicator stuff-->
@@ -17,8 +19,6 @@
     <dimen name="section_image_item">250dp</dimen>
     <dimen name="onboarder_footer_height">50dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">90dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="indicator_layout_margin">20dp</dimen>
     <dimen name="footer_margin">16dp</dimen>

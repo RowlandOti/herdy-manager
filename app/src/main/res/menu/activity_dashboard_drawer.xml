@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:checkableBehavior="single"
-        android:title="Main">
+    <item android:title="Main">
         <menu>
-            <item
-                android:id="@+id/nav_calendar"
-                android:icon="@drawable/ic_calendar_black_48dp"
-                android:title="Calendar" />
-            <item
-                android:id="@+id/nav_animals"
-                android:icon="@drawable/ic_child_care_black_48dp"
-                android:title="Animals" />
-            <item
-                android:id="@+id/nav_litters"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Litters" />
-            <item
-                android:id="@+id/nav_breeding"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Breeding" />
+            <group
+                android:id="@+id/nav_top_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_calendar"
+                    android:icon="@drawable/ic_calendar_black_48dp"
+                    android:title="Calendar" />
+                <item
+                    android:id="@+id/nav_animals"
+                    android:icon="@drawable/ic_child_care_black_48dp"
+                    android:title="Animals" />
+                <item
+                    android:id="@+id/nav_litters"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Litters" />
+                <item
+                    android:id="@+id/nav_breeding"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Breeding" />
+            </group>
         </menu>
     </item>
 
@@ -28,14 +30,18 @@
         android:checkableBehavior="single"
         android:title="Settings">
         <menu>
-            <item
-                android:id="@+id/nav_preferences"
-                android:icon="@drawable/ic_account_settings_variant_black_48dp"
-                android:title="Preferences" />
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_logout_black_48dp"
-                android:title="Logout" />
+            <group
+                android:id="@+id/nav_bottom_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_preferences"
+                    android:icon="@drawable/ic_account_settings_variant_black_48dp"
+                    android:title="Preferences" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout_black_48dp"
+                    android:title="Logout" />
+            </group>
         </menu>
     </item>
 
