@@ -154,10 +154,13 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
                 if (toggle) {
                     imageViewCarret.setImageResource(R.drawable.ic_arrow_drop_up_white_48dp);
                     toggle = false;
+                    navigationView.getMenu().clear();
+                    navigationView.inflateMenu(R.menu.activity_dashboard_drawer);
                 } else {
                     imageViewCarret.setImageResource(R.drawable.ic_arrow_drop_down_white_48dp);
                     toggle = true;
-                    navigationView.s
+                    navigationView.getMenu().clear();
+                    navigationView.inflateMenu(R.menu.activity_dashboard_drawer_account_selector);
                 }
             }
         });
