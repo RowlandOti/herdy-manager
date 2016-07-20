@@ -30,6 +30,8 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     public static final String SELECTED_NAV_MENU_KEY = "selected_nav_menu_key";
     // The selected grid position
     private int mSelectedNavMenuIndex = 0;
+    // Navigation Header
+    private View navigationHeader;
     // Accounts toggle
     private boolean toggle = false;
 
@@ -144,9 +146,8 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     }
 
     private void setListeners() {
-        View header = navigationView.getHeaderView(0);
-        //navigationView.removeHeaderView(header);
-        ImageView imageViewCarret = (ImageView) header.findViewById(R.id.imageViewCarret);
+        navigationHeader = navigationView.getHeaderView(0);
+        ImageView imageViewCarret = (ImageView) navigationHeader.findViewById(R.id.imageViewCarret);
         imageViewCarret.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -156,11 +157,17 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
                     toggle = false;
                     navigationView.getMenu().clear();
                     navigationView.inflateMenu(R.menu.activity_dashboard_drawer);
+                    if(navigationHeader != null) {
+                        navigationHeader.setBackgroundResource(R.drawable.side_nav_bar);
+                    }
                 } else {
                     imageViewCarret.setImageResource(R.drawable.ic_arrow_drop_down_white_48dp);
                     toggle = true;
                     navigationView.getMenu().clear();
                     navigationView.inflateMenu(R.menu.activity_dashboard_drawer_account_selector);
+                    if(navigationHeader != null) {
+                        navigationHeader.setBackgroundResource(R.color.app_color_grey);
+                    }
                 }
             }
         });

@@ -33,15 +33,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="HATCH" />
+            android:text="HUTCH NO." />
 
 
     </LinearLayout>
 
     <include
-        layout="@layout/inc_horizontal_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="6dp" />
+    layout="@layout/inc_horizontal_divider"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginBottom="6dp" />
 
 </LinearLayout>
