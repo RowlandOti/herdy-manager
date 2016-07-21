@@ -23,7 +23,7 @@ import co.herdy.manager.BuildConfig;
 import co.herdy.manager.R;
 import co.herdy.manager.domain.dashboardfeature.model.Animal;
 import co.herdy.manager.domain.repository.model.ModelLoader;
-import co.herdy.manager.presentation.dashboardfeature.view.adapter.AnimalAdapter;
+import co.herdy.manager.presentation.dashboardfeature.view.adapter.DueAdapter;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 /**
@@ -42,8 +42,9 @@ public class DueFragment extends ABaseFragment {
     @Bind(R.id.empty_text_view_container)
     LinearLayout mEmptyTextViewContainer;
 
-    protected List<Animal> mAnimalList;
-    protected AnimalAdapter mAnimalAdapter;
+    private List<Animal> mAnimalList;
+    private DueAdapter mDueAdapter;
+    private int mHeaderType = DueAdapter.TYPE_HEADER_ANIMAL;
     private LoaderManager.LoaderCallbacks mAnimalsLoaderCallBack;
 
 
@@ -83,9 +84,13 @@ public class DueFragment extends ABaseFragment {
         mRecycleView.setHasFixedSize(false);
         mRecycleView.setItemAnimator(new DefaultItemAnimator());
 
-        mAnimalAdapter = new AnimalAdapter(mAnimalList);
+        if(getArguments() != null) {
+            mHeaderType = getArguments().getInt(DueAdapter.TYPE_HEADER_TYPE);
+        }
 
-        mRecycleView.setAdapter(mAnimalAdapter);
+        mDueAdapter = new DueAdapter(mAnimalList, mHeaderType);
+
+        mRecycleView.setAdapter(mDueAdapter);
 
         mAnimalsLoaderCallBack = new LoaderManager.LoaderCallbacks<List<Animal>>() {
             @Override
@@ -97,18 +102,18 @@ public class DueFragment extends ABaseFragment {
             @Override
             public void onLoadFinished(Loader<List<Animal>> loader, List<Animal> dataList) {
                 mAnimalList = dataList;
-                mAnimalAdapter.addAll(mAnimalList);
-                mAnimalAdapter.notifyDataSetChanged();
+                mDueAdapter.addAll(mAnimalList);
+                mDueAdapter.notifyDataSetChanged();
                 updateEmptyView();
                 // Check whether we are in debug mode
                 if (BuildConfig.IS_DEBUG_MODE) {
-                    Log.d(LOG_TAG, "Animal: " + mAnimalAdapter.getItemCount());
+                    Log.d(LOG_TAG, "Animal: " + mDueAdapter.getItemCount());
                 }
             }
 
             @Override
             public void onLoaderReset(Loader<List<Animal>> loader) {
-                mAnimalAdapter.addAll(null);
+                mDueAdapter.addAll(null);
             }
         };
     }
@@ -129,7 +134,7 @@ public class DueFragment extends ABaseFragment {
     }
 
     public void updateEmptyView() {
-        if (mAnimalAdapter.getItemCount() == 0) {
+        if (mDueAdapter.getItemCount() == 0) {
             mSwRefreshLayout.setVisibility(View.GONE);
             mEmptyTextViewContainer.setVisibility(View.VISIBLE);
         } else {

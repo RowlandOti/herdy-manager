@@ -20,6 +20,7 @@ import com.activeandroid.ActiveAndroid;
 import com.activeandroid.Configuration;
 import com.squareup.leakcanary.LeakCanary;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,12 +75,12 @@ public class ApplicationController extends Application {
         // For Test
         Animal a = new Animal();
         a.setName("Gogi");
-        a.setDate("12/07/2012");
+        a.setDate(new Date());
         a.setHatchno("L5");
         a.save();
         Animal a1 = new Animal();
         a1.setName("Femi");
-        a1.setDate("12/07/2012");
+        a1.setDate(new Date());
         a1.setHatchno("L7");
         a1.save();
     }

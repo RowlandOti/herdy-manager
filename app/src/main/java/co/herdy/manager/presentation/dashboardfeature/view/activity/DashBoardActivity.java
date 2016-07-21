@@ -148,6 +148,7 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     private void setListeners() {
         navigationHeader = navigationView.getHeaderView(0);
         ImageView imageViewCarret = (ImageView) navigationHeader.findViewById(R.id.imageViewCarret);
+        ImageView imageViewProduct = (ImageView) navigationHeader.findViewById(R.id.imageViewProduct);
         imageViewCarret.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -158,7 +159,7 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
                     navigationView.getMenu().clear();
                     navigationView.inflateMenu(R.menu.activity_dashboard_drawer);
                     if(navigationHeader != null) {
-                        navigationHeader.setBackgroundResource(R.drawable.side_nav_bar);
+                        //navigationHeader.setBackgroundResource(R.drawable.side_nav_bar);
                     }
                 } else {
                     imageViewCarret.setImageResource(R.drawable.ic_arrow_drop_down_white_48dp);
@@ -166,7 +167,7 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
                     navigationView.getMenu().clear();
                     navigationView.inflateMenu(R.menu.activity_dashboard_drawer_account_selector);
                     if(navigationHeader != null) {
-                        navigationHeader.setBackgroundResource(R.color.app_color_grey);
+                        //navigationHeader.setBackgroundResource(R.color.app_color_grey);
                     }
                 }
             }

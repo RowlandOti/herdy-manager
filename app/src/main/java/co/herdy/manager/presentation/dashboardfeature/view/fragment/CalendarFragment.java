@@ -12,7 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.dashboardfeature.view.activity.DashBoardActivity;
-import co.herdy.manager.presentation.dashboardfeature.view.adapter.SmartNestedViewPagerAdapter;
+import co.herdy.manager.presentation.dashboardfeature.view.adapter.CalendarPagerAdapter;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
 /**
@@ -29,7 +29,7 @@ public class CalendarFragment extends ABaseFragment {
     ViewPager mViewPager;
 
     private String[] TITLES = {"Servings Due", "Kindlings Due", "Nestings Due", "Weanings Due", "Sexings Due"};
-    private SmartNestedViewPagerAdapter pagerAdapter;
+    private CalendarPagerAdapter pagerAdapter;
     private int selectedTabStrip = 0;
 
 
@@ -61,7 +61,7 @@ public class CalendarFragment extends ABaseFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        pagerAdapter = new SmartNestedViewPagerAdapter(getActivity().getSupportFragmentManager());
+        pagerAdapter = new CalendarPagerAdapter(getActivity().getSupportFragmentManager());
         mViewPager.setAdapter(pagerAdapter);
 
         ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();

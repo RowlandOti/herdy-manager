@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -17,28 +20,36 @@ import co.herdy.manager.R;
 import co.herdy.manager.domain.dashboardfeature.model.Animal;
 import co.herdy.manager.domain.dashboardfeature.model.callback.AnimalSortedListAdapterCallBack;
 
-public class AnimalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class DueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     // The class Log identifier
-    private static final String LOG_TAG = AnimalAdapter.class.getSimpleName();
-    private static final int TYPE_HEADER = 0;
-    private static final int TYPE_ITEM = 1;
+    private static final String LOG_TAG = DueAdapter.class.getSimpleName();
+    // Determine type of View
+    private static final int TYPE_HEADER =1;
+    private static final int TYPE_ITEM = 0;
+    // Determine Header type
+    public static final String TYPE_HEADER_TYPE = "header_type";
+    public static final int TYPE_HEADER_ANIMAL = 10;
+    public static final int TYPE_HEADER_LITTER = 11;
+
+    private int mHeaderType;
 
     private SortedList<Animal> mAnimalList;
 
-    public AnimalAdapter(List<Animal> animalList) {
+    public DueAdapter(List<Animal> animalList, int headerType) {
+        this.mHeaderType = headerType;
         addAll(animalList);
     }
 
-    // Called when RecyclerView needs a new AnimalViewHolder of the given type to represent an item.
+    // Called when RecyclerView needs a new DueViewHolder of the given type to represent an item.
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_ITEM) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_animal, parent, false);
-            return new AnimalViewHolder(v);
+            return new DueViewHolder(v);
         } else if (viewType == TYPE_HEADER) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_animal_header, parent, false);
-            return new AnimalHeaderViewHolder(v);
+            return new DueHeaderViewHolder(v);
         }
         throw new RuntimeException("there is no type that matches the type " + viewType + " + make sure your using types correctly");
     }
@@ -46,11 +57,11 @@ public class AnimalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     // Called by RecyclerView to display the data at the specified position.
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof AnimalViewHolder) {
+        if (holder instanceof DueViewHolder) {
             final Animal movie = mAnimalList.get(position);
-            ((AnimalViewHolder) holder).bindTo(movie, position);
-        } else if (holder instanceof AnimalHeaderViewHolder) {
-
+            ((DueViewHolder) holder).bindTo(movie);
+        } else if (holder instanceof DueHeaderViewHolder) {
+            ((DueHeaderViewHolder) holder).toggleHeader();
         }
     }
 
@@ -93,7 +104,9 @@ public class AnimalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     // Takes care of the overhead of recycling and gives better performance and scrolling
-    public class AnimalViewHolder extends RecyclerView.ViewHolder {
+    public class DueViewHolder extends RecyclerView.ViewHolder {
+
+        Calendar mCalendar;
 
         @Bind(R.id.txt_name)
         TextView mNameTextView;
@@ -104,24 +117,48 @@ public class AnimalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @Bind(R.id.txt_hatchno)
         TextView mHatchNoTextView;
 
-        public AnimalViewHolder(View itemView) {
+        public DueViewHolder(View itemView) {
             super(itemView);
+            mCalendar = Calendar.getInstance();
             ButterKnife.bind(this, itemView);
         }
 
         // Bind the data to the holder views
-        private void bindTo(final Animal animal, final int position) {
+        private void bindTo(final Animal animal) {
+            mCalendar.setTime(animal.getDate());
+            String format = new SimpleDateFormat("EEE, d MMMM yyyy", Locale.ENGLISH).format(animal.getDate());
+
             mNameTextView.setText(animal.getName());
-            mDateTextView.setText(animal.getDate());
+            mDateTextView.setText(format);
             mHatchNoTextView.setText(animal.getHatchno());
         }
     }
 
     // Takes care of the overhead of recycling and gives better performance and scrolling
-    public class AnimalHeaderViewHolder extends RecyclerView.ViewHolder {
-        public AnimalHeaderViewHolder(View itemView) {
+    public class DueHeaderViewHolder extends RecyclerView.ViewHolder {
+
+        @Bind(R.id.tv_header_one)
+        TextView mHeaderTextViewOne;
+
+        @Bind(R.id.tv_header_two)
+        TextView mHeaderTextViewTwo;
+
+        @Bind(R.id.tv_header_three)
+        TextView mHeaderTextViewThree;
+
+        public DueHeaderViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+        }
+
+        private void toggleHeader() {
+            if (mHeaderType == TYPE_HEADER_LITTER) {
+                mHeaderTextViewTwo.setText("LITTER");
+            }
+            if (mHeaderType == TYPE_HEADER_ANIMAL) {
+                mHeaderTextViewTwo.setText("ANIMAL");
+            }
+
         }
     }
 }

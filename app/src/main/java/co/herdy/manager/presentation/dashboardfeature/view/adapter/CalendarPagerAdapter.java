@@ -17,6 +17,7 @@
 
 package co.herdy.manager.presentation.dashboardfeature.view.adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
@@ -28,11 +29,11 @@ import co.herdy.manager.presentation.view.adapter.SmartFragmentStatePagerAdapter
 /**
  * Created by Rowland on 6/11/2015.
  */
-public class SmartNestedViewPagerAdapter extends SmartFragmentStatePagerAdapter {
+public class CalendarPagerAdapter extends SmartFragmentStatePagerAdapter {
 
     private CalendarFragment ht = new CalendarFragment();
 
-    public SmartNestedViewPagerAdapter(FragmentManager fm) {
+    public CalendarPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -40,50 +41,54 @@ public class SmartNestedViewPagerAdapter extends SmartFragmentStatePagerAdapter 
     public Fragment getItem(int index) {
         switch (index) {
             case 0: {
+                Bundle args = new Bundle();
+                args.putInt(DueAdapter.TYPE_HEADER_TYPE, DueAdapter.TYPE_HEADER_ANIMAL);
                 // Servings fragment
-                DueFragment popularFragment = new DueFragment().newInstance(null);
-                return popularFragment;
+                DueFragment fragment = new DueFragment().newInstance(args);
+                return fragment;
             }
             case 1: {
+                Bundle args = new Bundle();
+                args.putInt(DueAdapter.TYPE_HEADER_TYPE, DueAdapter.TYPE_HEADER_ANIMAL);
                 // Kindlings Rated fragment
-                DueFragment popularFragment = new DueFragment().newInstance(null);
-                return popularFragment;
+                DueFragment fragment = new DueFragment().newInstance(args);
+                return fragment;
             }
             case 2: {
+                Bundle args = new Bundle();
+                args.putInt(DueAdapter.TYPE_HEADER_TYPE, DueAdapter.TYPE_HEADER_ANIMAL);
                 // Nestings fragment
-                DueFragment popularFragment = new DueFragment().newInstance(null);
-                return popularFragment;
+                DueFragment fragment = new DueFragment().newInstance(args);
+                return fragment;
             }
             case 3: {
+                Bundle args = new Bundle();
+                args.putInt(DueAdapter.TYPE_HEADER_TYPE, DueAdapter.TYPE_HEADER_LITTER);
                 // Weanings fragment
-                DueFragment popularFragment = new DueFragment().newInstance(null);
-                return popularFragment;
+                DueFragment fragment = new DueFragment().newInstance(args);
+                return fragment;
             }
             case 4: {
+                Bundle args = new Bundle();
+                args.putInt(DueAdapter.TYPE_HEADER_TYPE, DueAdapter.TYPE_HEADER_LITTER);
                 // Sexings fragment
-                DueFragment popularFragment = new DueFragment().newInstance(null);
-                return popularFragment;
+                DueFragment fragment = new DueFragment().newInstance(args);
+                return fragment;
             }
-
         }
-
         return null;
     }
 
 
     @Override
     public int getCount() {
-
         // get item count - equal to number of tabs
-
         return ht.getTITLES().length;
-
     }
 
 
     @Override
     public CharSequence getPageTitle(int position) {
-
         return ht.getTITLES()[position];
     }
 }

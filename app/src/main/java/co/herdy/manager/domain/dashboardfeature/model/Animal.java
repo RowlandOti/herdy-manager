@@ -4,6 +4,8 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
+import java.util.Date;
+
 @Table(name = "animals")
 public class Animal extends Model {
 
@@ -13,7 +15,7 @@ public class Animal extends Model {
     @Column(name = "name")
     private String name;
     @Column(name = "date")
-    private String date;
+    private Date date;
     @Column(name = "hatchno")
     private String hatchno;
 
@@ -28,11 +30,11 @@ public class Animal extends Model {
         this.name = name;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
