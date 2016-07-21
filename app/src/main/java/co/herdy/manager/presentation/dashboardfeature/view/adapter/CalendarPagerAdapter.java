@@ -20,6 +20,9 @@ package co.herdy.manager.presentation.dashboardfeature.view.adapter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
+
+import org.json.JSONObject;
 
 import co.herdy.manager.presentation.dashboardfeature.view.fragment.CalendarFragment;
 import co.herdy.manager.presentation.dashboardfeature.view.fragment.DueFragment;

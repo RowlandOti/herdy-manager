@@ -2,7 +2,7 @@ package co.herdy.manager.presentation.dashboardfeature.view.fragment;
 
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
+import android.support.design.widget.SlidingTabStripLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +24,7 @@ public class CalendarFragment extends ABaseFragment {
     private static final String LOG_TAG = CalendarFragment.class.getSimpleName();
     public static final String SELECTED_TAB_KEY = "SELECTED_TAB";
 
-    TabLayout mSlidingTabStrips;
+    SlidingTabStripLayout mSlidingTabStrips;
     @Bind(R.id.calendar_view_pager)
     ViewPager mViewPager;
 
@@ -66,7 +66,7 @@ public class CalendarFragment extends ABaseFragment {
 
         ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
         View rootTab = getActivity().getLayoutInflater().inflate(R.layout.inc_tab_calendar, parentAppBarLayout);
-        mSlidingTabStrips = (TabLayout) rootTab.findViewById(R.id.slidingTabStrips);
+        mSlidingTabStrips = (SlidingTabStripLayout) rootTab.findViewById(R.id.slidingTabStrips);
         mSlidingTabStrips.setupWithViewPager(mViewPager);
         if (savedInstanceState != null) {
             selectedTabStrip = savedInstanceState.getInt(SELECTED_TAB_KEY, selectedTabStrip);

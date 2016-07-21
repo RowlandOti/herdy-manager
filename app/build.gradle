@@ -100,4 +100,5 @@ dependencies {
     compile developmentDependencies.leakCanary
     compile 'com.roomorama:caldroid:3.0.1'
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+    compile 'com.rowland.slidingtabstriplayout:slidingTabStripLayout:1.0.0-beta-1'
 }

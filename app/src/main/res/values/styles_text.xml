@@ -67,4 +67,11 @@
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
+    <style name="TextView.Title.Header" parent="CustomTabTextAppearance">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/app_color_white</item>
+    </style>
+
 </resources>

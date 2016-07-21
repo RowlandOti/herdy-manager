@@ -1,13 +1,13 @@
 ext {
     // Android
-    androidBuildToolsVersion = "24.0.0"
+    androidBuildToolsVersion = "23.0.2"
     androidMinSdkVersion = 11
-    androidTargetSdkVersion = 24
-    androidCompileSdkVersion = 24
+    androidTargetSdkVersion = 23
+    androidCompileSdkVersion = 23
 
     // Libraries
     // REMOTE BINARY DEPENDENCY - Android
-    supportLibraryVersion = '24.0.0'
+    supportLibraryVersion = '23.1.1'
     daggerVersion = '2.0.2'
     butterKnifeVersion = '7.0.1'
     rxJavaVersion = '1.0.14'

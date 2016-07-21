@@ -25,7 +25,7 @@ public class DueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     // The class Log identifier
     private static final String LOG_TAG = DueAdapter.class.getSimpleName();
     // Determine type of View
-    private static final int TYPE_HEADER =1;
+    private static final int TYPE_HEADER = 1;
     private static final int TYPE_ITEM = 0;
     // Determine Header type
     public static final String TYPE_HEADER_TYPE = "header_type";
@@ -45,10 +45,10 @@ public class DueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_ITEM) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_animal, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_due, parent, false);
             return new DueViewHolder(v);
         } else if (viewType == TYPE_HEADER) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_animal_header, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_due_header, parent, false);
             return new DueHeaderViewHolder(v);
         }
         throw new RuntimeException("there is no type that matches the type " + viewType + " + make sure your using types correctly");

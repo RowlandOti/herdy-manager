@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- TextView styles -->
-    <!-- TextView styles Normal -->
-    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
-        <item name="textAllCaps">true</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/color_list_text_selector</item>
-    </style>
-    <!-- TextView styles Bold -->
-    <style name="CustomTabTextAppearance.Bold" parent="CustomTabTextAppearance">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:shadowColor">@color/app_color_white</item>
-        <item name="android:shadowRadius">2</item>
-        <item name="android:shadowDx">0</item>
-        <item name="android:shadowDy">0</item>
-    </style>
-
     <style name="Widget.App.Tab">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/tab_height</item>
@@ -29,12 +11,35 @@
 
     <!-- Widget SlidingTabStripLayout styles -->
     <style name="Widget.App.SlidingTabStripLayout" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">@color/app_color_primary_dark</item>
-        <item name="tabIndicatorHeight">4dp</item>
-        <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
-        <item name="android:textAppearance">@style/CustomTabTextAppearance</item>
-        <item name="android:background">@color/app_color_white</item>
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabUnderlineColor">@color/app_color_window_grey</item>
+        <item name="tabIndicatorHeight">6dp</item>
+        <item name="tabUnderlineHeight">2dp</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="android:textAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextAppearance">@style/MyCustomTabTextAppearance.Bold</item>
+        <item name="tabSelectedTextColor">@color/app_color_accent_teal</item>
+        <item name="tabIsSelectedTextBold">true</item>
         <item name="tabGravity">fill</item>
-        <item name="tabMode">scrollable</item>
+        <item name="tabMode">fixed</item>
+    </style>
+
+
+    <!-- TextView styles -->
+    <!-- TextView styles Normal -->
+    <style name="MyCustomTabTextAppearance" parent="CustomTabTextAppearance">
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/selector_tab_text</item>
+    </style>
+    <!-- TextView styles Bold -->
+    <style name="MyCustomTabTextAppearance.Bold" parent="CustomTabTextAppearance.Bold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/app_color_white</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
     </style>
 </resources>
