@@ -63,6 +63,7 @@ public class CalendarFragment extends ABaseFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         pagerAdapter = new CalendarPagerAdapter(getActivity().getSupportFragmentManager());
         mViewPager.setAdapter(pagerAdapter);
 

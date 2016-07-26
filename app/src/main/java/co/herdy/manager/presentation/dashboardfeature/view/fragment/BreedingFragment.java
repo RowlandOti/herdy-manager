@@ -8,11 +8,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
+import co.herdy.manager.presentation.dashboardfeature.view.activity.DashBoardActivity;
+import co.herdy.manager.presentation.dashboardfeature.view.adapter.BreedingPagerAdapter;
 import co.herdy.manager.presentation.dashboardfeature.view.adapter.CalendarPagerAdapter;
 import co.herdy.manager.presentation.view.fragment.ABaseFragment;
 
@@ -31,7 +32,7 @@ public class BreedingFragment extends ABaseFragment {
     ViewPager mViewPager;
 
     private String[] TITLES = {"Ready for Mating ", "Resting", "Pregnant", "Lactating"};
-    private CalendarPagerAdapter pagerAdapter;
+    private BreedingPagerAdapter pagerAdapter;
     private int selectedTabStrip = 0;
 
     public BreedingFragment() {
@@ -63,6 +64,25 @@ public class BreedingFragment extends ABaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        pagerAdapter = new BreedingPagerAdapter(getActivity().getSupportFragmentManager());
+        mViewPager.setAdapter(pagerAdapter);
+
+        ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
+        View rootTab = getActivity().getLayoutInflater().inflate(R.layout.inc_slidingtab_calendar, parentAppBarLayout);
+        mSlidingTabStrips = (SlidingTabStripLayout) rootTab.findViewById(R.id.slidingTabStrips);
+        mSlidingTabStrips.setupWithViewPager(mViewPager);
+        if (savedInstanceState != null) {
+            selectedTabStrip = savedInstanceState.getInt(SELECTED_TAB_KEY, selectedTabStrip);
+            mViewPager.setCurrentItem(selectedTabStrip, true);
+        }
+    }
+
+    // Save data for this fragment
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        selectedTabStrip = mViewPager.getCurrentItem();
+        outState.putInt(SELECTED_TAB_KEY, selectedTabStrip);
     }
 
     @Override
@@ -75,7 +95,13 @@ public class BreedingFragment extends ABaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
+        parentAppBarLayout.removeView(mSlidingTabStrips);
         ButterKnife.unbind(this);
+    }
+
+    public String[] getTITLES() {
+        return TITLES;
     }
 }
 
