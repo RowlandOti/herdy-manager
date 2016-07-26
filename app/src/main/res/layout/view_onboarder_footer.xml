@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
                 android:padding="@dimen/footer_layout_margin"
-                android:src="@drawable/ic_chevron_right"
+                android:src="@drawable/ic_chevron_right_white_48dp"
                 android:tint="@color/app_color_accent_teal" />
 
         </FrameLayout>

@@ -2,12 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--  Active tab -->
-    <item android:color="@color/app_color_white" android:state_selected="true" />
-    <item android:color="@color/app_color_white" android:state_focused="true" />
-    <item android:color="@color/app_color_white" android:state_pressed="true" />
+    <item android:color="@color/app_color_accent_teal" android:state_selected="true" />
+    <item android:color="@color/app_color_accent_teal" android:state_focused="true" />
+    <item android:color="@color/app_color_accent_teal" android:state_pressed="true" />
     <!--  Inactive tab -->
-    <!--<item android:color="@color/apptheme_secondary_text_whitegrey" />-->
-    <item android:color="@color/app_color_white" />
+    <item android:color="@color/app_color_disabled_text" />
 
 
 </selector>

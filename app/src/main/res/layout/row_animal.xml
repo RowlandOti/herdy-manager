@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="horizontal"
+            android:textColor="@color/app_color_secondary_text_grey">
+
+            <TextView
+                android:id="@+id/txt_name_label"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/app_color_secondary_text_grey" />
+
+            <TextView
+                android:id="@+id/txt_name_value"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Gori"
+                android:textColor="@color/app_color_accent_teal" />
+
+        </LinearLayout>
+
+
+        <include
+            layout="@layout/inc_horizontal_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="horizontal"
+            android:textColor="@color/app_color_secondary_text_grey">
+
+            <TextView
+                android:id="@+id/txt_hatchno"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Hutch: "
+                android:textColor="@color/app_color_secondary_text_grey" />
+
+            <TextView
+                android:id="@+id/txt_hatchno_value"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="L6"
+                android:textColor="@color/app_color_accent_orange" />
+
+            <include
+                layout="@layout/inc_horizontal_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/txt_sex"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sex: "
+                android:textColor="@color/app_color_secondary_text_grey" />
+
+            <TextView
+                android:id="@+id/txt_sex_value"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Male"
+                android:textColor="@color/app_color_accent_orange" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="horizontal"
+            android:textColor="@color/app_color_secondary_text_grey">
+
+            <TextView
+                android:id="@+id/txt_date"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Born: "
+                android:textColor="@color/app_color_secondary_text_grey" />
+
+            <TextView
+                android:id="@+id/txt_date_value"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="July 22nd 2016"
+                android:textColor="@color/app_color_accent_orange" />
+
+            <include
+                layout="@layout/inc_horizontal_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/txt_breed"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Breed: "
+                android:textColor="@color/app_color_secondary_text_grey" />
+
+            <TextView
+                android:id="@+id/txt_breed_value"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Checkered Giant"
+                android:textColor="@color/app_color_accent_orange" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/inc_horizontal_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="horizontal"
+            android:textColor="@color/app_color_secondary_text_grey">
+
+            <TextView
+                android:id="@+id/txt_status"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Status"
+                android:textColor="@color/app_color_secondary_text_grey" />
+
+            <include
+                layout="@layout/inc_horizontal_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/txt_status_value"
+                style="@style/TextView.Title.AddAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lactating"
+                android:textColor="@color/app_color_accent_red" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/inc_horizontal_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

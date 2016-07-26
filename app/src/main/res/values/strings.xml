@@ -53,5 +53,6 @@
     <string name="add_animal_sex_hint">e.g Doe</string>
     <string name="add_animal_breed_hint">e.g Checkered Giant</string>
     <string name="empty_list">Currently Empty</string>
+    <string name="empty_try_again">Try Again Later</string>
 
 </resources>

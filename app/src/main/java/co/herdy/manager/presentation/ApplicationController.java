@@ -77,12 +77,34 @@ public class ApplicationController extends Application {
         a.setName("Gogi");
         a.setDate(new Date());
         a.setHatchno("L5");
+        a.setSex("Male");
+        a.setBreed("Checkered Giant");
+        a.setStatus("Lactating");
+        a.setWeaned(true);
+        a.setLitter("SmallGs");
         a.save();
+
         Animal a1 = new Animal();
         a1.setName("Femi");
         a1.setDate(new Date());
         a1.setHatchno("L7");
+        a1.setSex("Male");
+        a1.setBreed("Carlifonian");
+        a1.setStatus("Pregnant");
+        a1.setWeaned(false);
+        a1.setLitter("Brownies");
         a1.save();
+
+        Animal a2 = new Animal();
+        a2.setName("Meria");
+        a2.setDate(new Date());
+        a2.setHatchno("L9");
+        a2.setSex("Male");
+        a2.setBreed("American");
+        a2.setStatus("Pregnant");
+        a2.setWeaned(true);
+        a2.setLitter("Sentinels");
+        a2.save();
     }
 
     public ApplicationComponent getAppComponent() {

@@ -18,7 +18,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import co.herdy.manager.R;
 import co.herdy.manager.presentation.dashboardfeature.view.fragment.AddAnimalFragment;
+import co.herdy.manager.presentation.dashboardfeature.view.fragment.AnimalFragment;
+import co.herdy.manager.presentation.dashboardfeature.view.fragment.BreedingFragment;
 import co.herdy.manager.presentation.dashboardfeature.view.fragment.CalendarFragment;
+import co.herdy.manager.presentation.dashboardfeature.view.fragment.LitterFragment;
 import co.herdy.manager.presentation.view.activity.ABaseActivity;
 
 public class DashBoardActivity extends ABaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -104,12 +107,15 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
                 mSelectedNavMenuIndex = 0;
                 break;
             case R.id.nav_animals:
+                showAnimalFragment(null);
                 mSelectedNavMenuIndex = 1;
                 break;
             case R.id.nav_litters:
+                showLitterFragment(null);
                 mSelectedNavMenuIndex = 2;
                 break;
             case R.id.nav_breeding:
+                showBreedingFragment(null);
                 mSelectedNavMenuIndex = 3;
                 break;
             case R.id.nav_preferences:
@@ -134,6 +140,21 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
 
     private void showCalendarFragment(Bundle args) {
         CalendarFragment fragment = CalendarFragment.newInstance(args);
+        replaceFragment(R.id.fragment_container, fragment, false, true);
+    }
+
+    private void showAnimalFragment(Bundle args) {
+        AnimalFragment fragment = AnimalFragment.newInstance(args);
+        replaceFragment(R.id.fragment_container, fragment, false, true);
+    }
+
+    private void showLitterFragment(Bundle args) {
+        LitterFragment fragment = LitterFragment.newInstance(args);
+        replaceFragment(R.id.fragment_container, fragment, false, true);
+    }
+
+    private void showBreedingFragment(Bundle args) {
+        BreedingFragment fragment = BreedingFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 

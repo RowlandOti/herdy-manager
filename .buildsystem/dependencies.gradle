@@ -7,7 +7,7 @@ ext {
 
     // Libraries
     // REMOTE BINARY DEPENDENCY - Android
-    supportLibraryVersion = '23.1.1'
+    supportLibraryVersion = '23.4.0'
     daggerVersion = '2.0.2'
     butterKnifeVersion = '7.0.1'
     rxJavaVersion = '1.0.14'

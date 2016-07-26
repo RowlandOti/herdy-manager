@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.herdy.manager.R;
@@ -65,7 +67,7 @@ public class CalendarFragment extends ABaseFragment {
         mViewPager.setAdapter(pagerAdapter);
 
         ViewGroup parentAppBarLayout = ((DashBoardActivity) getActivity()).getAppBarLayout();
-        View rootTab = getActivity().getLayoutInflater().inflate(R.layout.inc_tab_calendar, parentAppBarLayout);
+        View rootTab = getActivity().getLayoutInflater().inflate(R.layout.inc_slidingtab_calendar, parentAppBarLayout);
         mSlidingTabStrips = (SlidingTabStripLayout) rootTab.findViewById(R.id.slidingTabStrips);
         mSlidingTabStrips.setupWithViewPager(mViewPager);
         if (savedInstanceState != null) {
@@ -80,6 +82,13 @@ public class CalendarFragment extends ABaseFragment {
         super.onSaveInstanceState(outState);
         selectedTabStrip = mViewPager.getCurrentItem();
         outState.putInt(SELECTED_TAB_KEY, selectedTabStrip);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        // Change Title
+        getActivity().setTitle("Calendar");
     }
 
     @Override

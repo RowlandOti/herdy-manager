@@ -18,6 +18,17 @@ public class Animal extends Model {
     private Date date;
     @Column(name = "hatchno")
     private String hatchno;
+    @Column(name = "sex")
+    private String sex;
+    @Column(name = "breed")
+    private String breed;
+    @Column(name = "status")
+    private String status;
+    @Column(name = "weaned")
+    private boolean weaned;
+    @Column(name = "litter")
+    private String litter;
+
 
     public Animal() {
     }
@@ -46,6 +57,46 @@ public class Animal extends Model {
         this.hatchno = hatchno;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean getWeaned() {
+        return weaned;
+    }
+
+    public void setWeaned(boolean weaned) {
+        this.weaned = weaned;
+    }
+
+    public String getLitter() {
+        return litter;
+    }
+
+    public void setLitter(String litter) {
+        this.litter = litter;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -53,6 +104,11 @@ public class Animal extends Model {
         stringBuilder.append("name=" + this.getName() + "\n");
         stringBuilder.append("date=" + this.getDate() + "\n");
         stringBuilder.append("hatchno=" + this.getHatchno() + "\n");
+
+        stringBuilder.append("sex=" + this.getSex() + "\n");
+        stringBuilder.append("breed=" + this.getBreed() + "\n");
+        stringBuilder.append("status=" + this.getStatus() + "\n");
+        stringBuilder.append("weaned=" + this.getWeaned() + "\n");
         stringBuilder.append("*******************************");
         return stringBuilder.toString();
     }

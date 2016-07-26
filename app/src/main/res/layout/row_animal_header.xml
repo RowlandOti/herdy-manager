@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="DATE" />
+            android:text="NAME" />
 
         <TextView
             android:id="@+id/tv_header_two"
@@ -27,16 +27,43 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="ANIMAL" />
+            android:text="HUTCH" />
 
         <TextView
-            android:id="@+id/tv_header_three"
+        android:id="@+id/tv_header_three"
+        style="@style/TextView.Title.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="SEX" />
+
+        <TextView
+            android:id="@+id/tv_header_four"
             style="@style/TextView.Title.Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="HUTCH" />
+            android:text="BORN" />
+
+        <TextView
+            android:id="@+id/tv_header_five"
+            style="@style/TextView.Title.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="BREED" />
+
+        <TextView
+            android:id="@+id/tv_header_six"
+            style="@style/TextView.Title.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="STATUS" />
 
     </LinearLayout>
 
