@@ -53,7 +53,8 @@ public class StatusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof StatusViewHolder) {
-            final Animal movie = mAnimalList.get(position);
+            // Subtract 1 to cater for Header View
+            final Animal movie = mAnimalList.get(position - 1);
             ((StatusViewHolder) holder).bindTo(movie);
         } else if (holder instanceof StatusHeaderViewHolder) {
             ((StatusHeaderViewHolder) holder).toggleHeader();
@@ -67,7 +68,8 @@ public class StatusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             if (BuildConfig.IS_DEBUG_MODE) {
                 Log.d(LOG_TAG, "List Count: " + mAnimalList.size());
             }
-            return mAnimalList.size();
+            // Add 1 to cater for Header View
+            return mAnimalList.size() + 1;
         }
         return 0;
     }

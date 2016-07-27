@@ -51,7 +51,8 @@ public class LitterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof LitterViewHolder) {
-            final Animal movie = mLitterList.get(position);
+            // Subtract 1 to cater for Header View
+            final Animal movie = mLitterList.get(position - 1);
             ((LitterViewHolder) holder).bindTo(movie);
         } else if (holder instanceof LitterHeaderViewHolder) {
 
@@ -65,7 +66,8 @@ public class LitterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             if (BuildConfig.IS_DEBUG_MODE) {
                 Log.d(LOG_TAG, "List Count: " + mLitterList.size());
             }
-            return mLitterList.size();
+            // Add 1 to cater for Header View
+            return mLitterList.size()+ 1;
         }
         return 0;
     }
