@@ -130,7 +130,8 @@ public class StatusFragment extends ABaseFragment {
     }
 
     public void updateEmptyView() {
-        if (mStatusAdapter.getItemCount() == 0) {
+        // Subtract 1 to cater for Header View
+        if (mStatusAdapter.getItemCount() - 1 == 0) {
             mSwRefreshLayout.setVisibility(View.GONE);
             mEmptyTextViewContainer.setVisibility(View.VISIBLE);
         } else {

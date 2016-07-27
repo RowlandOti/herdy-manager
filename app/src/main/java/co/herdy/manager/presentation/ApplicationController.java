@@ -41,7 +41,7 @@ public class ApplicationController extends Application {
         this.initializeInjector();
         //this.initializeLeakDetection();
         this.initializeActiveAndroid();
-        this.initializeFakeData();
+        //this.initializeFakeData();
 
         appControllerInstance = this;
         apiManager = new ApiManager(this);

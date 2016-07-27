@@ -136,7 +136,8 @@ public class LitterFragment extends ABaseFragment {
     }
 
     public void updateEmptyView() {
-        if (mDueAdapter.getItemCount() == 0) {
+        // Subtract 1 to cater for Header View
+        if (mDueAdapter.getItemCount() - 1 == 0) {
             mSwRefreshLayout.setVisibility(View.GONE);
             mEmptyTextViewContainer.setVisibility(View.VISIBLE);
         } else {
