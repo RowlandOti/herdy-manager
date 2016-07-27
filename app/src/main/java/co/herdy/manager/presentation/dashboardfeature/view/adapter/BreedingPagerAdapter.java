@@ -42,28 +42,24 @@ public class BreedingPagerAdapter extends SmartFragmentStatePagerAdapter {
         switch (index) {
             case 0: {
                 Bundle args = new Bundle();
-                args.putInt(StatusAdapter.TYPE_HEADER_TYPE, StatusAdapter.TYPE_HEADER_ANIMAL);
                 // Ready for mating fragment
                 StatusFragment fragment = new StatusFragment().newInstance(args);
                 return fragment;
             }
             case 1: {
                 Bundle args = new Bundle();
-                args.putInt(StatusAdapter.TYPE_HEADER_TYPE, StatusAdapter.TYPE_HEADER_ANIMAL);
                 // Resting fragment
                 StatusFragment fragment = new StatusFragment().newInstance(args);
                 return fragment;
             }
             case 2: {
                 Bundle args = new Bundle();
-                args.putInt(StatusAdapter.TYPE_HEADER_TYPE, StatusAdapter.TYPE_HEADER_ANIMAL);
                 // Pregnant fragment
                 StatusFragment fragment = new StatusFragment().newInstance(args);
                 return fragment;
             }
             case 3: {
                 Bundle args = new Bundle();
-                args.putInt(StatusAdapter.TYPE_HEADER_TYPE, StatusAdapter.TYPE_HEADER_LITTER);
                 // Lactating fragment
                 StatusFragment fragment = new StatusFragment().newInstance(args);
                 return fragment;

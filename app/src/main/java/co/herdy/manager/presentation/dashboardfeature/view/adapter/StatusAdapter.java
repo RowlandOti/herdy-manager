@@ -128,9 +128,6 @@ public class StatusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @Bind(R.id.tv_header_two)
         TextView mHeaderTextViewTwo;
 
-        @Bind(R.id.tv_header_three)
-        TextView mHeaderTextViewThree;
-
         public StatusHeaderViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

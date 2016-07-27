@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.SlidingTabStripLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -139,21 +140,25 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
     }
 
     private void showCalendarFragment(Bundle args) {
+        removeSlidingTab();
         CalendarFragment fragment = CalendarFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 
     private void showAnimalFragment(Bundle args) {
+        removeSlidingTab();
         AnimalFragment fragment = AnimalFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 
     private void showLitterFragment(Bundle args) {
+        removeSlidingTab();
         LitterFragment fragment = LitterFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
 
     private void showBreedingFragment(Bundle args) {
+        removeSlidingTab();
         BreedingFragment fragment = BreedingFragment.newInstance(args);
         replaceFragment(R.id.fragment_container, fragment, false, true);
     }
@@ -197,6 +202,13 @@ public class DashBoardActivity extends ABaseActivity implements NavigationView.O
 
     public AppBarLayout getAppBarLayout() {
         return appBarLayout;
+    }
+
+    private void removeSlidingTab(){
+        View oldSlidingTab =  findViewById(R.id.slidingTabStrips);
+        if(appBarLayout.getChildCount() > 1) {
+            appBarLayout.removeView(oldSlidingTab);
+        }
     }
 
     @OnClick(R.id.fab_dashboard)
